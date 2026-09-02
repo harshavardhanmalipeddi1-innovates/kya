@@ -58,6 +58,7 @@ import uuid
 from fastapi import FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator
 from typing import List, Optional
 
@@ -999,3 +1000,10 @@ def reconciliation_status(request: Request, x_kya_demo_key: Optional[str] = Head
         "pending_reconciliations": pending,
         "status": "action_required" if pending > 0 else "none_pending",
     }
+
+
+# --- Serve frontend as static files ---
+import pathlib
+_frontend_dir = pathlib.Path(__file__).parent.parent / "frontend"
+if _frontend_dir.is_dir():
+    app.mount("/", StaticFiles(directory=str(_frontend_dir), html=True), name="frontend")
