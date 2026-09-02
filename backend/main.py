@@ -1006,4 +1006,4 @@ def reconciliation_status(request: Request, x_kya_demo_key: Optional[str] = Head
 import pathlib
 _frontend_dir = pathlib.Path(__file__).parent.parent / "frontend"
 if _frontend_dir.is_dir():
-    app.mount("/", StaticFiles(directory=str(_frontend_dir), html=True), name="frontend")
+    app.mount("/dashboard", StaticFiles(directory=str(_frontend_dir), html=True), name="frontend")
