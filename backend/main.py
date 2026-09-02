@@ -265,6 +265,10 @@ async def rate_limit_and_body_size_middleware(request: Request, call_next):
 # var for local dev on a different port; never fall back to "*".
 _default_origins = "http://localhost:3000,http://localhost:5173,http://127.0.0.1:5500"
 ALLOWED_ORIGINS = [o.strip() for o in os.environ.get("KYA_ALLOWED_ORIGINS", _default_origins).split(",") if o.strip()]
+# Always allow the Firebase frontend and the backend itself
+for extra in ["https://kya-frontend.web.app", "https://kya-backend.onrender.com"]:
+    if extra not in ALLOWED_ORIGINS:
+        ALLOWED_ORIGINS.append(extra)
 
 app.add_middleware(
     CORSMiddleware,
