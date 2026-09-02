@@ -23,3 +23,6 @@ backend/data/audit_trail.db-shm
 # Generated binary docs (source of truth is the .md file)
 docs/ARCHITECTURE.pdf
 backend/data/policies.json
+backend/data/traces.db
+backend/data/traces.db-wal
+backend/data/traces.db-shm
