@@ -1,0 +1,25 @@
+# KYA — Know Your Agent
+# Python dependencies
+#
+# Install: pip install -r requirements.txt
+# For development: pip install -r requirements.txt pytest
+
+# Core
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+pydantic>=2.0.0
+
+# HTTP client (demo scenarios, eval, Razorpay adapter)
+requests>=2.28.0
+
+# Razorpay integration (Phase 2 — optional, only needed for real payments)
+# razorpay>=1.4.0
+
+# Cryptography (Phase 3 — production identity)
+cryptography>=41.0.0
+
+# JWT (Phase 3 — production identity)
+PyJWT>=2.8.0
+
+# Testing
+pytest>=7.0.0

@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  kya:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - KYA_SIGNING_SECRET=${KYA_SIGNING_SECRET}
+      - KYA_DEMO_ISSUER_KEY=${KYA_DEMO_ISSUER_KEY}
+      - KYA_LOG_LEVEL=${KYA_LOG_LEVEL:-INFO}
+      - KYA_PAYMENT_PROVIDER=${KYA_PAYMENT_PROVIDER:-mock}
+      - KYA_IDENTITY_MODE=${KYA_IDENTITY_MODE:-hmac}
+      - KYA_ALLOWED_ORIGINS=${KYA_ALLOWED_ORIGINS:-http://localhost:3000}
+      - KYA_AUDIT_LOG_FILE=${KYA_AUDIT_LOG_FILE:-}
+    volumes:
+      - kya-data:/app/backend/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  kya-data:

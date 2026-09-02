@@ -1,0 +1,7 @@
+{
+  "dataset_version": 2,
+  "epoch": 1700000000,
+  "generated_at_offset": 0,
+  "eval_time": 1700000200,
+  "note": "eval_time is a fixed logical clock, not wall time. eval/harness.py evaluates every delegation token's expiry against this value. Do not replace it with time.time() -- that reintroduces the original non-determinism bug (results depending on when the harness happens to be run)."
+}

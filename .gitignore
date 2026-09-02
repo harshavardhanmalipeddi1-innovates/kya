@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.pytest_cache/
+
+# Runtime artifacts -- generated per-run/per-machine by the server,
+# not part of the source tree. agents.json (the seed registry) is
+# intentionally NOT listed here since it's static input data, not
+# a runtime artifact.
+backend/data/audit_log.json
+backend/data/execution_claims.db
+backend/data/execution_claims.db-wal
+backend/data/execution_claims.db-shm
+backend/data/baselines.db
+backend/data/baselines.db-wal
+backend/data/baselines.db-shm
+backend/data/audit_trail.db
+backend/data/audit_trail.db-wal
+backend/data/audit_trail.db-shm
+
+# Generated binary docs (source of truth is the .md file)
+docs/ARCHITECTURE.pdf
+backend/data/policies.json
