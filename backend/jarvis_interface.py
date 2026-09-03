@@ -108,8 +108,9 @@ class AgentRouter:
     It accepts standardized requests and returns standardized responses.
     """
 
-    def __init__(self, kya_base_url: str = "http://localhost:8000"):
+    def __init__(self, kya_base_url: str = "http://localhost:8000", demo_key: Optional[str] = None):
         self.base_url = kya_base_url
+        self.demo_key = demo_key if demo_key is not None else os.environ.get("KYA_DEMO_ISSUER_KEY", "")
         self._pipeline_fn: Optional[Callable] = None
 
     def set_pipeline(self, pipeline_fn: Callable) -> None:
@@ -147,6 +148,10 @@ class AgentRouter:
         """Route through HTTP (for production use)."""
         import requests
 
+        headers = {"Content-Type": "application/json"}
+        if self.demo_key:
+            headers["X-Kya-Demo-Key"] = self.demo_key
+
         resp = requests.post(
             f"{self.base_url}/verify",
             json={
@@ -155,7 +160,7 @@ class AgentRouter:
                 "stated_intent": request.stated_intent,
                 "cart": request.cart,
             },
-            headers={"Content-Type": "application/json"},
+            headers=headers,
         )
         data = resp.json()
         return AgentResponse(
@@ -177,16 +182,21 @@ class MemoryInterface:
     - Audit trail for compliance
     """
 
-    def __init__(self, kya_base_url: str = "http://localhost:8000"):
+    def __init__(self, kya_base_url: str = "http://localhost:8000", demo_key: Optional[str] = None):
         self.base_url = kya_base_url
+        self.demo_key = demo_key if demo_key is not None else os.environ.get("KYA_DEMO_ISSUER_KEY", "")
 
     def get_agent_history(self, agent_id: str) -> List[Dict[str, Any]]:
         """Get transaction history for an agent."""
         import requests
 
+        headers = {"Content-Type": "application/json"}
+        if self.demo_key:
+            headers["X-Kya-Demo-Key"] = self.demo_key
+
         resp = requests.get(
             f"{self.base_url}/audit",
-            headers={"Content-Type": "application/json"},
+            headers=headers,
         )
         entries = resp.json()
         return [e for e in entries if e.get("agent_id") == agent_id]
@@ -195,9 +205,13 @@ class MemoryInterface:
         """Get current context for an agent."""
         import requests
 
+        headers = {"Content-Type": "application/json"}
+        if self.demo_key:
+            headers["X-Kya-Demo-Key"] = self.demo_key
+
         resp = requests.get(
             f"{self.base_url}/agents",
-            headers={"Content-Type": "application/json"},
+            headers=headers,
         )
         agents = resp.json()
         return agents.get(agent_id, {})

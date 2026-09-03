@@ -4,7 +4,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1fd2fbadbfb447bf93d3772ac425804d\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d35e65798e7a3ed80210801849335a45e2bdb219e9910c9a0376050acb6a4be3\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3a45b17df0fa4331be16f142b974c937\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"83fc1953cb7c6cc4a4f46f58c35315eb168a7544f93c785abb7171d33947ed7f\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -19,7 +19,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a1cf314692c24a729696dc72ee2f5f6d\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1b434cb40a9e0b21cf42cb47d8ad890535f490429c25c6e435e2d53d70c9e7c3\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"609df31b55544d368a3c7dae4e07ac58\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"160fbd5d833cc53db4123ec2a0fe626b1a69f1869de54888d658ec4e5eb61178\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -34,7 +34,7 @@
     "case_type": "scope_violation",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ae7b9b03ac054a688fb2261fc16fa65d\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d7ef1d80732651d38bf1db71b9b7aafd53deee0263a5ee20f4333ee214ec4aad\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a1131fe89d214b949c7f381f452f082e\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"3385d55408e3e791e73e99578123a0aed38b5388eb717b416d87d80a34beecf3\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -49,7 +49,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"183b4516a96c409e9418bf4a1b935c8b\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"e7ed9514c5f9f5322f59269aa73eb6e81c8ebedc6833fc66e647c5cf3c14d1e5\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4c5a3a0071c34840af5edfc0b0d8cbb1\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0ad25d8bc089ad8ab4bcc9fe9e95725ce613cbce22783b260a6242d007afd776\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -64,7 +64,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b6f1f9e3d0284c1280b0d41ae9b71b3d\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"647825e9b3ef857609dc5b10a1bb03af8a6c7e161c6c8cf8e0272d7e6dcb4f9d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"530f5f2f582c4d24accd3712a8c542fb\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"85bb06f38a5d866f6f55bda8c0548fbde90d22969b7ce97ca4c2c1dee5c9a13a\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -79,7 +79,7 @@
     "case_type": "delegation_expired",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"e24396811da24f8db3da530d51c39d22\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"72cd047aa77ca2e1fb803da34939613e2abecb116d20ff4cc0b262ddbfc10559\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"6a16bfb9e6014860bc5cc8124bc890d2\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"d027711e35b1b453b4ef1acc646ce8eb3454861fe20ff31a1fe557e7d31780ad\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -109,7 +109,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"459928f4e67d4284b9581ad4e07cbb01\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"4d956e8306e2d0403726b775dbaebad65f8176d74f8ba5d05403a7cd8a250490\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4a8bee7a613f4fda8601a40e8f500922\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"cd4a0b18105fc8e8191e611b31b1f4f9218c0a1edc18deb8de64098e140e553d\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -124,7 +124,7 @@
     "case_type": "delegation_expired",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"ea80b0f8554649d5b920d967962d115c\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"56deec969b3f904c6bb02a2214d4d0a8c4a7ec02824b15e1dc1c020db934bb73\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"1b62130cef8149959ac76146c038e607\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"13226eb587c13e80c76a7d7695da197f5cc713ffbfdf70e8576ff2b48e614669\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -154,7 +154,7 @@
     "case_type": "delegation_replay",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"751a490ab55b469892bf310ef5ef1822\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c5acb9ca485889c89652abaaaae08ac849c48e7620488ef3d141f998ef451bb6\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"90ea731f451f468a851a3f31c0fbfe90\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d2986f6f42c34c9a2a900cf6f7530c6cb6c7fc63cc12bc1d9fde040aceb97492\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -169,7 +169,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1ea97a65c58e4ddb991a411a94a033e1\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8bb0105b793c31dc43e19a7fbc16a65a98e942a9f4399ac99ad584c756b3e5bb\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a592e5ab37f340b880e115ccf635724c\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"5a89a7c208cbd87ec623dc04e87e5f1676f38f00159427b743bd261a94b75cd5\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -184,7 +184,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b03b0c076d3948daa91ecc345295aed4\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"802d7a3fc0a09ad40a0bb93f867ff3b1556e720e0c36c848a725e5fdb8774d8e\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"857a5f658d064fa8b465799560e992c8\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"af4177fdd41fe6beb04d94136c9b39ec195e6c5b28ef82929017bc7dba570d3a\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -199,7 +199,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"71776128e20545dc9c77b8f1c6746d59\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c67b8268d1ce08097d129a49e3e3ef403ded26b72457a06968d77fca967a521a\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"577336c95dd748e48b29239bf88ed542\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"96591b76a7b5bd97eb49666754e09613938b0034303b14b6df202b663958b59c\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -214,7 +214,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"5803d57a772940e6b6e59983dade5b1b\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ccabdc1eb3f24018f4678f5fdd0c0cbfcfb09d44c296974d741d62fb1465c8a0\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d9647b8383e04ac88c9239861e524505\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"3e3247d2e9db7494dfec7931d48bfdaaa197d02a6a02e90971b0de667fc70204\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -229,7 +229,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"fba88a621e314ecd861b21b8b54ffbbb\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"88285caa43efcff26b3293578dac9920c07462645d85505038897c32fd63d388\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f79afd43e28740e3887daf6e86e1e59d\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"64ecf704b3b056729ab7b5d41ea8992382d1f3e822c52d2530021fc9d28edbc8\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -244,7 +244,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3ed42c805cc1490885090bf6d48696e1\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"96b3ca78e23f5080a05142fea3b9124afd96a68a2a629d146fc4f6f3d3205d20\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e4ceda462dc14890a72a9d7edc6fa8e5\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9a534c2bdf0ba071460c2d85c726b793a2f1654feb4b6e43e5f32da87db29afa\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -259,7 +259,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f0c09c3bdb2242339b857e59ade24c19\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"fc8dc3382a685ff9918b2808d41a8c23a56bff2bbacadc5eb938711089ce6168\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ed58b8d91bbe46d48a2d8500a907f322\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"03ce505c43d3ef01b58fc82674044e395edb3c920cd7fdedfe631c62425bf89c\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -274,7 +274,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3bbeb5dc7cd8466cbc898196b2c4939a\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"11a6b3f9c8fea5edcc94dc72e72394ececf95c433ea6b4869e873b063fab2f70\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4c8bbaa5d9ab4c63b3510ceab4128275\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"651b8935ce78111ed30c6361997decb69b09f005d5a6c267775c23d7ff8bad96\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -289,7 +289,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3930c036331a4514b52b98e6c9e63fc7\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8e4fdaeb89b8916bab33b5786e8c2a9941e3644e8655541499ea731b3ae4ccce\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a0a4b29ef7614a1b9cb6d7455003b3c9\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0cc3cf3c649f7938c8625ffdaab5f881bee11168bc83477e57e7604287f253b3\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -304,7 +304,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c001343766804d97b5bdd2a16cd620a7\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c550621665ae603aebd1d565b6941937bea5730315eafe42a857b9026fb1ba67\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"0a0a137b6b834c1ea54977ee5e1d1546\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"58a7c2de04a7360b66c8375507cc631cd4cc12390e0abfa94208eac9fab56263\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -319,7 +319,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c75bbe43125d4f1d9edfad0c25c9b67b\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"35891d20bddb1a47f2f4a9beb99ba969b982fb28f7ecd22072a186e87b0f51ea\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"07fa09a19f674e7d939f90fbf08afbb5\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1ffe285f46ab6ae10ed6c9c116041741b5baecb027698540fd0f986ea4901a50\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -334,7 +334,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"daaead52651a49bd929bb45a0cdf224d\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c560a75150d695126a2ef4bf9c522179cbb9460ed37c7a969cfbb3761108efbb\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"51616fba2ffc424aa7ae2a417bb8f038\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"993b3b25d0da4282eeae91717c640e31ad36e491d0620486b8533d51d08bec41\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -349,7 +349,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e98b91b6cc914455966096f6e50dabf4\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"6558ec3f2810c8313d1bf93f2cfa2da15ffa845c055f162462cf478474b8391d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"769d90bdb6a5464b99910d507f535783\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"5b597f6cbcc1fd7078dc446dd0b788a29c5e9d5c6d22a1102dbaffdb8f056959\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -364,7 +364,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ad52307b441240f2a11d527fff939760\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"b97d2deba4576a02a30f951093732ebb929517c6f416967a3a5f9d053c2cbd32\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"70f50808cfbf4e148a0d6cf2b05b59db\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"4270a6cd66da0dd9cbf4761f13a20cbebc9d4631786b55907a2866d6b59e141d\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -379,7 +379,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1ff8ed3a313843779f519f544fd60119\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2098ad6fee4ad5b04baa5be4973a7eb54959737c434e4b2bfb07030487b8fe6d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4e0f2b01c3fa46aa9eb566ce2da4b958\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"fcf0130bc84abaaa850dad059771d0fa9b8598146ee8db0074780951f2060f6b\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -394,7 +394,7 @@
     "case_type": "scope_violation",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ad2c206c11f541eca9781626c7e314e0\\\", \\\"max_amount\\\": 12000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"5de1ecdf39337d42acc111266f77c48e217dd49e6f2891bfdfd6e1980d97279e\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1237896998314be1a823d618b5e64e18\\\", \\\"max_amount\\\": 12000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c461a4613ef48ccee9dffeecc5dce0d0ba29c69c3011ef7a68ccfd47e74c8dbc\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -409,7 +409,7 @@
     "case_type": "scope_violation",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"fdd8d80e12864a4494626aea2a4f9d53\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"96e7c5f23ebef40e87792cb8d8702d94d7f42a1e001fcdf960a42a2605dd8f33\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3fed7f6dc874462db8becccdb1ef077a\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d8d108e8631180e242685401e06b1f94fb26f4dcb8e96441734cdd0ea3bd6635\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -424,7 +424,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a4bca8a3ad5843df82059ca76c72a4a3\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9a9f3dacfa8d05ea9e7e0557bedc1f11c38ebaa82237084567ce2e65de5c00aa\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"549b851c96374274957110f8ad41c41b\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8281bce17b8e8b41bd182b0a3acd1e3ce1a5a4028505d56bf72fe0cfea2701a7\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -439,7 +439,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"845acb3598834caf9ad3ef5316235ab9\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"729d4677a66280a66b2e5052860f7a76914a5227698b2876d55613f435901bed\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"dae8dd4b175e44eeb20712003f91bf34\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"b8ed0007ebd37087f8c0a3c82097b267de026b314d0ab44dc7719cccbb391279\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -454,7 +454,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e43c17ed6101404db873bcee18a6310e\\\", \\\"max_amount\\\": 120000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ae4118f103e79bfb02a286415d1adf63c7826b44a3056db95fba18d1815be4e2\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c962869130784e5bb9207f50d39096aa\\\", \\\"max_amount\\\": 120000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"446494e34d75b3ea59cc4f7cf9e1db457fdb0bdf6ac38e7277f09b8a75e6965a\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -469,7 +469,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"23025a29faee41daa617e4b709a37b3c\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"7caed4e22b8d2cc67bc6fabba777905da82e4d8d8a5438d344edb354d839fe71\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"469e2d4375354fc7bb9a7ca88bf1b23d\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9ac8addc4d43b18a869499c6d78ec8820b6a9a3564f1d8445c682be38489b2db\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -484,7 +484,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"59825a0b5d924e63a7a1e2e3f3ff6b0d\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"7b3a38bf214e75f48c1ce1ff76314fc3783c6f117cc92c3a7b01213a4b8ec7d0\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f70de3cb38414f90bffe9856e09a7e55\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c879bdb8ed781047135f31528f31ba6a138b36c91fc194c8f95835ebb16c3c67\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -499,7 +499,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4b738ef6a4a34317b4cd28999e8cddf3\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"20493cb4aadecc82834cb5117f3109b3d37ea752c638ab42d103f2247031a714\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"2c640cf50f19423798ea50024e1919d4\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"f41cedfde1912acf536a69baf3972d115f166fd073e7f08db7d7c3ee551a3973\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -514,7 +514,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"dbd07043be444dee9484f57eb6d76c2e\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1fc65bf56660a60ae2dc98d08f0b9a3c070bf5ea34ba80b1ec7f80c63da5c578\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3ea9f2bf0d124203bd8109a76f3cdf4c\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"948e4961bf876b648c1da491a6176ca8aca2bd14a9d1a983bc0c242b5a40676d\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -529,7 +529,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3fb48a3e7a1044b5b4db3b3895697086\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"667ecc2c654ba43349d60a84ff34de04acb6cd16d5c13fb08a3f600a59a8729d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"7b8dbccc382846e3b1af212ea9be2f6e\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"601dd16386f279cb10d18d3328c8ceb826cef7532cedab9c9652175e82b57378\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -544,7 +544,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b1b78d36c7d04a0e83c1959b01d2421e\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"a5626131aee267246f6ef13ccf286a9fe4e0c207b27e4dfad83b263f2de1c4a5\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f3fdd355035c4ce191c0b0a8a7e5456a\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"470e0ff2e999855a866201632f87c430befffaf28d39145592dc0885331f9e8a\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -559,7 +559,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d1fb08bcf1364931b5928e01d3af063f\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"951f5d725d12f4d1c6eefcac04cec851a2a48cef7468a865718a47a912e14861\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d05fd3b9dbc44f4b9ad043d5d71c3b39\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9edb05e89e4fe6db7ca1e203f2534308df4d207aac97dba5a8bd76c4ec25da17\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -574,7 +574,7 @@
     "case_type": "delegation_expired",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"734ff39ac95e4439a3ab5d73a615f0e2\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"d2379b6a0ff8dede8de68de7f1eba57a9bd3e0aabe11e5c73c6c13653675656f\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"f55237d2478d4005a036a9990cca27f6\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"90901c40d3df9bc7c32930a8cd2aa8738dcb25a3547d5b4942e9466cbf0fc8cb\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -604,7 +604,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b2ae97ce6d3149419eaf6f30db41586d\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"07d8ea926c6e621a5d224a8bc23bfa05d9169eb208f5aa993965106326690d33\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b83c350b4c234f27abd5d96ed5c70893\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"159c1fed57ba4ad0f84c6c05c7fcb425888e15a25c2f26a5b43cc793db92fb07\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -619,7 +619,7 @@
     "case_type": "delegation_expired",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"81148c917e344b0cbec4ad681fd51dba\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"00ed4f0b03830126284b02ce75328ff365903e000fc443c094fa2b5f21790b27\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"3cf834f24eca4b42b2634d309172b8e0\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"63ffa7ef30d6be97ce41ca907588edd7d838bbf1c37314bdeeec3d5ccccae468\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -634,7 +634,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"50c8eaa072514bccbfd3f9852af1ed26\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ab45542fc150d5ba93e13e5aeb78c6785aa7351179ef2eb423d2f6c2006deba1\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ecaa686544dc4bf9a898dfd2abfa32b5\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9cae495df0791d5cf7cd4be6b220eee456c28becd6c6b56dc7f55dce90fbb675\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -649,7 +649,7 @@
     "case_type": "delegation_replay",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"5bd6a21f56a44ff1ad61d959e79bd6a3\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"a8a134319bf3b3e9978254e14f6b21e37e1bf1a738a9809c680260996ce47c43\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d942bde7c4db46b2b03531d4792d81ae\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c5cdad52b317399a0d704d06e0b0127cf70f71c4181da9a83619245c6798f7e4\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -664,7 +664,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"711618a7560742ae8552c77308233f43\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"27912a440fc8e1dfea1280d9795280d88cfe380ea58935c20d2d3cc5275db0ec\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"727b2b3561e546e4af75a20d81f0ab28\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"815807ef20a81b3f934496f052dddbe8770a497e78e26515e5e310752851c51e\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -679,7 +679,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"65cd646da836488194a9ea878f8a3afd\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d4777557b8b1bfa22e124189942bcfbe311c36ce9ecf617c105ce2ca26a4b97f\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"73b9229efb6b4cbf9c8c3499c90336f5\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"7751d4b29c02c46fc94a9e5400df337c3e64d45072576a62b8b4f7da902c65d1\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -694,7 +694,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"8f68282ab8bd42fd9bba46897b9f6769\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1b29f49d8ec4bf540e9686e400df4489980f94606615f663358c10fbba9b232d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f21bdd9ce9c34f7f90cc673219d266ec\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"391509b986b382a2ea78561766d75e4b3da840aacbbdc55dac9b7c313f8c70f1\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -709,7 +709,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"091fa17045854f02b6525c535f365ec7\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"166785ec9315642d4047db91e3061be1f2c86bb73ecdc1963cd3ae584a755113\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d7579a1eda0347a6b2d77131925b0124\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1099a62dcb3f8d22ad6aa209acd3229e5fd8d007a481dab99a9712ea36b59e7a\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -724,7 +724,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"dc6a326c30da437eb586bcac87335f6b\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"6dad02d9e5aa14df1a2a9901a505ab61e6d3f7508428d6c0205457b1a9e059fb\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"eca627580e9f45c6bb951432f2339053\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"55571d02153431a1a08ac80f4fbc118e5ad8231a7f696546f5df927d239900cf\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -739,7 +739,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"210df694673443d7be686d058b8b120b\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9173c9b16df2b0f092bdfffbe9e6c1f03ec3501f4522c815bf1fbc73042c8f96\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"5ba972a6238b4edc83b7744a39a49f0e\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"dad9ba2319848385275fb7b74264fcc10e6cb995800b1f849f1b76078d53b743\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -754,7 +754,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"637d6f61c1f945849d3b7f12c7bd0c7d\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"db7c4792bfd04d91d107f1dae9024d04dc4c316d9ac31d8ddf29b0f0b25eefb8\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"49d98000ea3045c3b5a327db47e09c16\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1f106fc1d461530adc5e1fae23fe83f1f9fd2893a822fd229c37c2f3fe60df38\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -769,7 +769,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"bf9ed920bd3b404090c37b0e3a42bd0c\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"26ea79e98ad6330c128a569359fa6b7ad6b69a7b5029484300fb2d646011e0bc\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"56ed26a23c294be6a04aaaf80f38f79d\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"dbc4e1ca8bbf4a5d9c933d572d8358c630c4c8664f3b0f93c1a0688cd97ad0fd\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -784,7 +784,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"71c77a12aa1942538907dc2ffc310dc2\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"5134da7fc586b7a99cc5bdb74400700a1d3ca9b93360ec5ceedfabeeef0737a1\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"83dab479cf284bbdbb776a8a49488793\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"87147f18bd949568b00761ebc953cb9196170e2b058f2b2676f15b6b755cdde4\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -799,7 +799,7 @@
     "case_type": "scope_violation",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ac441abbf18f432489f985a3aa2ac1df\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d7b64833563205369760429de438ebd34b7286ac0d922d4a15566d7ee0b49e51\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"595cbe0bbc1c481bb493bf829f6467b9\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1d07690001bb823a0455134ef60ecfd0a9976defd463cf62f2740acf8db57ccc\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -814,7 +814,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"42fe19a0761d436b820a5f4a21a3eaaf\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"23db930fd7ca838ebf2f7d677206f93d474d57908b6ff1887d53235a1314589a\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"592cd556fb9345f2b9f2cf84f4fb7ed3\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d2a9b866649a3d6e6e218abb545a89b35f1902d76a09b20326f65f125d45b805\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -829,7 +829,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"351755d6563b4cfcbbb5cca9fc9e3a4f\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"daae16e1b54ffb0b513651a79e93864aa51f81bdeb38cad76ca42948310adbe8\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"193ab4e635964751a092ebbdfddf2d4b\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"6a291f8348cc321f7f9420c4db4e68bda9f9ec19570a16732d143e1af13fb73f\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -844,7 +844,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d53ba357e71e403da98f7364b0ec4b46\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ac6be623c348b13d5d36fc323e85d4fd1cc63a0878720341edb2dbe2b847b34e\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"614cc7af0ce44434bc3606c0e3331fc6\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"b557826689cd1090ee51a1a42255feeeef0d31ace84ca655731ef68e752a37da\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -859,7 +859,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"412c21dfe125402496cc72dd5a3b122d\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ebba41bef86a00884c5199dbe5b3ed2af12e72bb6100338a3ad92ac00844d1d2\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4b44891f34eb4bfe952a5d47167e2410\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"eecc9ae12de66c7a247144413948b70c3772a90225e02686214dd56128bf57ee\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -889,7 +889,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"0327982d9819402eadb069138b5780cf\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"413dce1ae2a07e6f4dd759d67454b3699a3b4d792c313f0ecae2d19d11c113e0\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"19bf0626ea83427aaf3d6c2c47d75c43\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"07e1028c7250817a791c86436492277600a6b95bca34ef87a7d60981ddf1bfc5\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -904,7 +904,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b67c379e55224ad6b00e23ea18054672\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d98803dcc4715bf0bd3fbd8794b57c407ad235f0da84e77f13ab044eb31de67c\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"74ba94ca0baa49d19992b69d2d0d8a53\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"427dc7dcc604f89f21abae74fbb74abc7f9a2f2f4b7ef22707fd5078b99be6d3\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -919,7 +919,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4806af58d00d44d183fb0e8b2a81acf5\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ab5a097b3938e5851f2aa25aee39e3818ea508361f53523605557cb5e7a0efa8\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4b6f53344a90479c81fc108f0ac11208\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"7297adb4233aa546cea057fdc20642e2b1d3655b54417502fdada0643e57b2f4\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -934,7 +934,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"9f9c2f37ce91459997446ccf2b415eda\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1bcac410083deb5c5f611d27172f4d1d479048924df8e09759aac134840e8f55\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d97b7070d9d74c89865690f87234aa26\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ce12850c0b6d6266caed4c554daba864ee22a60bacd5c6b3376d316bf798a8bd\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -949,7 +949,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"708edb424d9a4fc5819eab8159291d10\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"fc26e795aad6ab6f84b17b11e5609acb365dde7f320dc6610ec6aad487b12429\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d8a319f86d3e42c58cbb616496d6fb5b\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"a7f435cb14975887f8fbe375f288a72d4e9340a573dad15b9d52f32423110dd8\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -964,7 +964,7 @@
     "case_type": "delegation_replay",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"8dafb1077afb4c3fb17120775b1d8533\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2a4f0bcd5588793bb8a81ac483c42be2c8e8f11ee1e439e0bddfb084312e3878\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"6927943410ab4fc9bf8fe61e2f490d0e\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"7899e6fb5cbc595f1695863795b11a381fdaf0ec40b3ba8aa893e38e05c305ce\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -979,7 +979,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a2cd5327833d4ebf867a74f388021258\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"620e323df15a21a9fe1c5f80e3c2a7e0d557fd5284eb044a31d6c05af6ea74d5\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a4afbe35a64d496a97330d1f2fc3a5be\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"552b3a75ddac0abf545dddf3d48877b159bcbca6717daad179b76f840831f305\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -994,7 +994,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b3dbb75fdef5493280b7a0764b6adb8b\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"05de5c2fd59a21afc1d31b45262346cb9ac1b871db495aead4e10dbfd5706965\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"da5bd188a17744daad70718431ce440a\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9f243cbfc1d89414030c95ede95fc32f672714f0eda3bcc01410d4373d3da952\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1009,7 +1009,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"812be8d6fe964f66b24c6c74c3365288\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"78bfa2c5c9d81f1ff8afd2f6f468a8eeb920429af9a9c73d134b49e8be19cc43\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"496375c5ff974ec9af6f92f79a6f44a3\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8f34bcd4d63c3a53cb0a7b8efdb1455e9dbf477674a1a1710a1f63cdbdc0511b\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1024,7 +1024,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"31a88c4021f04bc58920c91fb2bc0f92\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ebc5ae5e4b220b63efe6ad62bcd4be170fe078c3dca28255a175e43ddbe7706e\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"9b8e6fb9d6714a35aa4ca6f31571ae17\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"3435a06aa3dfff5d3830b7f9a3984e79348a6682f61bfd0c9eae2f2a7dfa58ae\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1069,7 +1069,7 @@
     "case_type": "delegation_replay",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b11b5be6aea64b70ab95306378799c22\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"3f179273c236276c9c1959ac2bc7f5449656d6c00af6dc45e38d7f5dd7388120\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"8b3ff44753964067a07d0dc82168ae1c\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"e5f9e94940267e3db7588078d6ae007d883bef8a9af79ee3868f2cf6d4bc56d5\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1084,7 +1084,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1aba2fff31914b69afc7c38f23c5804c\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"5559d8271c697b4398d96720907690504ea27f5b89752b0b0aa0c96f09b5090b\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"29c876e7b8194b7c8792b08e02870da9\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"a2dfe57891c8f8c438208fe5e3dc226d0c471f2f937d896fd56fbb3890b60148\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1099,7 +1099,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b609a9fde6e8406c9f41aabec671bd8a\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c62c08f5737c892a7665e669ecebd9c97d421f273c17f6804ab213ddeb956253\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"694cafa595a148ce99647afb131ff7d3\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"a72f074c38b0ee6cbef219c8488ec9ec16ff0f3e3d91995c4c6532d690bcbbbc\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1114,7 +1114,7 @@
     "case_type": "delegation_replay",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"5c2a81ffca8c48319dbe6a296b1450d6\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"f8c4bdfc9894fa638b00fa48ae198067cb3faba1be6b49116c1c7dbeb95b19ab\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ab69db706b394a448d94dc3854223e86\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"73c0afdd546be5de3eea7236b09f985a55b87ab538414c4900314dc0768bb2fa\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1129,7 +1129,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"0c405af4e77d46a1886eeb07ac363b68\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0f0b69c6d1743c3c5fe363e9f66c03873dae811f34005ff96397e05934659c03\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"014fc1afc38f40efaef3481b78fde6b1\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"be1eafc98672bf65e442d7fb468a17e1eca2735759176b3f3ca08434e6922cb3\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1144,7 +1144,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1769de5e627f4cf88685258dfdcf9013\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"5fa92acab8381b5d3df971efdb53830789fcd358dd50f67588cbd370ba20b531\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"77452378d05a43048e939e85b6f1b5c9\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"cc6bb41c9cef182f534fe1f49c2e13d55271222b0dd53032730e50011bab94f4\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1159,7 +1159,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"588e3d2ff2d345239507a4753aad70b9\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"a3e3cbdd22443f0fe07128916155238a1afae4972f1a35911ccc056f41c50757\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"cdbec7f7910543248e98774eb4b73760\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"6b969d1abc4f71c2eebb22cd47e9782e6f8153b17711e4a31012e0d6fd618b78\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1174,7 +1174,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e2282199aa3647fbb99dcbb3ca00959a\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"4f5e2a3c48cf6926cec5e8afc0b3d63827d6df907a0119b44a65ef81056b7c5b\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1e758c82ab1646548491d24d9ac771de\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c02310c93cfd089e81f7267bf2e1484882c7cfdad416ec950c08b535ae9d5f77\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1189,7 +1189,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"36a3899ca0af4f578d5d1763f4b50db2\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c65ecf45cdfa0b064ce5bd525bba45a2d2f791782941a803cfed3bee9baa1d56\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"7148bd9d02584eada70171035e948688\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"96783a818c19facf600baee9c2b0849a20e24e88e8a43a2017652713353f73a5\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1204,7 +1204,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4bae0b711232438cb5a4ab476f723957\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"07943ed41511363bce68ec5dece4b3e45c09c2ab9c0bc4ec0c4ed1cadbce37c3\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a48f92e043ba46ad811fc537cf21027d\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"3e96a9b40082d20b08af232a7c260a6453ca96f07a08dc6daa80d43fc77ec362\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1219,7 +1219,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3c05ab1e3fa34486a3465d31f5da2a2c\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0c46279190a24de7058313ab3ebccad1f6fe1d22cb5fb619966f05d9821d4756\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"bed25ae6350c4a65bcfeabb1520327ff\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8505eb69956c39d696ba50c14c4bf8c4e3e457ee4992bbddd53ce3d801698d6a\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1249,7 +1249,7 @@
     "case_type": "scope_violation",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d590be6899c14747b0f0afb0834a014b\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2913b281dff1af4c04531c1eb99f1fcb3fb5c47ae6b7e4b5057d35aebb9b9658\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"0586e6a169d44767a0e27651ce4d7822\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c975d96e6261a8a48cdda9a45386a336fe8da8f55d09c2b20a6722809d2d428a\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1264,7 +1264,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f8411e3c749b435c984f92b55b93c139\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"e675a70f091cc3498002298b8e02b04b5e69ec8ec0a93cf4503a93b59f943641\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b0dc249078514271a9408e3e1f27f546\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0ab1b0dc09f6618dac1c251cec451b27424ea55403de65da03fef16809463ba2\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1279,7 +1279,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"5b0be73187e44a1a8e1efb745b309dfa\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"29483981e6bda65f9374b0659fcb2fcd67951af9645373c7e469c25a7486cde9\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"16f2f61570c94ee3b47b5d969bc69fa4\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"79a882b2bb7bfced6e4b81da794673e77b536bea71ef5693168a63f2779aae2a\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1294,7 +1294,7 @@
     "case_type": "scope_violation",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a61c3d7554a6402aa9e2795e211a2326\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"76723f2f9680028d6ba2a0333899a8988544b20396834fcb93e7e8ac6e03c692\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c10773f8db824e35ad3f1ef025916b3d\\\", \\\"max_amount\\\": 9000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"4aa47c04de69e38c9b104749db2069839da8c97f69edc570ffeb99279376260e\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1309,7 +1309,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"42ff02bd565746f399c9f0e7326a3501\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"75a797c92177144313739eb59bde422334f50c7aa8a5063861302cbfbc5eaf38\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"0fa186cc2ff04959bf513428403857f7\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9fad36201351550c906417ee58f0bda70b6af214edafb3e86f5c0975b3b55a2b\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1324,7 +1324,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"683ce4ee18a249e986027898bf9adf34\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"31cc8c6d3475ade1a3ca3cdd68edf668f62dd80a0cc3a1baec5d8447ec27741a\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b8012ddbd1fd4ca3b6eb0faee9c1abc5\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ceda4cc98a006cb92389681f21d1486ab0643db8ac9528b898ccd98523f46c3c\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1339,7 +1339,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"404c04eacf68462e82ffc92c7ba88b03\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"31e25c9aa6c9e8306353890b1901a24ecb030358d2a65db151765773693bf500\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"01da996faccf4e57b79b0a833eb3f254\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1632cd0d296fdfaf0185e530311579f6a607d25e087cd8ae3091b15a2dfd7d5d\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1354,7 +1354,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"0d28f0183b1941d5b495101b26a8acc6\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"922688a13433248a9f984fc3f67603938bf71575a18a7d7b1ddae5d8e16ee5a1\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"dc9e55d21631464b899db274bc78d031\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"67d101b00e1821e1808d91a4c630512d09e25a44c9df118c1c3aaa04e280ae42\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1369,7 +1369,7 @@
     "case_type": "delegation_expired",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"cfcd6935b2764765a41226e34bf4381b\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"4e77d80838fc2928a87be1a839301786f67f7a60b0fb0283f1d59e1bce93f8ee\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"dc5fe0f0352845119fe3c2c84f4529f3\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"bf514cf662e6a430123b5cbd6ffd347e263ceb097f4d4ec574ce340d153dc62b\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1384,7 +1384,7 @@
     "case_type": "scope_violation",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"8063e4e2ffaa408ea2ed74e5e8931fa6\\\", \\\"max_amount\\\": 12000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"7beb2ed675a4d806841b86ab28d9f395ab7205ad922f3f22409eb9ceb967e545\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"cb5d646ff13c460080f15cac77fb774f\\\", \\\"max_amount\\\": 12000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"fb76301ce7bc0f9a9b864d1859f81b04eead5d6e5e7b1433b275fa4fbfac652c\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1399,7 +1399,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3f409491c67f4708b6370d62eea289b7\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"98db35475ad736ba7c9ac6b519d15a165b507627738ed24e68af61cc3a6faae5\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"782135bd84fb4a38a1907870b17163ba\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"dc28b96f659967d18409160c85585e5f2996f7a5e6c9484444570005fd8a2bc0\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1414,7 +1414,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c09dbc33a8f04fe993ed237d1a534caa\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"3d107d4b2aa59ed50470de2e19f54b89eb61b17c7d9459458b8f45f65b738471\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"2cc0407a4cfc4b10ae577808d771bb42\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"dd1eab97a96683e9370c854532ad617548f61aea5c5ab12526687850e38d6d72\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1429,7 +1429,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"6eebbc99bbf5459c91a489e4cec65e82\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0fac64cd35cc9aa0341bc41d97fb68b4ac9c03401d2fa9fd2aeb5c48c5673b81\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"2a3fea2a719f4006bbee721010c065e5\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9ba0aef2cf297299c1b13efa5079b02e2907d9655e82fc053349c274fe78f5eb\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1444,7 +1444,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d9e353053c62446b83ea3b3c28406115\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"81ebb21c2d912f2c1331dfe772ec92364ed2b5961b42f1577195f878863ca814\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f4e89172fc364e05b3f33e8222812f5d\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c328002a005d8dc65d0317f681c4318b2e59baf241d0ee76ca8cdf432a2594c9\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1459,7 +1459,7 @@
     "case_type": "delegation_expired",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"cf68282437ad44c8a4bb61d8110308df\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"99bbe570934e753766355045515bf97d6b1fe76ec633dc85062291bd85a705de\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"bff14d31b06845e7bcf6163b6b543c43\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"577023136c9d2bd472b35d5a8c00a76193bdd307dba25a1a777b4f021819cb66\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1474,7 +1474,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"784cc77ee3e447c687482c9d34d5a0d8\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"4862215dddc5237d0d4b162fce3cbeb4cc0c145302d01cfa90e7f6e3bd43868f\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d7cb5e102bd344e5ac183da3730d8904\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"55b214ab4bb12386b82407b27aacf6095387933d2465433dd3b5d0e169bc5be9\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1489,7 +1489,7 @@
     "case_type": "delegation_replay",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f67a64e157a2429f89ba9cd7233f56ee\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"dbce57bc6ba8ad2a97ec842751ca64940d796755a5b2b0710755ef5c6ff49c4a\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ea0c48a34ba342a1a187e386ed868c90\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c2f21bb30c063d2fc732867daef04b3342e854d2c4d108efc25556720d00d387\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1504,7 +1504,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"107c25bc37a94396a82a9288e56ef865\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"66c2c88cd2b13adfcb0473cd12824f07e654a9521a2b476886fdf0ac7b5285ab\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ae23e6cc3e004c35a9f845562f80573f\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"912634a7e1e9576c6e5f1e4c4f6a819b5210e977d759edf55b770c64ab1fc155\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1519,7 +1519,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c10eebcc620340f49613aa2a9d900dd5\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1b44e55bdd0c5827f0a0127b24b38c245a02070801a61863e2de83010e45d76d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1a3b64bb0a56493e98d30ccd3ac2e35a\\\", \\\"max_amount\\\": 24000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ce2b0fdd49f383f3bf534f6e628ddc98ad159c61c881a05e35e88e19058e28c3\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1534,7 +1534,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"40d71aecdb9d4ca8bf355c02c6989ded\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c28d276641ba4d63dbc44099e33e883c536e367f482e12492b2acb026edaaff3\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"7c556fa135a64c44a99c0b9f79da0dc6\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"83dabe46267b47fd31b26022cebb06e7dbf7a0f984e730a345762b35d75ae4f0\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1549,7 +1549,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d75d405f23b5469e91023fd0dc00388b\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0c53fedd56b79a833ed8443b61bd37c0878b8651f36861c0a80ba1072fc5ff5d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"26f0b3dde86a4ba1b04b67361c1fe9a5\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"42187fdf9dd8ef1a1e353a16a7840bff2c18957bd23a41548e53887287b99123\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1564,7 +1564,7 @@
     "case_type": "delegation_replay",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"23a9ce6c6fe54669a7e9bc804f88cdf7\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"671eb0541ef5e61e92666121c23a781a005a2f59dde15fca0ed2d91252aaad27\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"27e95a2295cc49f3b61861bd10931e83\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1d4ddcc95effe1cbd9ca7e8c192ca107726d1f3128459a7f064f8dc935c3d7cc\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1579,7 +1579,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f982dd8a7b684102b40b08268eecd472\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"bc5397c0a99a33d9d024024f6f41b672d8715eba87ee0e26544b9e49912696b2\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d2355fedb4374f178ed12dbbf4435f12\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"55ef39c9a49a03c360ca81c754375225d0ffa5c97cc1e08034272f91f32546f6\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1594,7 +1594,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"40982697bd614d779870795914675a14\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"f25b01799caa0e246ce1a683c790d606c6a44d2bbad09f67c2d0e9e749d17c8b\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"12d218dc034c427d8db9776b52d7cf22\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"407092e216a104fd83104f1ebd5f708bdee4be1c4ac66db4d9240750863c949b\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1609,7 +1609,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"cfe6c5f2fc0c4ed8885e87922782889e\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"e7d2b1d0f0877f6cad4777859b670be4f22a9f14994d1c1a46207480d72286e4\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"fed5dc55e82a439988eae6278aedcb34\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"00f755fd7c7939d5aa34504beb76346cb43e77ef0396341ec87818d87145194d\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1624,7 +1624,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e40ab5367fc9469cb7f98682a78f6c79\\\", \\\"max_amount\\\": 120000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"66566d3ebc4df4b692e19bae38089d79e71cb2cc3d4b9968eeee2bd23e5fb34c\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f1bfc98abe99409c96da1417b9c7b5e4\\\", \\\"max_amount\\\": 120000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"49941248a9e7ccfc3a3d7e6a7ba17907353d55b0a347d585600cdbe2a065cfa3\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1654,7 +1654,7 @@
     "case_type": "delegation_replay",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f6127875c9404bb69a50738d8de08225\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"f168693bcf356ff3bce7b4a01c846e31b93ec851e7e11fb6cabeed2168924cb9\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1c8d8fe1b6cc4f57ac2c45e7ea73c69a\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"a07e167be73072752625b93b79564de0df5fb4c0804e777b50d659e061849f04\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1684,7 +1684,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"128f5e9e19f7429d9e05708ab19c2546\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"4ab6e203d4812f43c9c5dadd5e53097f24e5f9c203b30a50a835dd88760fe7d9\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"12135d4a567d4e94850855856268498e\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8a192cf450831bbecab03236265edfb56a6bf6ee1163f28558c57555e5f33295\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1699,7 +1699,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"32bc5e6e240a4517bb2ed1236be0bd1f\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8e94cbdd5b12581a16a85321dbf3a1bde76a12f61cc20aec4b069ec2427d6e9a\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"763503cbdc4648de92acca0a22588ae0\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2a3db59d409c9896477331f1d1303ddae48ea46ab720fc7d497eb0b2df103d25\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1714,7 +1714,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"0125618ca2304cb5acbed5466f08c59e\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"95380a8f470f0358d1095ec5b4c9debd4cd9b788dddc40801527cfc18451fec9\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b09125ac0c6e486dbcd9bbeb412e5be2\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"06e23ed318cc8d7de03976ad1cd006fe2496c273075daca777ffa4927033dcaf\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1729,7 +1729,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"6d5f2b1865664b55907a642150c4996d\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"02f1de2ffa92eb05a245f4661db7b0eb6390c7a23c6650a58a3aa1a3c6151495\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f965a633dccb464a986bc1ac21a19dd1\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"fab15ad2019266440ac57240e34af323f101dbb39b7ae6fe6bfe9b1638804a28\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1744,7 +1744,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d5896b651fa2408faeb87d8289475ac0\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"50a3cb0c3e39ea67adb7a085c3be4baccaf6a2c21bf02830fbc89d8c7ea440e3\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"44ac20312df94ee08777159763054f49\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"340380a49e1ef93e57191c8e3e483cedf6532a50f3f41629436ad20873925bbe\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1759,7 +1759,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3dc74ebc43c942aa95e84670a2589130\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"24d1e6c683897b0cde3f7264dcbc381b2272cb9b8c6aa3783ed4d68726204f4b\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"adcd986bcfda42a090ec675f6c884089\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"135a9656f0cf5e7edc03eb534a42db1f6772195c1d849208a40450542cd57e4d\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1774,7 +1774,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b9b5a8c0b8e54407a455f59e541f78f5\\\", \\\"max_amount\\\": 120000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ab27bbf02b8b6e9aca7231fff66b87b3a6797f265ed4339f0e89c9d8f7ca5a2c\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f403bc1bda4d4188914c0f3a78dee3a7\\\", \\\"max_amount\\\": 120000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"544733a18094b59383b3af430eb6303bc832face785b6644064a6652c78337a7\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1789,7 +1789,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f25f8ff98b53453d8fcc204e02523cdc\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0fef7bda5b2df75b45f5de7ebf50c550a38a2712730d1a403902862259ee8308\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ce165eb20ab541a68e805532b45de826\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1df5764d796b7f75e360fd4d98c23b4c2b9160ed8d21ca40819d47273176d225\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1804,7 +1804,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"56cbc05c16204c87bb6e970afdcc99f1\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"a9dab9017575bbae7e27994999d370ae1b760cb5f411f86131252001ef3f1f69\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"216817dd94cb4591a20ce3550ac9bf1f\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1976e9ca0cfc77c1f1243798bf884f122c9a4f4bb10557eee0741a59b3cc2466\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1819,7 +1819,7 @@
     "case_type": "delegation_expired",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"55d1e31959e9484895175e75ce6cda6b\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"4f90c017c6afe0e85b2d9fe9e4c05d6dc3a43bbbf95bb53191f40d40619db477\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"0cb13f9f0d3c400a890daa27727b5845\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"cb3faba51b998f6525198a12b0971dd01884c6cf27880ed5934b9afc1e879d38\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1834,7 +1834,7 @@
     "case_type": "intent_hijack",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a3b7817b8fb743a888d3011ea0da7804\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"67e2ae6f6052d89bfef5a075becbd94005f88843f2775b9b403841e4bcca599d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\", \\\"electronics\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e0a79d86d2c2426da9e417a896c698a1\\\", \\\"max_amount\\\": 18000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"970ef6ee24a983aae2bbb1d27c725b264c954afcdfd135602956d97621d96e1c\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1849,7 +1849,7 @@
     "case_type": "delegation_expired",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"16774c2cbf5f4c698ecb76f04dc29440\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"3372dbc36a1c790e93d721e86a78fb88630384364fbe3e7bd0758c4fb95cec95\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1699999000, \\\"jti\\\": \\\"7c481886d5ea414682fc69d5b3e5b1cc\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 100}\", \"signature\": \"1a4697d6c7587e9ad42123baf52115dd7a7dab1680d982f256520c388fa30bea\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1879,7 +1879,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"32de5eb05f684fe9bd81d994ff92725c\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"44ab02fa5b7d224e982ba264567dfbee15e852b99b8502a92e9519c6f5cd9675\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"77a6f9734ea843f6bc84773041c472d2\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"393282ad43bac414a959d4ff1101845b18d6ad550e6346ace8a72a3bfdddc12d\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1894,7 +1894,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"cfe3b6dfeadb4b6ca5b71611adcf2255\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"10b0846ba5bec78572266b17d7ba32aca36d6cbd1ba82a623900cf0efcabf614\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"095d6a49f688442db009aaab51e2834b\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"5b38077bb0ee10dfaca40fc07f566b777a140a835ec630e9c17e6cbd63ef4e96\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -1909,7 +1909,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b5803f52e54a4e71be3dab9a6ecb4bbf\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"96511cf9f336e6c5d73eb9cb70a9d0c8124509627432d87e6aa2a5e475cbe11b\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"2f6560f426e442d0bf2c7e07501fd868\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"6a42ac2031e76d28f46f3590ddea1e4982cffa9eeaea8245a7e37b1fecfacbf7\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1924,7 +1924,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"cb9fdd802e1f4438bb36043173abf953\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"7db284779cb272dc6d484bf10cf8d758cce82f9e78dbffb541da919d4dd3ff1e\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ebc7aa3bac194a0c9edd2713029314cc\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c535be25cd104ce73c7e3e8fef053a13d7aa30434e235c5e5f6bbb003c5e26f5\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1954,7 +1954,7 @@
     "case_type": "scope_violation",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"565c98c9dbce48b99ca96454b3d8dc18\\\", \\\"max_amount\\\": 12000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d26d835ddb718d6143c1c2df91eb4022cd4c68cfb1129871520c8f75a050ef80\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e5e82859f6b94c5e87f49ce59d11453a\\\", \\\"max_amount\\\": 12000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"f0a4fc1371cad5f8fa26f7f26a6e2a9a9cfd58fe54849a7b5259c81a1b80f1ac\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -1969,7 +1969,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"0cab4e82279942f6a12a12aef00cae9b\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"aa835390cd81e2b1f710c79ed516e187bdcaacb4bf446534b85ebd4bc77a0ff5\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e454f1aeb67a475bb4535101253feed4\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0de11239e61cd5f152e1c6bcf58c2907f300f03d814103fb1c8ffd1c6775c56e\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1984,7 +1984,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ebc13cc4f52c4a12886cb7e655b6740c\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"f3718906071f3334f3cb7bde458ba7d68a3e407fd87a87156b1f9637905c1071\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"42fbe8ddb23d490cadc43e97effe9b9d\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d3431eb78458fdb4df228b7a6d6161ddca9cb3f734ec804bb7bb48291cae9def\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -1999,7 +1999,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"5299a5c1e9134447b3db9aed83dca2f9\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"fcd137c5c2586bd4cf92c961860258d2d594a96a1426adbcce573aab1079a9d1\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"28d410169a2642a0abd9782104194567\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d33dd7da955b565873b57b0fd836c8f9ea0f70b1478a798aa0af79eea7480fc9\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2014,7 +2014,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"25214e9dc90f426d94b257a4b752cbca\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"76e6a293a0f4b8c9f152c197a4e334665f1133732c0e8e8b855cfd102163e93d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"cc821242371444e08bb1d6103fa6dca5\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2328e8b7cf32a78c9f8e9280a3ff8fc1e4a8a8096127b61670008da0d79e48ae\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2044,7 +2044,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"45c06db9dee24bb98d76dd4848266628\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2e052f9a8d8f7743636ddf196d7b7a3d30e3ed7b06e04af8cd62050cb39681af\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f9feb287bed646c5ba710c1eedd892d6\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"e468b04fbb230da5aeb63ca1ee0f6a0b25120c13429614fa32503c12e46df89b\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2074,7 +2074,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b55ad6d51f8c4c97814e7698af770e4a\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"eef2d4e43587d6a61fcc3b40d3bab10fed617fa2190438f2c6e00bc84d2febb9\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c1b649cc75c341aa8200eca12c71db8f\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8248d155bfb84c9ac412eaa830c145dc1f152f0cc172341de70df736bd370da2\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2089,7 +2089,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"db1339097d984958a059171038c320c8\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"17a42a70b26b77c8b6f089b0d42c241d9c5609d8444342cc489096ee888012a6\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1038943d96ff424b9a87619bc7194ffb\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"893472616e1ad668d74077ac7e6fe2023602677b900d7ad482b8a344a90dc9a3\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2119,7 +2119,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"67ec047fcce94664a2670d9ee527be23\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"827c46575ec1eaae332491260360022eb7ef645eb8fa5c3459da9adfefecfb57\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b5b1128b6ded4bcea5af716ca974ed64\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1d5f39a01311ed29f2f5fd13d3fd18b0c1fde1879aeb5ca52f96282ed84c54d2\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2134,7 +2134,7 @@
     "case_type": "drift_moderate",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"eac071a87d6a4230961268f86e034314\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ea62965b61b57c50d5eec60826f64ef65ed73076b562eeaaf4a5de9537e90c76\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"198494f8783b4966955445d245524c21\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"6caecbac82bae7744fab79ced8a47bf13482cbc9842f6e385b4e5daca0794e1c\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -2149,7 +2149,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ee636ccd52394ee987c669361ed80b6c\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d27895aef45b1055269f6e6e861c1c476025a15effa9ef9132b60115635b0c60\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"10ca38f0c4ff483b959f2522e655e227\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"4a59930b0651300e5d04773f34c4f8f9eb934f2517d8fb49868d74c6639243fc\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2179,7 +2179,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c2e8ee9ea8e547ff8bf2477f9575f2c9\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"1ca157d2a7bdfe7b54f15243f5425a98e12203ea36219ca250b6958d05683df6\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b6d4a8210092434e842f208f08a052ff\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0264e722fce6fda5607ca56be7fc2405d3fa2cb6b7e663ceaaaa87921a93f1c1\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2194,7 +2194,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"d718d02c5879406fa6539720c4c0b9f5\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"075209f002b9e3f2a1949feeac8463726eb9b097a6fb2533cd63d55da411348c\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"6f8c37850a9c436c8ac39c62e8d42e77\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"42c73cff1c88607c09652559e4c6579679071d14d6f6e716a5e00a7309df6156\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2209,7 +2209,7 @@
     "case_type": "legit_normal",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"de47e54810ff469a80089ce7c982c584\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2ccc5a27ce90fa1dc913c49f7def2cefe75dcb8ad0dc4e40b49aa686f93971a6\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"520af2e30d8b4b16bc931e0396e2236d\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9a8f89c4960c92ab1e5ce5cb1dac49ca18f4536cf8c26a8334a0d215edd259fa\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2224,7 +2224,7 @@
     "case_type": "drift_extreme",
     "expected_decision": "BLOCK",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"cf6acc7de2e746f7882d1b4daaf83209\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"24521f0542605d701472c9fb5bf05075297f419922dca0b629fc8619001a59b2\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"91cfb08bab68434ea0450a7502b4daa1\\\", \\\"max_amount\\\": 90000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"16519b103b2cbf978bedacbe9340a6c4f9ec459c4b7bdafdadf43d84a277603c\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2239,7 +2239,7 @@
     "case_type": "delegation_replay",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"6dfc4f90027945dd8f1124c2e11111bb\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ba71568daceeee6df87204f6e5762bfd705eecb6f21a5070ac61361306b11eee\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4356a9fb750447599010500fc9e9a140\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"7d482ff54afaeed37c441517c6f7d295e201d0fdf20969749b5d9795a9840a91\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -2254,7 +2254,7 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b39aac87231d41bba3a9b06a9082f3eb\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"e0b709e77990ff9f666027863c9f221f1ea5daf2904cd952b6c85a5572d0d5ac\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"6125b39588954419afcf1ed82e8b7290\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"979ebc2170059e59784a178040259974903d8069f66fc741b8295d7d926a32c9\"}",
     "stated_intent": "pick up some essentials for home",
     "cart": [
       {
@@ -2269,8 +2269,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"93d0812a8b11499b8953246da6d9eef8\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"f092be896a50b905eea91068481ed8321b843db56b9c20bfbb4f4dbdf7930bf2\"}",
-    "stated_intent": "take care of the recurring order",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"56348d7be3324370847df94ff7902f55\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"a06a791a3b0a391d08296124fae7353f9d560ceb77fa0f5c00d16db597cbe9e0\"}",
+    "stated_intent": "place the usual order",
     "cart": [
       {
         "item": "Vegetables box",
@@ -2284,8 +2284,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"fe5c3b03722f4d81a72200ad268aa75c\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"cfc61b27da500beb96fe451c5d0514cc20734cc1b6611daa7b24caea81996879\"}",
-    "stated_intent": "handle the usual weekly errand",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c30368dd066040609c6dde40a131618b\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0583403ef57f538890d8bafa8483399b34725e656c9b613f3aba9d91579b1b16\"}",
+    "stated_intent": "get the items on the list",
     "cart": [
       {
         "item": "Rice (5kg)",
@@ -2299,8 +2299,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e736ae0a3367477cb0752442a2221fbb\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"942a5a555043e7518c05388d2e0f9156f5d566440fec04834dced5ae8af2320b\"}",
-    "stated_intent": "get some new tech gear",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"cb03da1607b54555a9ebb02b523bb933\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"81c87ec1d6544ad6bc1b16f097288c4826c9c7a61f5d58a7d4f19a05ffdd88f8\"}",
+    "stated_intent": "take care of the recurring order",
     "cart": [
       {
         "item": "Rice (5kg)",
@@ -2314,8 +2314,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"2910587a46ef49b89f3caa7194a00735\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"6efea098b316c7893272efc17e9f80cac8f4886e5de734b1452ce3e7755250bc\"}",
-    "stated_intent": "take care of the recurring order",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"153318f2d1d547fdad1b3649a06d9a55\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c8b27be4de84d68fc4c4d0c5732fdadf7b09d5d7c4eac22b0191a054df28bd09\"}",
+    "stated_intent": "place the usual order",
     "cart": [
       {
         "item": "Gaming laptop",
@@ -2329,8 +2329,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"53ecfeeadbe647a694e5f84158e1ae76\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"08c902f1b4e8a61235f0b2095fc386d9d5706c0ebbf722fd32f47c457b691771\"}",
-    "stated_intent": "take care of the recurring order",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b8d034da1a7d4342b7960ba02edb8520\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0482afef464980cc494c996c0eed3d7134db33396af4b31809cb437398f04907\"}",
+    "stated_intent": "place the usual order",
     "cart": [
       {
         "item": "Gaming laptop",
@@ -2344,8 +2344,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"467b8526ece449cb95528e35c647cc69\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9ebb1a3fa2a767bf11dd16394b9387fa82f72c391b4b7b52f21ac3868838c6ec\"}",
-    "stated_intent": "restock supplies for the desk",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"38cd9086f4174bc4acff5e5c1cc32a6b\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"871b193c4455c6cc64d11de04b6510eecba0e3525eb8f91d3e5ef8d82a79917b\"}",
+    "stated_intent": "handle the usual weekly errand",
     "cart": [
       {
         "item": "Notebooks",
@@ -2359,7 +2359,7 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b43696dbf79640a9aefc15d34f42da24\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d7dc23b5df00ae7b92afb593bf66aa3372b0db0f53fa719351e13f3425134543\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f77305275a004d36b79de8fa24f2b836\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"6552e069bd353e9e410395a539affc4743205146ddd6481f9065171b82f2ca22\"}",
     "stated_intent": "pick up some essentials for home",
     "cart": [
       {
@@ -2374,8 +2374,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"65787452fcdd4a50912e99fa5069a0b6\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"feb95eb773bd640296c1c422e7ce4fc60b5d5a7828fd25bc18bdfa0350e2766e\"}",
-    "stated_intent": "handle the usual weekly errand",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ae13e5b802dc418893b3b8869108e8b0\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2c53bc806ba4d3f450baea51f5c91d97714150ede960fa7a71af7aa580b094c0\"}",
+    "stated_intent": "get the items on the list",
     "cart": [
       {
         "item": "Snacks pack",
@@ -2389,8 +2389,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"1f7c2cb11ed44db9959ae5d0fded5a08\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"05a717b0eeb8fd1335a6dd5e3e9ce2b990a3bbae5fc8baefddc71ca0490f030e\"}",
-    "stated_intent": "handle the usual weekly errand",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"09b3923239664124b0e5ca73edeb681b\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"3bbef0be65cfc90c0756ff0394d63df5714f51f5e2506e5275d428d86e899196\"}",
+    "stated_intent": "get the items on the list",
     "cart": [
       {
         "item": "Rice (5kg)",
@@ -2404,8 +2404,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a700e7b4c40e43afaf97d47c2cf42813\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2b7872c5396e9de6b351a8108c9ceb6db3e4594a7d6c61b04a690c81eae99306\"}",
-    "stated_intent": "take care of the recurring order",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"2bee861b52324d27bc1180aa25cb09ab\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"f441ea1566ae36bd417863d919ab6c96e1e227b229d18b6974ade58f1e7cc4aa\"}",
+    "stated_intent": "place the usual order",
     "cart": [
       {
         "item": "Bluetooth speaker",
@@ -2419,8 +2419,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"16ae4690ef514aefb17443b25bf455dd\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9840c8a704ba16dc4468086fd069ea632c903170959ebbca33fa7d68ea8615a1\"}",
-    "stated_intent": "take care of the recurring order",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"2e91a996c39d40088e0ab0f1cde7f689\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"3290a0b6f2a132ba8cd0b3a1514efb405ff8feb89fe86899c3712836b73608a1\"}",
+    "stated_intent": "place the usual order",
     "cart": [
       {
         "item": "Printer paper",
@@ -2434,8 +2434,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"df2e9eec0a764db0bc3eff0372fcae5a\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"99de1e7dd1b3407d93a6faf85312dd90070e13bf04ac625d99b8373d6cb2f6f4\"}",
-    "stated_intent": "get some new tech gear",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"93a45b8f37314d2d98c19f8e025291cf\\\", \\\"max_amount\\\": 6000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"12a1973a6e3c9ce5b9d14302ebf70e29bbb3a6bbf38f2b1b0e6b6122d01e757e\"}",
+    "stated_intent": "take care of the recurring order",
     "cart": [
       {
         "item": "Pens (box)",
@@ -2449,7 +2449,7 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"adf47395c4164881afb7d684593678e7\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"155d25c709bed92ab99322d449f66531e5c435c838edc19f40654d4884c9a08b\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"df6ab88d631c4d9586f5c32ccd22a0da\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2368b5dcf9e848022195e3e0de01f8ff2c2cddba2295d799b06849c261a3cb67\"}",
     "stated_intent": "pick up some essentials for home",
     "cart": [
       {
@@ -2464,8 +2464,8 @@
     "case_type": "ambiguous_intent_legit",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"62ceb5ae74554b0e87870a9b630956f2\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"7dd483e5ca43d806c8b757726b0553b2ffb473f5254cd4ddc1ae0e3f81c864b2\"}",
-    "stated_intent": "restock supplies for the desk",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"a5a44c00b20f433096524f32c3dcf861\\\", \\\"max_amount\\\": 4500.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"76839383e67f64c266aa46c397465131c253f40f070b7cfd5697657694677a60\"}",
+    "stated_intent": "handle the usual weekly errand",
     "cart": [
       {
         "item": "Rice (5kg)",
@@ -2479,7 +2479,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"dfa5a2c655b74723ac87884042024d9c\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d0f6965b4d09e5db5f2f54659823c27b012ae2e2d33eb002f4a942379833f9dc\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"6bf03f34ce1548feaf349d26a0ec24cb\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"534f3068295e17fb0c8f035329a8d898e534cecf95a6f1f2c453496e2e8e4e78\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2495,7 +2495,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"83ac5a90ab6a4cb49e43aca7f50a02b1\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"c3d913caa88f9c3e0e0fb5cdd546749da298254ee749099b211174e0b8b0e1cf\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"2d5b588b6886498c808fbf242d3e6d9a\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"35c041650a72da02790daa24b7a6ce9c3f28b3292ec77aad8eaa1e54d68b3107\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2511,7 +2511,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "APPROVE",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"94349123c14c45cdba4529ee92c6e37d\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"0ce797ea75c448554cb37f3edecf2af3497bf61480d0dd541dae226f2a998170\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"9e7e4b7839334d3ea812db045431deae\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"44741b4c9e3d58aa6c3c32b23dac6ad7deb81f39f13358c822527754dc272fe9\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2527,7 +2527,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"5c33381d82bf4861a9a106f0ab7d39fe\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"89a9497c682c3ef6d142050776954856419d0fb952372ff3e305df28cbc37cce\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ec7b09a04c6d4c788bfdb6bfd4301b66\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"2eff4cc7860bcecaf9617ae213370e50d0c65bdb33b58b9a65a91fd7a87b2663\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2543,23 +2543,23 @@
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"042f82b3dbe84eb980d0a294cba00a4c\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"fea1c3374382dbf4d4c3ba68f15d0c2766addd5752dade5e2c3fa30ad0522f14\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"94c1f27c0fa543a5ad688445cf4385af\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"af9e3c78e84dbb76b5db99dfba1d0603d669a5e089e6b548f71fb70d776c88c4\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
         "item": "Toner cartridge",
         "category": "office_supplies",
-        "amount": 2740.0
+        "amount": 2705.0
       }
     ],
-    "_z": 4.4
+    "_z": 4.3
   },
   {
     "id": "req_0170",
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"37438a845653499bbb13da9c13f474c8\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"26161f6803f3585c15a2e9c4650a2e24c5c32b1a98ec4256113f14c2a654b3d9\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"fa4ac498ce1b4103b40072b85c4ae941\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"ee274908f723ae1b5fc6493c2a89a55a4858ff1c9fafaadb4b8e29fb6a7032bd\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -2575,7 +2575,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4b129a4ef9da46d39d541b86613efc6a\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d091ec1a1d786328afa2f345d0543181018e153246a839ae73b7546ad20928a6\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"8105288c625d46748af60400f82ed21e\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"d37b2860a5e20a581b4168e780d73ce332ac07910cb85ef9d3fee2ecb4de7adf\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2591,7 +2591,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "BLOCK",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"dc14df26c7514cffa0dbe6037a8b1636\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"fe084c4239ad9f67d3d4793b1124d769f58be3ea882d1d279d59f828f23b768f\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"f02a1a6c92e74115a86f6fb6f9b152ef\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8ebc59f72c68466fa8f554157b06ed7cca09c380a6a1c9f2b6e0a047a09243be\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2607,7 +2607,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"6a9173c1bcbb44189289f0cb82b1a5e1\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"960af00acfea95ebe32129392e6af3755dd47b6a631bba44556664494ac3becd\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"b7c10d9763094a96a8a3dfcc1ab712a8\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"15f949bdfc6494b77f167705d7cdb961bac01e4c7edc9a188183f6ec44fb851d\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2623,7 +2623,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"4ba3dc3ab700468685451b192b0c3a8e\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"503af9bdfdc432f8a8350bd69791a5a85a43be3b90a8bc9bb0dbc6212d571ae7\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"c7156bf4b3654ed8a5a364579f29147a\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"825eec5515f5407547d5e61799a81f53974af6e5ca74a5bf4af01d2000db1a54\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2639,7 +2639,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "APPROVE",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"771bea0b7afb4164bc1e29cb2c4c15c4\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"8f90f80dcdfd70bee53b3cc4ff9b796ffcdefdf65fb464e4927832c94cbb87a1\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"69ae6af8a39c4fed884e752654edbc5a\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"902c305ee70403dc25a4ebe3d83505e8c2f38be5a885474bd4a8adfca38b482c\"}",
     "stated_intent": "reorder office supplies",
     "cart": [
       {
@@ -2655,23 +2655,23 @@
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"3afc04b9df1749b1aae4a52bff5b1358\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"352b783a3a4f73321a6d4faf8b2c73dab3b53a3fe20a88ec6c364cad4e8b0a18\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"ecf439a004794caf905d7c0230b18ca8\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"009bb3a02636fe876d4555ac4c61f49db81b3f22898fe840931bba4f0345ac3d\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
         "item": "Rice (5kg)",
         "category": "groceries",
-        "amount": 2660.0
+        "amount": 2620.0
       }
     ],
-    "_z": 4.4
+    "_z": 4.3
   },
   {
     "id": "req_0177",
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"aefdddc0e3a84701a30e7380dd0ca4af\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"e67201e49509318b6c5359dfb2599f46e0bc78311296aef5a9c1ef4d149ec513\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"9fe631ba3d37454394e6e06742e836d0\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"5e6cbe347cd94ecb987e0b5090f01716287d9d65118369b0fcab9f7824293eae\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {
@@ -2687,7 +2687,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_shopgenie_777",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"68a4d174baf94f1ba999cafc52cfdbee\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"e28dce92e9cf2f95fec8d069596eae4f65138e455c3d464fa9ff3bcd4aac2703\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_shopgenie_777\\\", \\\"allowed_categories\\\": [\\\"electronics\\\", \\\"groceries\\\"], \\\"human_id\\\": \\\"user_rahul_12\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"8b285a8fadbe4d3e9f539abc61268468\\\", \\\"max_amount\\\": 45000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"38ae8426aa0a32d7ee1b948b042b6d582871b689e98559f0dce02a68ad4d5c3c\"}",
     "stated_intent": "buy electronics",
     "cart": [
       {
@@ -2703,7 +2703,7 @@
     "case_type": "boundary_drift",
     "expected_decision": "STEP_UP",
     "agent_id": "agent_procure_bot_042",
-    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"e3c793ed3ab147d2ae956532fd53977c\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"9b7789984f7972e780e111c14edb50286dc2ca0e6aad5ab4902bacc21ece153d\"}",
+    "delegation_token": "{\"payload\": \"{\\\"agent_id\\\": \\\"agent_procure_bot_042\\\", \\\"allowed_categories\\\": [\\\"groceries\\\", \\\"office_supplies\\\"], \\\"human_id\\\": \\\"user_priya_88\\\", \\\"issued_at\\\": 1700000000, \\\"jti\\\": \\\"0817b2f379584941bf7525b0ff0e2bf2\\\", \\\"max_amount\\\": 60000.0, \\\"ttl_seconds\\\": 3600}\", \"signature\": \"76f00c0328bc60091b442416d0c693c7388070535be08d9eeee26f03462ce77b\"}",
     "stated_intent": "buy groceries for the week",
     "cart": [
       {

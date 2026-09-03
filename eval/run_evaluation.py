@@ -17,6 +17,8 @@ def load_dataset():
 
 
 def run_all(dataset):
+    demo_key = os.environ.get("KYA_DEMO_ISSUER_KEY", "")
+    headers = {"X-Kya-Demo-Key": demo_key} if demo_key else {}
     results = []
     latencies = []
     for req in dataset:
@@ -27,7 +29,7 @@ def run_all(dataset):
             "cart": req["cart"],
         }
         t0 = time.time()
-        resp = requests.post(f"{BASE}/verify", json=payload).json()
+        resp = requests.post(f"{BASE}/verify", json=payload, headers=headers).json()
         latency_ms = (time.time() - t0) * 1000
         latencies.append(latency_ms)
         results.append({

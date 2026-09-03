@@ -305,56 +305,37 @@ python3 harness.py intent_match_pre_fix_reference  # original numbers, for compa
 
 ---
 
-## What's been built (roadmap status)
+## What's been built (Architecture & Roadmap Status)
 
-| Phase | Status | What it adds |
-|-------|--------|-------------|
-| Phase 0: Verified MVP baseline | ✅ Done | Deterministic pipeline, eval harness, synthetic dataset |
-| Phase 1A: Secret hardening | ✅ Done | Fail-closed env vars, constant-time key comparison |
-| Phase 1B: Input validation | ✅ Done | Pydantic validators on all models |
-| Phase 1C: Access controls | ✅ Done | Auth on all endpoints |
-| Phase 1D: Rate limiting | ✅ Done | Sliding-window per-IP, body size cap |
-| Phase 1E: Durable audit | ✅ Done | SQLite-backed audit trail |
-| Phase 1F: Security headers | ✅ Done | X-Content-Type-Options, CORS rejection |
-| Phase 1G-A: Payment execution safety | ✅ Done | Durable state machine, crash recovery |
-| Phase 1G-B: Reconciliation framework | ✅ Done | Provider-neutral adapter, reconciliation log |
-| Phase 1H: Baseline poisoning protection | ✅ Done | Deviation detection, security logging |
-| Phase 1I: End-to-end tracing | ✅ Done | request_id → audit → execution → payment |
-| Phase 1J: Distributed rate limiting | ✅ Done | Provider-neutral interface, Redis stub |
-| Phase 1K: Production datastore eval | ✅ Done | SQLite sufficient, migration path documented |
-| Phase 5: Rolling baselines | ✅ Done | Adaptive per-agent risk scoring |
-| Phase 6: Outbox pattern | ✅ Done | Crash recovery for payment-audit consistency |
-| Phase 7: Structured logging | ✅ Done | JSON security events for SIEM integration |
-| Phase 8: Adversarial tests | ✅ Done | 32 adversarial + 24 security regression tests |
-| Phase 9: Production readiness | ✅ Done | Health check, request tracing, timing, configurable logging |
-| Phase 2: Razorpay adapter | ✅ Done | Provider adapter with real API support |
-| Phase 3: Production identity | ✅ Done | Ed25519 asymmetric crypto, key management |
-| Phase 4: Advanced intent | ✅ Done | Structured extraction, multi-signal scoring |
-| Phase 5: Multi-signal risk | ✅ Done | Time, frequency, category, velocity, reputation signals |
-| Phase 6: Distributed reliability | ✅ Done | Circuit breaker, retry, dead-letter queue |
-| Phase 7: Observability | ✅ Done | Metrics collection, Prometheus export |
-| Phase 9: Production deployment | ✅ Done | Dockerfile, docker-compose, health checks |
-| Phase 10: Policy engine | ✅ Done | Per-agent rules, amount/hour/daily limits |
-| Phase 11: Multi-agent security | ✅ Done | Delegation chains, cross-agent isolation |
-| Phase 12: JARVIS integration | ✅ Done | Agent router, memory interface, security gateway |
-| Phase 13: Platformization | ✅ Done | Service registry, unified platform API |
-| Phase 14: Research/benchmarking | ✅ Done | Latency, security resistance, comparison benchmarks |
+### Core Live Pipeline (Integrated in `main.py`)
+- **Security Hardening** (Phases 1A-1F): Input validation, auth, sliding-window rate limiting, persistent audit, security headers
+- **Payment Execution Safety** (Phases 1G-A/B): Durable state machine, crash recovery outbox, provider-neutral adapter
+- **Intelligence & Risk Scoring** (Phases 1H, 4, 5): Baseline poisoning protection, TF-IDF cosine similarity intent classifier, z-score behavioral risk scorer
+- **Observability & Tracing** (Phases 1I, 7): Request tracing (`/traces` endpoint), structured JSON security logging, metrics collection
+- **Owner Controls & Spending Limits**: Dynamic per-agent hard spending limit ceiling (`PUT /agents/{id}/limit`), immutable server-side enforcement
 
-## What's been built (complete roadmap)
+### Standalone Modules (Unit-Tested & Framework Components)
+- **Production Identity** (`identity.py`): Ed25519 asymmetric signature & credential verification framework (tested in `test_security.py`)
+- **Policy Engine** (`policy_engine.py`): Fine-grained per-agent rule engine (tested in `test_remaining_phases.py`)
+- **Multi-Agent & Platformization** (`kya_platform_registry.py`, `agent_graph.py`): Cross-agent routing & isolation framework (tested in `test_phase3.py`)
+- **Distributed Reliability** (`reliability_ext.py`): Circuit breaker & retry dead-letter queue extensions (tested in `test_phase3_sandbox.py`)
+- **JARVIS Interface** (`jarvis_interface.py`): Agent router & security gateway interface (tested in `test_remaining_phases.py`)
 
-All 15 phases are implemented. The system includes:
+| Component / Module | Live Integration Status | Description |
+|--------------------|-------------------------|-------------|
+| Pipeline & Decision Engine (`pipeline.py`, `decision_engine.py`) | ✅ Integrated (`/verify`) | 5-stage gating: Identity → Delegation → Scope/Limit → Intent → Risk |
+| Payment Providers (`payment_provider.py`, `razorpay_mock.py`, `razorpay_provider.py`) | ✅ Integrated (`/verify`) | Built-in mock provider + real Razorpay API adapter (`KYA_PAYMENT_PROVIDER=razorpay`) |
+| Trace & Observability (`trace.py`) | ✅ Integrated (`/traces`) | End-to-end request tracing & audit linkage |
+| Rolling Baselines (`baseline.py`) | ✅ Integrated (`/verify`) | Adaptive per-agent z-score anomaly scoring |
+| Rate Limiter (`rate_limiter.py`) | ✅ Integrated (`/verify`) | Sliding-window per-IP rate limiting |
+| Standalone Security Modules (`identity.py`, `policy_engine.py`, `agent_graph.py`, `jarvis_interface.py`) | 🧪 Standalone (Unit-Tested) | Specialized extension frameworks with dedicated unit test suites |
 
-- **Security hardening** (Phases 1A-1F): Input validation, auth, rate limiting, audit, headers
-- **Payment safety** (Phases 1G-A/B): State machine, crash recovery, reconciliation framework
-- **Intelligence** (Phases 1H, 4, 5): Baseline poisoning detection, advanced intent, multi-signal risk
-- **Observability** (Phases 1I, 7): Request tracing, metrics collection, Prometheus export
-- **Infrastructure** (Phases 1J, 1K, 6, 9): Rate limiter interface, datastore eval, reliability, Docker
-- **Advanced features** (Phases 3, 10, 11, 12, 13, 14): Production identity, policy engine, multi-agent, JARVIS, platform, benchmarking
+---
 
 ### Next steps for production
 
 1. **Wire Razorpay sandbox credentials** — Set `RAZORPAY_KEY_ID` and `RAZORPAY_KEY_SECRET`, change `KYA_PAYMENT_PROVIDER=razorpay`
 2. **Add webhook handler** — Receive payment status updates from Razorpay
-3. **Add embedding-based intent matcher** — Replace keyword matcher with sentence-transformers
+3. **Add embedding-based intent matcher** — Upgrade TF-IDF Cosine Similarity to sentence-transformers
 4. **Add Redis for distributed rate limiting** — Replace `LocalRateLimiter` with `RedisRateLimiter`
 5. **Add PostgreSQL** — Migrate from SQLite when scaling beyond single-server

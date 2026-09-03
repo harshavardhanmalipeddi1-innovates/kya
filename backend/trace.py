@@ -195,3 +195,16 @@ def get_trace_stats() -> Dict[str, Any]:
         total = conn.execute("SELECT COUNT(*) FROM traces").fetchone()[0]
         finalized = conn.execute("SELECT COUNT(*) FROM traces WHERE finalized_at IS NOT NULL").fetchone()[0]
     return {"total_traces": total, "finalized": finalized, "pending": total - finalized}
+
+
+def record_trace(audit_entry: Dict[str, Any]) -> None:
+    """Record an audit entry into the trace store."""
+    req_id = audit_entry.get("request_id") or f"req_{audit_entry.get('audit_id', 'unknown')}"
+    ctx = TraceContext.create(request_id=req_id, agent_id=audit_entry.get("agent_id"))
+    ctx.set_audit_id(audit_entry.get("audit_id", ""))
+    if audit_entry.get("executed"):
+        ctx.set_execution_id(audit_entry.get("execution_id", ""))
+    payment = audit_entry.get("payment")
+    if payment and isinstance(payment, dict) and payment.get("razorpay_order_id"):
+        ctx.set_payment_id(payment["razorpay_order_id"])
+    ctx.finalize()

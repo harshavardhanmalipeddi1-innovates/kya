@@ -101,6 +101,16 @@ def get_agent(agent_id: str) -> Optional[Dict[str, Any]]:
     return registry.get(agent_id)
 
 
+def update_agent_limit(agent_id: str, owner_max_amount: float) -> Optional[Dict[str, Any]]:
+    registry = load_registry()
+    if agent_id not in registry:
+        return None
+    registry[agent_id]["owner_max_amount"] = owner_max_amount
+    with open(AGENTS_PATH, "w") as f:
+        json.dump(registry, f, indent=2)
+    return registry[agent_id]
+
+
 def _sign(payload: str) -> str:
     """Sign a payload using the configured identity mode."""
     if _identity_provider and IDENTITY_MODE == "ed25519":

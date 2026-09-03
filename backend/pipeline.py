@@ -78,6 +78,7 @@ def run_pipeline(
     # 3. Scope + limit check (only meaningful if delegation parsed)
     scope_ok = True
     within_limit = True
+    limit_reason = ""
     if claims:
         cart_categories = {c["category"] for c in cart}
         scope_ok = cart_categories.issubset(set(claims.get("allowed_categories", [])))
@@ -87,6 +88,16 @@ def run_pipeline(
             delegation_result["reason"] = (
                 "Token was issued for a different agent_id -- possible token theft"
             )
+
+    # 3b. Owner Hard Limit Ceiling check
+    if agent and identity_ok:
+        owner_max = agent.get("owner_max_amount")
+        if owner_max is None:
+            within_limit = False
+            delegation_result["reason"] = "Owner limit check failed: Registered agent has no owner spending limit configured -- failing closed"
+        elif total_amount > owner_max:
+            within_limit = False
+            delegation_result["reason"] = f"Owner limit check failed: Transaction amount ₹{total_amount:.0f} exceeds owner-configured hard spending limit of ₹{owner_max:.0f}"
 
     # 4. Intent match (uses advanced classifier if configured)
     if _advanced_matcher:

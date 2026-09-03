@@ -55,7 +55,7 @@ def scenario_1_legit_purchase():
             {"item": "Milk (2L)", "category": "groceries", "amount": 300},
         ],
     }
-    resp = requests.post(f"{BASE}/verify", json=req).json()
+    resp = requests.post(f"{BASE}/verify", headers=AUTH_HEADERS, json=req).json()
     pretty("SCENARIO 1 — Legitimate purchase, verified agent, matching intent", resp)
 
 
@@ -68,7 +68,7 @@ def scenario_2_unregistered_agent():
         "stated_intent": "buy electronics",
         "cart": [{"item": "Wireless earbuds", "category": "electronics", "amount": 2500}],
     }
-    resp = requests.post(f"{BASE}/verify", json=req).json()
+    resp = requests.post(f"{BASE}/verify", headers=AUTH_HEADERS, json=req).json()
     pretty("SCENARIO 2 — Unregistered / spoofed agent identity", resp)
 
 
@@ -92,7 +92,7 @@ def scenario_3_intent_mismatch():
         "stated_intent": "buy groceries for the week",
         "cart": [{"item": "Gaming laptop", "category": "electronics", "amount": 42000}],
     }
-    resp = requests.post(f"{BASE}/verify", json=req).json()
+    resp = requests.post(f"{BASE}/verify", headers=AUTH_HEADERS, json=req).json()
     pretty("SCENARIO 3 — Intent mismatch (stated groceries, cart is a ₹42k laptop)", resp)
 
 
@@ -116,12 +116,13 @@ def scenario_4_behavioral_drift_step_up():
         "stated_intent": "reorder office printer paper",
         "cart": [{"item": "Bulk printer paper (large order)", "category": "office_supplies", "amount": 2500}],
     }
-    resp = requests.post(f"{BASE}/verify", json=req).json()
+    resp = requests.post(f"{BASE}/verify", headers=AUTH_HEADERS, json=req).json()
     pretty("SCENARIO 4 — Behavioral drift (~2x this agent's normal spend) -> STEP_UP", resp)
 
     if resp["decision"] == "STEP_UP":
         confirm = requests.post(
             f"{BASE}/step-up/confirm",
+            headers=AUTH_HEADERS,
             json={"audit_id": resp["audit_id"], "human_confirmed": True},
         ).json()
         pretty("SCENARIO 4b — Human confirms the step-up challenge", confirm)

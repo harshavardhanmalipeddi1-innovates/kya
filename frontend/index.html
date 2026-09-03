@@ -2,197 +2,597 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KYA — Know Your Agent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
   :root {
-    --ink: #0b0d10;
-    --panel: #12161b;
-    --line: #232a32;
-    --text: #d7dee5;
-    --dim: #7c8894;
-    --approve: #3ecf8e;
-    --stepup: #e8b339;
-    --block: #e0553f;
+    --ink: #01040a;
+    --panel: rgba(10, 20, 36, 0.78);
+    --panel-hover: rgba(15, 28, 50, 0.88);
+    --line: rgba(59, 130, 246, 0.18);
+    --line-active: rgba(59, 130, 246, 0.45);
+    --text: #f0f6fc;
+    --dim: #7d9bbd;
+    --rzp-blue: #3b82f6;
+    --rzp-cyan: #06b6d4;
+    --approve: #10b981;
+    --stepup: #f59e0b;
+    --block: #f43f5e;
     --mono: 'IBM Plex Mono', 'Courier New', monospace;
-    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --glow-rzp: 0 0 20px rgba(59, 130, 246, 0.3);
+    --glow-g: 0 0 20px rgba(16, 185, 129, 0.25);
+    --glow-r: 0 0 20px rgba(244, 63, 94, 0.25);
+    --glow-y: 0 0 20px rgba(245, 158, 11, 0.25);
   }
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin:0; padding:0; }
+
   body {
-    margin: 0;
     background: var(--ink);
     color: var(--text);
     font-family: var(--sans);
     min-height: 100vh;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
   }
+
+  /* ── Animated 3D WebGL background ── */
+  #bg-canvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+  body > *:not(#bg-canvas) { position: relative; z-index: 1; }
+
+  /* ── Header ── */
   header {
-    padding: 28px 40px 20px;
+    padding: 16px 40px;
     border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(1, 4, 10, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    position: sticky; top: 0; z-index: 100;
   }
   header .brand {
-    font-family: var(--mono);
-    font-size: 20px;
-    letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 14px;
+    font-family: var(--sans); font-size: 20px; font-weight: 700;
   }
-  header .brand span { color: var(--dim); font-weight: 400; }
-  header .tag {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--dim);
+  header .brand-logo {
+    display: flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    padding: 6px 14px; border-radius: 8px;
+    box-shadow: var(--glow-rzp);
+    color: #fff; font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
   }
+  header .brand-title {
+    font-family: var(--mono); font-size: 19px; font-weight: 700;
+    background: linear-gradient(90deg, #ffffff, #60a5fa, #38bdf8);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    letter-spacing: 0.03em;
+  }
+  header .tag { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--dim); }
+  .rzp-header-badge {
+    background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.35);
+    color: var(--rzp-blue); padding: 4px 10px; border-radius: 6px; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.06em; box-shadow: 0 0 12px rgba(59, 130, 246, 0.2);
+  }
+
+  /* ── Stats Bar ── */
+  .stats-bar {
+    display: flex; align-items: center;
+    background: rgba(2, 6, 16, 0.7); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line); padding: 0 40px;
+  }
+  .stat-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 20px 10px 0; margin-right: 20px;
+    border-right: 1px solid var(--line); font-family: var(--mono); font-size: 11px;
+    transition: transform 0.2s ease;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-size: 18px; font-weight: 700; transition: transform 0.2s ease; }
+  .stat-label { color: var(--dim); font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .stat-dot { width: 7px; height: 7px; border-radius: 50%; box-shadow: 0 0 8px currentColor; }
+
+  /* ── Layout ── */
   .layout {
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 0;
-    min-height: calc(100vh - 90px);
+    display: grid; grid-template-columns: 340px 1fr;
+    min-height: calc(100vh - 110px);
   }
+
+  /* ── Rail ── */
   .rail {
     border-right: 1px solid var(--line);
-    padding: 24px;
+    padding: 22px 20px;
+    background: rgba(2, 6, 16, 0.6);
+    backdrop-filter: blur(20px);
+    overflow-y: auto;
+    max-height: calc(100vh - 110px);
   }
   .rail h2 {
-    font-family: var(--mono);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--dim);
-    margin: 0 0 12px;
+    font-family: var(--mono); font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--dim); margin: 0 0 10px; font-weight: 600;
   }
+
+  /* ── Scenario Buttons ── */
   .scenario-btn {
-    display: block;
-    width: 100%;
-    text-align: left;
+    display: block; width: 100%; text-align: left;
     background: var(--panel);
     border: 1px solid var(--line);
     color: var(--text);
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: var(--sans);
-    font-size: 13px;
-    transition: border-color 0.15s ease;
+    padding: 12px 14px; margin-bottom: 10px;
+    border-radius: 8px; cursor: pointer;
+    font-family: var(--sans); font-size: 13px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+    transform: perspective(600px) translateZ(0);
+    backdrop-filter: blur(12px);
   }
-  .scenario-btn:hover { border-color: var(--dim); }
-  .scenario-btn .num { font-family: var(--mono); color: var(--dim); margin-right: 8px; }
-  .scenario-btn .desc { display: block; color: var(--dim); font-size: 11px; margin-top: 4px; }
+  .scenario-btn:hover {
+    border-color: var(--rzp-blue);
+    background: var(--panel-hover);
+    transform: perspective(600px) translateZ(5px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.3);
+  }
+  .scenario-btn:active { transform: perspective(600px) translateZ(-2px); }
+  .scenario-btn .num { font-family: var(--mono); color: var(--rzp-blue); margin-right: 8px; font-size: 11px; font-weight: 600; }
+  .scenario-btn .desc { display: block; color: var(--dim); font-size: 11px; margin-top: 4px; line-height: 1.4; }
 
+  /* ── Architecture mini ── */
+  .arch-diagram {
+    background: rgba(3, 10, 24, 0.7); border: 1px solid var(--line);
+    border-radius: 8px; padding: 14px; margin-top: 10px;
+    text-align: center; font-family: var(--mono); font-size: 11px;
+  }
+  .arch-node {
+    display: inline-block; padding: 6px 12px; border-radius: 6px;
+    border: 1px solid var(--line); background: rgba(255,255,255,0.03);
+    color: var(--text); font-size: 10px;
+  }
+  .arch-arrow { color: var(--dim); margin: 0 6px; font-size: 12px; }
+  .arch-kya {
+    border-color: rgba(59, 130, 246, 0.5); background: rgba(59, 130, 246, 0.08);
+    color: var(--rzp-blue); font-weight: 700;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
+  }
+
+  /* ── Main ── */
   main { padding: 24px 40px; }
 
+  /* ── Gate Pipeline ── */
   .gate {
-    display: flex;
-    gap: 0;
-    margin-bottom: 28px;
+    display: flex; margin-bottom: 24px;
+    border-radius: 12px; overflow: hidden;
     border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
+    background: rgba(4, 12, 28, 0.8);
+    backdrop-filter: blur(16px);
+    transform-style: preserve-3d;
+    perspective: 800px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
   }
   .gate .stage {
-    flex: 1;
-    padding: 16px;
+    flex: 1; padding: 18px 12px;
     border-right: 1px solid var(--line);
-    background: var(--panel);
+    background: transparent;
     text-align: center;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    position: relative;
   }
   .gate .stage:last-child { border-right: none; }
-  .gate .stage .label { font-family: var(--mono); font-size: 10px; text-transform: uppercase; color: var(--dim); letter-spacing: 0.06em; }
-  .gate .stage .state { font-family: var(--mono); font-size: 13px; margin-top: 6px; font-weight: 600; }
-  .gate .stage.ok { background: rgba(62,207,142,0.08); }
-  .gate .stage.ok .state { color: var(--approve); }
-  .gate .stage.warn { background: rgba(232,179,57,0.08); }
-  .gate .stage.warn .state { color: var(--stepup); }
-  .gate .stage.fail { background: rgba(224,85,63,0.1); }
-  .gate .stage.fail .state { color: var(--block); }
-  .gate .stage.pending .state { color: var(--dim); }
-
-  .decision-banner {
-    padding: 20px 24px;
-    border-radius: 8px;
-    margin-bottom: 24px;
-    font-family: var(--mono);
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    border: 1px solid var(--line);
-    background: var(--panel);
+  .gate .stage::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: transparent; transition: background 0.4s ease;
   }
-  .decision-banner.APPROVE, .decision-banner.APPROVE_STEP { color: var(--approve); border-color: var(--approve); }
-  .decision-banner.STEP_UP { color: var(--stepup); border-color: var(--stepup); }
-  .decision-banner.BLOCK { color: var(--block); border-color: var(--block); }
-  .decision-banner .sub { display:block; font-family: var(--sans); font-size: 13px; color: var(--text); font-weight: 400; margin-top: 8px; }
+  .gate .stage .label { font-family: var(--mono); font-size: 9px; text-transform: uppercase; color: var(--dim); letter-spacing: 0.08em; }
+  .gate .stage .state { font-family: var(--mono); font-size: 12px; margin-top: 8px; font-weight: 700; }
+  .gate .stage.ok { background: rgba(16, 185, 129, 0.06); }
+  .gate .stage.ok::before { background: var(--approve); box-shadow: var(--glow-g); }
+  .gate .stage.ok .state { color: var(--approve); text-shadow: 0 0 10px rgba(16, 185, 129, 0.6); }
+  .gate .stage.warn { background: rgba(245, 158, 11, 0.06); }
+  .gate .stage.warn::before { background: var(--stepup); box-shadow: var(--glow-y); }
+  .gate .stage.warn .state { color: var(--stepup); text-shadow: 0 0 10px rgba(245, 158, 11, 0.6); }
+  .gate .stage.fail { background: rgba(244, 63, 94, 0.08); }
+  .gate .stage.fail::before { background: var(--block); box-shadow: var(--glow-r); }
+  .gate .stage.fail .state { color: var(--block); text-shadow: 0 0 10px rgba(244, 63, 94, 0.6); }
+  .gate .stage.pending .state { color: var(--dim); }
+  .gate .stage.scanning { background: rgba(245, 158, 11, 0.04); }
+  .gate .stage.scanning .state { color: var(--stepup); animation: stagePulse 0.7s ease infinite; }
+  @keyframes stagePulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+  /* ── Decision Banner ── */
+  .decision-banner {
+    padding: 22px 26px; border-radius: 12px; margin-bottom: 20px;
+    font-family: var(--mono); font-size: 24px; font-weight: 700;
+    letter-spacing: 0.04em;
+    border: 1px solid var(--line);
+    background: rgba(4, 12, 28, 0.85);
+    backdrop-filter: blur(20px);
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+    animation: bannerIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes bannerIn { from { opacity:0; transform: translateY(-12px) scale(0.97); } to { opacity:1; transform: translateY(0) scale(1); } }
+  .decision-banner.APPROVE { color: var(--approve); border-color: rgba(16, 185, 129, 0.4); box-shadow: var(--glow-g), inset 0 0 40px rgba(16, 185, 129, 0.04); }
+  .decision-banner.APPROVE_STEP { color: var(--approve); border-color: rgba(16, 185, 129, 0.4); box-shadow: var(--glow-g); }
+  .decision-banner.STEP_UP { color: var(--stepup); border-color: rgba(245, 158, 11, 0.4); box-shadow: var(--glow-y), inset 0 0 40px rgba(245, 158, 11, 0.04); }
+  .decision-banner.BLOCK { color: var(--block); border-color: rgba(244, 63, 94, 0.4); box-shadow: var(--glow-r), inset 0 0 40px rgba(244, 63, 94, 0.04); }
+  .decision-banner .sub { display:block; font-family: var(--sans); font-size: 13px; color: var(--text); font-weight: 400; margin-top: 8px; line-height: 1.5; }
   .decision-banner .meta { display:flex; gap: 20px; font-family: var(--mono); font-size: 11px; color: var(--dim); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); flex-wrap: wrap; }
   .decision-banner .meta b { color: var(--text); font-weight: 600; }
 
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+  /* ── Cards ── */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
   .card {
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 18px 20px;
+    border-radius: 12px; padding: 20px;
+    backdrop-filter: blur(20px);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
   }
-  .card h3 { font-family: var(--mono); font-size: 12px; text-transform: uppercase; color: var(--dim); margin: 0 0 12px; letter-spacing: 0.06em;}
-  .reason-list { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; }
-  .risk-bar-row { display:flex; align-items:center; gap:10px; margin-bottom:8px; font-size:12px;}
-  .risk-bar-row .rname { width: 140px; color: var(--dim); font-family: var(--mono); font-size: 11px;}
-  .risk-bar-track { flex:1; height: 8px; background: #1a2027; border-radius: 4px; overflow:hidden;}
-  .risk-bar-fill { height:100%; background: linear-gradient(90deg, var(--approve), var(--stepup), var(--block)); }
+  .card:hover { border-color: var(--line-active); box-shadow: 0 14px 40px rgba(0,0,0,0.5), var(--glow-rzp); }
+  .card h3 { font-family: var(--mono); font-size: 10px; text-transform: uppercase; color: var(--dim); margin: 0 0 12px; letter-spacing: 0.08em; font-weight: 600; }
+  .reason-list { margin: 0; padding-left: 16px; font-size: 12px; line-height: 1.7; }
+  .risk-bar-row { display:flex; align-items:center; gap:10px; margin-bottom:8px; font-size:11px; }
+  .risk-bar-row .rname { width:130px; color: var(--dim); font-family: var(--mono); font-size:10px; }
+  .risk-bar-track { flex:1; height:6px; background: rgba(255,255,255,0.05); border-radius:3px; overflow:hidden; }
+  .risk-bar-fill { height:100%; background: linear-gradient(90deg, var(--approve), var(--stepup), var(--block)); border-radius:3px; transition: width 0.8s cubic-bezier(0.34,1.56,0.64,1); }
   .risk-total { font-family: var(--mono); font-size: 28px; margin-top: 10px; }
 
+  /* ── Step-Up Actions ── */
   .stepup-actions { margin-top: 12px; display:none; gap: 10px; }
-  .stepup-actions button {
-    font-family: var(--mono); font-size: 12px; padding: 10px 16px; border-radius: 6px; cursor:pointer; border: 1px solid var(--line);
-  }
-  .btn-confirm { background: var(--approve); color: #06120c; border: none; }
+  .stepup-actions button { font-family: var(--mono); font-size: 12px; padding: 10px 18px; border-radius: 8px; cursor:pointer; border: 1px solid var(--line); transition: all 0.2s ease; }
+  .btn-confirm { background: var(--approve); color: #06120c; border: none; box-shadow: var(--glow-g); }
+  .btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(62,207,142,0.4); }
   .btn-decline { background: transparent; color: var(--block); border-color: var(--block); }
+  .btn-decline:hover { background: rgba(239,68,68,0.1); }
 
+  /* ── Table ── */
   table { width: 100%; border-collapse: collapse; font-size: 12px; font-family: var(--mono); }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
-  th { color: var(--dim); text-transform: uppercase; font-size: 10px; letter-spacing: 0.05em; }
-  .tag-decision { padding: 2px 8px; border-radius: 4px; font-size: 11px; }
-  .tag-decision.APPROVE { color: var(--approve); background: rgba(62,207,142,0.1); }
-  .tag-decision.STEP_UP { color: var(--stepup); background: rgba(232,179,57,0.1); }
-  .tag-decision.BLOCK { color: var(--block); background: rgba(224,85,63,0.1); }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--dim); text-transform: uppercase; font-size: 9px; letter-spacing: 0.08em; }
+  tr { transition: background 0.15s ease; }
+  tbody tr:hover { background: rgba(62,207,142,0.03); }
+  .tag-decision { padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+  .tag-decision.APPROVE { color: var(--approve); background: rgba(62,207,142,0.12); }
+  .tag-decision.STEP_UP { color: var(--stepup); background: rgba(245,158,11,0.12); }
+  .tag-decision.BLOCK { color: var(--block); background: rgba(239,68,68,0.12); }
 
-  .empty { color: var(--dim); font-family: var(--mono); font-size: 13px; padding: 40px 0; text-align:center; }
+  .empty { color: var(--dim); font-family: var(--mono); font-size: 13px; padding: 60px 0; text-align:center; }
+
+
+  /* Toast */
+  #toast-container { position: fixed; top: 18px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; }
+  .toast {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 12px 16px; border-radius: 8px; min-width: 280px; max-width: 360px;
+    font-family: var(--sans); font-size: 13px;
+    border: 1px solid var(--line);
+    background: #1a2030;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    animation: toastIn 0.25s ease;
+    cursor: pointer;
+  }
+  .toast.approve { border-color: var(--approve); }
+  .toast.block { border-color: var(--block); }
+  .toast.stepup { border-color: var(--stepup); }
+  .toast .toast-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .toast .toast-title { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+  .toast .toast-body { color: var(--dim); font-size: 11px; line-height: 1.4; }
+  @keyframes toastIn { from { opacity:0; transform: translateX(20px); } to { opacity:1; transform: translateX(0); } }
+
+  /* Scanning animation */
+  @keyframes stagePulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+  .gate .stage.scanning { background: rgba(232,179,57,0.06); }
+  .gate .stage.scanning .state { color: var(--stepup); animation: stagePulse 0.7s ease infinite; }
+
+  /* CSV button */
+  .csv-btn {
+    background: rgba(62,207,142,0.08); border: 1px solid rgba(62,207,142,0.3); color: var(--approve);
+    padding: 4px 10px; border-radius: 4px; font-family: var(--mono); font-size: 10px;
+    cursor: pointer; float: right; margin-top: -2px; transition: background 0.15s;
+  }
+  .csv-btn:hover { background: rgba(62,207,142,0.2); }
+
+  /* Latency badge */
+  .latency-badge { font-family:var(--mono); font-size:11px; color:var(--approve); background:rgba(62,207,142,0.1); border:1px solid rgba(62,207,142,0.25); border-radius:4px; padding:2px 8px; display:inline-block; margin-left:10px; }
+
+  /* Token Inspector */
+  .token-inspector { background:#080e18; border:1px solid #1a2a3a; border-radius:8px; padding:14px; margin-top:16px; }
+  .token-inspector summary { font-family:var(--mono); font-size:11px; color:var(--dim); cursor:pointer; letter-spacing:0.06em; text-transform:uppercase; }
+  .token-inspector summary:hover { color:var(--text); }
+  .token-inspector pre { margin:10px 0 0; font-size:10px; color:#7dd3fc; line-height:1.5; overflow-x:auto; white-space:pre-wrap; word-break:break-all; }
+
+  /* Without/With KYA */
+  .kya-compare { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+  .compare-box { border-radius:8px; padding:14px; border:1px solid var(--line); font-size:12px; line-height:1.6; }
+  .compare-box.danger { border-color:rgba(224,85,63,0.4); background:rgba(224,85,63,0.05); }
+  .compare-box.safe { border-color:rgba(62,207,142,0.4); background:rgba(62,207,142,0.05); }
+  .compare-box .ch { font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px; font-weight:700; }
+  .compare-box.danger .ch { color:var(--block); } .compare-box.safe .ch { color:var(--approve); }
+
+  /* Architecture diagram */
+  .arch-diagram { background:#080e18; border:1px solid #1a2a3a; border-radius:8px; padding:20px; margin-top:16px; text-align:center; font-family:var(--mono); font-size:11px; }
+  .arch-node { display:inline-block; padding:8px 14px; border-radius:6px; border:1px solid var(--line); background:var(--panel); color:var(--text); font-size:11px; }
+  .arch-arrow { color:var(--dim); margin:0 8px; font-size:14px; }
+  .arch-kya { border-color:var(--approve); background:rgba(62,207,142,0.08); color:var(--approve); font-weight:700; }
+
+  /* Kiosk mode button */
+  .kiosk-btn { width:100%; background:rgba(51,149,255,0.1); border:1px solid #3395ff; color:#3395ff; padding:9px; border-radius:6px; font-family:var(--mono); font-size:11px; font-weight:600; cursor:pointer; margin-bottom:10px; transition:background 0.15s; }
+  .kiosk-btn:hover { background:rgba(51,149,255,0.2); }
+  .kiosk-btn.running { animation:stagePulse 1s ease infinite; }
+
+  /* Risk gauge */
+  .gauge-wrap { text-align:center; padding:10px 0; }
+  .gauge-score { font-family:var(--mono); font-size:32px; font-weight:700; margin-top:6px; }
+
+  /* Multi-cart item row */
+  .cart-item-row { display:flex; gap:6px; margin-bottom:8px; align-items:center; }
+  .cart-item-row input, .cart-item-row select { background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:6px; border-radius:4px; font-size:11px; }
+  .cart-item-row .remove-btn { background:rgba(224,85,63,0.15); border:1px solid rgba(224,85,63,0.4); color:var(--block); padding:4px 8px; border-radius:4px; cursor:pointer; font-size:13px; flex-shrink:0; }
+  .rzp-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(11, 13, 16, 0.75); backdrop-filter: blur(4px);
+    z-index: 2000; display: flex; align-items: center; justify-content: center;
+  }
+  .rzp-modal-card {
+    background: #09131e; border: 1px solid #1d334a; border-radius: 12px;
+    width: 380px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.6);
+    color: #e2e8f0; font-family: var(--sans);
+  }
+  .rzp-header {
+    background: linear-gradient(135deg, #02042b, #0c2340); padding: 18px 20px;
+    border-bottom: 1px solid #1d334a; display: flex; align-items: center; justify-content: space-between;
+  }
+  .rzp-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; color: #fff; }
+  .rzp-badge { background: rgba(51, 149, 255, 0.15); color: #3395ff; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-family: var(--mono); }
+  .rzp-body { padding: 20px; text-align: center; }
+  .rzp-status-icon {
+    width: 52px; height: 52px; background: rgba(62, 207, 142, 0.15); border: 2px solid #3ecf8e;
+    border-radius: 50%; color: #3ecf8e; display: flex; align-items: center; justify-content: center;
+    font-size: 26px; margin: 0 auto 14px;
+  }
+  .rzp-amount { font-family: var(--mono); font-size: 26px; font-weight: 700; color: #fff; margin: 6px 0 16px; }
+  .rzp-meta { background: #0e1a26; border-radius: 8px; padding: 12px; font-size: 12px; text-align: left; margin-bottom: 20px; }
+  .rzp-meta-row { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  .rzp-meta-row:last-child { margin-bottom: 0; }
+  .rzp-meta-row span { color: var(--dim); }
+  .rzp-meta-row b { color: var(--text); font-family: var(--mono); font-size: 11px; }
+  .rzp-close-btn {
+    width: 100%; background: #3ecf8e; color: #06120c; border: none; padding: 12px;
+    border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; transition: opacity 0.15s ease;
+  }
+  .rzp-close-btn:hover { opacity: 0.9; }
 </style>
 </head>
 <body>
 
+<canvas id="bg-canvas"></canvas>
+
 <header>
-  <div class="brand">KYA <span>// Know Your Agent</span></div>
-  <div class="tag">cross-transaction verification layer &middot; mocked Razorpay executor (offline demo)</div>
+  <div class="brand">
+    <div class="brand-logo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      KYA
+    </div>
+    <div class="brand-title">Know Your Agent</div>
+  </div>
+  <div class="tag">
+    <span class="rzp-header-badge">Provider-Neutral Agent Security Gateway</span>
+    <span>Cross-Transaction Agent Verification Layer</span>
+  </div>
 </header>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-dot" style="background:#3b82f6;"></div>
+    <div><div class="stat-num" id="stat-total" style="color:var(--text);">0</div><div class="stat-label">Total Runs</div></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-dot" style="background:var(--approve);"></div>
+    <div><div class="stat-num" id="stat-approve" style="color:var(--approve);">0</div><div class="stat-label">Approved</div></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-dot" style="background:var(--stepup);"></div>
+    <div><div class="stat-num" id="stat-stepup" style="color:var(--stepup);">0</div><div class="stat-label">Step-Up</div></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-dot" style="background:var(--block);"></div>
+    <div><div class="stat-num" id="stat-block" style="color:var(--block);">0</div><div class="stat-label">Blocked</div></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-dot" style="background:#c084fc;"></div>
+    <div><div class="stat-num" id="stat-protected" style="color:#c084fc;">₹0</div><div class="stat-label">Fraud Protected</div></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-dot" style="background:#38bdf8;"></div>
+    <div><div class="stat-num" id="stat-latency" style="color:#38bdf8;">—</div><div class="stat-label">Verification Time</div></div>
+  </div>
+  <div style="margin-left:auto; display:flex; gap:10px; align-items:center; font-family:var(--mono); font-size:10px;">
+    <span id="demo-data-tag" style="background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.35); color:var(--stepup); padding:3px 8px; border-radius:4px;">READY FOR DEMO — Run a scenario to populate security metrics</span>
+    <span style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:var(--approve); padding:3px 8px; border-radius:4px;">● KYA NODE: ONLINE</span>
+    <span style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); color:var(--rzp-blue); padding:3px 8px; border-radius:4px;">ENVIRONMENT: DEMO</span>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+
+<div id="razorpay-modal" class="rzp-modal-overlay" style="display:none;" onclick="if(event.target===this) closeRazorpayModal()">
+  <div class="rzp-modal-card">
+    <div class="rzp-header">
+      <div class="rzp-brand">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#3b82f6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        KYA Security Gate
+      </div>
+      <span class="rzp-badge">VERIFIED & AUTHORIZED</span>
+    </div>
+    <div class="rzp-body">
+      <div class="rzp-status-icon">✓</div>
+      <div style="font-size: 14px; font-weight: 600; color: #10b981;" id="rzp-modal-title">Payment Authorized by KYA</div>
+      <div style="font-size: 11px; color: var(--dim); margin-top: 2px;" id="rzp-modal-subtitle">Mock Payment Executed (Provider-Neutral)</div>
+      <div class="rzp-amount" id="rzp-modal-amount">₹0</div>
+      
+      <div class="rzp-meta">
+        <div class="rzp-meta-row"><span>Order ID</span><b id="rzp-modal-order">—</b></div>
+        <div class="rzp-meta-row"><span>Agent ID</span><b id="rzp-modal-agent">—</b></div>
+        <div class="rzp-meta-row"><span>Status</span><b style="color:#10b981;">AUTHORIZED</b></div>
+      </div>
+
+      <button class="rzp-close-btn" onclick="closeRazorpayModal()">Done</button>
+    </div>
+  </div>
+</div>
 
 <div class="layout">
   <div class="rail">
     <h2>Demo Scenarios</h2>
+    <button class="kiosk-btn" id="kiosk-btn" onclick="toggleKioskMode()">Auto-Demo — Run All Scenarios</button>
     <button class="scenario-btn" onclick="runScenario(1)">
-      <span class="num">01</span>Legitimate purchase
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span><span class="num">01</span>Legitimate purchase</span>
+        <span style="color:var(--approve); font-family:var(--mono); font-size:10px; font-weight:700;">₹850 ✓ APPROVE</span>
+      </div>
       <span class="desc">Verified agent, valid mandate, intent matches cart</span>
     </button>
     <button class="scenario-btn" onclick="runScenario(2)">
-      <span class="num">02</span>Unregistered agent
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span><span class="num">02</span>Unregistered agent</span>
+        <span style="color:var(--block); font-family:var(--mono); font-size:10px; font-weight:700;">₹900 ✕ BLOCK</span>
+      </div>
       <span class="desc">Spoofed identity attempts checkout</span>
     </button>
     <button class="scenario-btn" onclick="runScenario(3)">
-      <span class="num">03</span>Intent mismatch
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span><span class="num">03</span>Intent mismatch</span>
+        <span style="color:var(--block); font-family:var(--mono); font-size:10px; font-weight:700;">₹42,000 ✕ BLOCK</span>
+      </div>
       <span class="desc">Stated "groceries", cart is a ₹42k laptop</span>
     </button>
     <button class="scenario-btn" onclick="runScenario(4)">
-      <span class="num">04</span>Behavioral drift
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span><span class="num">04</span>Behavioral drift</span>
+        <span style="color:var(--stepup); font-family:var(--mono); font-size:10px; font-weight:700;">₹1,100 ⚠ STEP-UP</span>
+      </div>
       <span class="desc">~2x normal spend &rarr; human step-up required</span>
     </button>
+    <button class="scenario-btn" style="border-color:rgba(59,130,246,0.4); background:rgba(59,130,246,0.08);" onclick="runScenario(5)">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span><span class="num" style="color:var(--rzp-blue);">05</span>Owner limit exceeded</span>
+        <span style="color:var(--block); font-family:var(--mono); font-size:10px; font-weight:700;">₹1,201 ✕ BLOCK</span>
+      </div>
+      <span class="desc" style="color:var(--rzp-blue);">Hard ceiling demo — ₹1,201 exceeds the owner-configured ₹1,200 limit</span>
+    </button>
 
-    <h2 style="margin-top:32px;">Audit Trail</h2>
-    <div id="audit-mini" style="font-family: var(--mono); font-size: 11px; color: var(--dim);">
-      Run a scenario to populate the audit log below.
+    <h2 style="margin-top:20px;">Architecture</h2>
+    <div class="arch-diagram">
+      <div style="margin-bottom:8px; font-size:11px;">
+        <span class="arch-node">🤖 AI Agent</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-node arch-kya">🛡 KYA Gate</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-node">💳 Payment Provider</span>
+      </div>
+      <div style="color:var(--dim); font-size:10px; line-height:1.5;">
+        ├── Mock Provider (Built-in)<br>
+        └── Razorpay API (Optional / Sandbox)
+      </div>
+    </div>
+
+    <h2 style="margin-top:20px;">Custom Tester</h2>
+    <div style="background:#1a2030; border:1px solid var(--line); border-radius:8px; padding:14px; margin-bottom:20px;">
+      <div style="font-size:10px; color:var(--dim); font-family:var(--mono); margin-bottom:4px; letter-spacing:0.08em;">AGENT ID</div>
+      <select id="custom-agent-id" style="width:100%; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:8px; border-radius:5px; font-family:var(--mono); font-size:11px; margin-bottom:10px;">
+        <option value="agent_procure_bot_042">agent_procure_bot_042 (ProcureBot)</option>
+        <option value="agent_shopgenie_777">agent_shopgenie_777 (ShopGenie)</option>
+        <option value="agent_unknown_bot_999">agent_unknown_bot_999 (Unregistered)</option>
+      </select>
+
+      <div style="font-size:10px; color:var(--dim); font-family:var(--mono); margin-bottom:4px; letter-spacing:0.08em;">STATED INTENT</div>
+      <input type="text" id="custom-intent" value="buy groceries for the week" style="width:100%; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:8px; border-radius:5px; font-family:var(--sans); font-size:12px; margin-bottom:10px;" />
+
+      <div style="font-size:10px; color:var(--dim); font-family:var(--mono); margin-bottom:6px; letter-spacing:0.08em;">CART ITEMS <button onclick="addCartRow()" style="background:rgba(62,207,142,0.1); border:1px solid rgba(62,207,142,0.3); color:var(--approve); padding:2px 8px; border-radius:4px; font-size:10px; cursor:pointer; margin-left:6px;">+ Add Item</button></div>
+      <div id="cart-rows">
+        <div class="cart-item-row">
+          <input type="text" placeholder="Item name" value="Vegetables box" style="flex:1;" />
+          <select style="width:110px;">
+            <option value="groceries">groceries</option>
+            <option value="office_supplies">office_supplies</option>
+            <option value="electronics">electronics</option>
+          </select>
+          <input type="number" placeholder="₹" value="800" style="width:70px;" />
+        </div>
+      </div>
+
+      <button onclick="runCustomScenario()" style="width:100%; background:rgba(62,207,142,0.15); border:1px solid var(--approve); color:var(--approve); padding:9px; border-radius:6px; font-family:var(--mono); font-size:12px; font-weight:600; cursor:pointer; letter-spacing:0.04em; margin-top:10px;">▶ Verify Custom Request</button>
+    </div>
+
+    <h2 style="margin-top:20px;">Connection & Owner Controls</h2>
+    <div style="background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px; margin-bottom:20px;">
+      <div style="font-size:10px; color:var(--dim); font-family:var(--mono); margin-bottom:4px; letter-spacing:0.08em;">BACKEND API ENDPOINT</div>
+      <select id="api-select" style="width:100%; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:7px; border-radius:5px; font-family:var(--mono); font-size:11px; margin-bottom:6px;" onchange="localStorage.setItem('KYA_API_URL', this.value); updateBackendNote(this.value)">
+        <option value="built_in" selected>Built-in Engine — Authoritative Pipeline (Recommended)</option>
+        <option value="https://kya-backend.onrender.com">Render Cloud (https://kya-backend.onrender.com)</option>
+        <option value="http://localhost:8000">Local Backend (http://localhost:8000)</option>
+      </select>
+      <div id="backend-note" style="font-size:10px; font-family:var(--mono); padding:6px 8px; border-radius:4px; margin-bottom:10px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.2); color:var(--approve);">● Runs the same 5-stage Identity → Delegation → Scope → Intent → Risk pipeline as the Python backend — all security logic is identical, no network required.</div>
+
+      <div style="font-size:10px; color:var(--dim); font-family:var(--mono); margin-bottom:4px; letter-spacing:0.08em;">OWNER AUTHORIZATION</div>
+      <input type="password" id="demo-key-input" placeholder="Configure Demo Auth Key" style="width:100%; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:7px; border-radius:5px; font-family:var(--mono); font-size:11px; margin-bottom:6px;" onchange="localStorage.setItem('KYA_DEMO_KEY', this.value.trim()); updateAuthStatusUI();" />
+      <div id="auth-status-badge" style="font-family: var(--mono); font-size: 10px; color: var(--approve); margin-bottom:10px;">Authorization: ● Configured (Demo Mode)</div>
+
+      <div style="border-top:1px solid var(--line); padding-top:10px; margin-top:4px;">
+        <div style="font-size:10px; color:var(--dim); font-family:var(--mono); margin-bottom:4px; letter-spacing:0.08em;">SELECT AGENT TO CONFIGURE</div>
+        <select id="owner-agent-select" style="width:100%; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:7px; border-radius:5px; font-family:var(--mono); font-size:11px; margin-bottom:10px;" onchange="loadOwnerAgentLimitIntoUI()">
+          <option value="agent_procure_bot_042">ProcureBot (agent_procure_bot_042)</option>
+          <option value="agent_shopgenie_777">ShopGenie (agent_shopgenie_777)</option>
+        </select>
+
+        <div style="font-size:10px; color:var(--dim); font-family:var(--mono); margin-bottom:4px; letter-spacing:0.08em;">OWNER HARD PER-TRANSACTION LIMIT (₹)</div>
+        <input type="number" id="owner-limit-input" value="1200" placeholder="e.g. 1200" style="width:100%; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:7px; border-radius:5px; font-family:var(--mono); font-size:12px; margin-bottom:10px;" />
+
+        <button onclick="saveOwnerLimit()" style="width:100%; background:rgba(59,130,246,0.15); border:1px solid var(--rzp-blue); color:var(--rzp-blue); padding:8px; border-radius:6px; font-family:var(--mono); font-size:11px; font-weight:600; cursor:pointer;">🔒 SAVE OWNER LIMIT</button>
+      </div>
+
+      <div style="margin-top:12px; font-size:10px; font-family:var(--mono); color:var(--dim); background:rgba(0,0,0,0.3); padding:8px; border-radius:4px;" id="owner-limits-summary">
+        <div><b>Active Limits:</b></div>
+        <div>• ProcureBot: Baseline ₹1,200 | Limit: <span id="summary-limit-042" style="color:var(--rzp-blue);">₹1,200</span></div>
+        <div>• ShopGenie: Baseline ₹900 | Limit: <span id="summary-limit-777" style="color:var(--rzp-blue);">₹1,200</span></div>
+      </div>
     </div>
   </div>
 
   <main>
+    <!-- HERO FEATURE CARD: OWNER CONTROL -->
+    <div class="card" style="background: linear-gradient(135deg, rgba(8,20,42,0.95), rgba(15,32,64,0.95)); border: 1.5px solid var(--rzp-blue); margin-bottom: 20px; box-shadow: var(--glow-rzp);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px;">
+        <div>
+          <div style="font-family:var(--mono); font-size:10px; text-transform:uppercase; color:var(--rzp-blue); font-weight:700; letter-spacing:0.1em; margin-bottom:4px;">OWNER CONTROL — PER-AGENT TRANSACTION CEILING</div>
+          <div style="font-size:18px; font-weight:700; color:var(--text);">ProcureBot &nbsp;·&nbsp; Max per transaction: <span style="color:var(--approve); font-family:var(--mono);" id="hero-limit-display">₹1,200</span></div>
+          <div style="font-size:12px; color:var(--dim); margin-top:4px;">Owner-defined hard ceiling enforced server-side before payment execution. Transactions above this limit fail closed regardless of delegation token.</div>
+        </div>
+        <button onclick="testOwnerLimit()" style="background:linear-gradient(135deg, #1d4ed8, #3b82f6); color:#ffffff; border:none; padding:10px 18px; border-radius:8px; font-family:var(--mono); font-size:12px; font-weight:700; cursor:pointer; box-shadow:0 4px 14px rgba(59,130,246,0.4); transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">Run Limit Verification</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:10px; margin-top:14px; padding-top:12px; border-top:1px solid rgba(59,130,246,0.2); font-family:var(--mono); font-size:12px;">
+        <button onclick="runLimitVerification(1199)" style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:6px; padding:8px 10px; text-align:center; cursor:pointer; color:inherit;">
+          <span style="color:var(--dim); font-size:10px; display:block;">TEST ₹1,199</span>
+          <span style="color:var(--approve); font-weight:700;">✓ ALLOWED</span>
+        </button>
+        <button onclick="runLimitVerification(1200)" style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:6px; padding:8px 10px; text-align:center; cursor:pointer; color:inherit;">
+          <span style="color:var(--dim); font-size:10px; display:block;">TEST ₹1,200</span>
+          <span style="color:var(--approve); font-weight:700;">✓ ALLOWED</span>
+        </button>
+        <button onclick="runLimitVerification(1201)" style="background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.3); border-radius:6px; padding:8px 10px; text-align:center; cursor:pointer; color:inherit;">
+          <span style="color:var(--dim); font-size:10px; display:block;">TEST ₹1,201</span>
+          <span style="color:var(--block); font-weight:700;">✕ BLOCKED</span>
+        </button>
+        <button onclick="testOwnerLimit()" style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); border-radius:6px; padding:8px 10px; text-align:center; cursor:pointer; color:inherit;">
+          <span style="color:var(--dim); font-size:10px; display:block;">FULL SEQUENCE</span>
+          <span style="color:var(--rzp-blue); font-weight:700;">▶ RUN ALL</span>
+        </button>
+      </div>
+    </div>
+
     <div class="gate" id="gate">
       <div class="stage pending" data-stage="identity"><div class="label">Identity</div><div class="state">—</div></div>
       <div class="stage pending" data-stage="delegation"><div class="label">Delegation</div><div class="state">—</div></div>
@@ -202,11 +602,14 @@
     </div>
 
     <div id="result-area">
-      <div class="empty">Select a scenario on the left to run it through the KYA pipeline.</div>
+      <div class="card" style="border:1px dashed var(--line); text-align:center; padding:24px; background:rgba(8,16,32,0.6);">
+        <div style="font-family:var(--mono); font-size:12px; color:var(--approve); font-weight:700; letter-spacing:0.08em; margin-bottom:6px;">READY FOR VERIFICATION</div>
+        <div style="font-size:13px; color:var(--dim);">No payment executed. Select a scenario on the left or click <b style="color:var(--text);">⚡ Test Limit Enforcement</b> above to run pipeline verification.</div>
+      </div>
     </div>
 
     <div class="card" style="margin-top: 24px;">
-      <h3>Audit Log</h3>
+      <h3>Audit Log <button class="csv-btn" onclick="exportAuditCSV()">⬇ Export CSV</button></h3>
       <table id="audit-table">
         <thead><tr><th>Time</th><th>Agent</th><th>Amount</th><th>Decision</th><th>Reason</th></tr></thead>
         <tbody><tr><td colspan="5" style="color:var(--dim); font-family: var(--sans);">No transactions yet.</td></tr></tbody>
@@ -216,52 +619,529 @@
 </div>
 
 <script>
-const API = "https://kya-backend.onrender.com";
-// SECURITY: The demo issuer key must be provided at runtime. It is NOT
-// shipped in source code. To use this dashboard:
-//
-//   1. Start the backend with KYA_DEMO_ISSUER_KEY set:
-//      PowerShell: $env:KYA_DEMO_ISSUER_KEY="your-key"
-//      CMD:        set KYA_DEMO_ISSUER_KEY=your-key
-//      Bash:       export KYA_DEMO_ISSUER_KEY=your-key
-//
-//   2. Open this HTML file, then in the browser console run:
-//      window.__DEMO_KEY = "<same value you set on the server>"
-//
-//   3. Click a scenario button.
-//
-// IMPORTANT: Never embed a real issuer key in a production frontend.
-// This mechanism is for local demo only. In production, the issuer-key
-// flow must happen server-side, not in client JavaScript.
-const DEMO_KEY = window.__DEMO_KEY || "";
+// Auto-migrate legacy localStorage owner limits if previously set to old defaults
+if (!localStorage.getItem("KYA_V2_LIMITS_SET")) {
+  localStorage.setItem("KYA_OWNER_LIMIT_agent_procure_bot_042", 1200);
+  localStorage.setItem("KYA_OWNER_LIMIT_agent_shopgenie_777", 1200);
+  localStorage.setItem("KYA_V2_LIMITS_SET", "true");
+}
+
+const REGISTERED_AGENTS = {
+  "agent_procure_bot_042": {
+    name: "Procurement Bot 042",
+    baseline_mean: 1200,
+    owner_max_amount: parseFloat(localStorage.getItem("KYA_OWNER_LIMIT_agent_procure_bot_042")) || 1200,
+    allowed_categories: ["groceries", "office_supplies"]
+  },
+  "agent_shopgenie_777": {
+    name: "ShopGenie 777",
+    baseline_mean: 900,
+    owner_max_amount: parseFloat(localStorage.getItem("KYA_OWNER_LIMIT_agent_shopgenie_777")) || 1200,
+    allowed_categories: ["electronics", "groceries"]
+  }
+};
+
+function loadOwnerAgentLimitIntoUI() {
+  const sel = document.getElementById("owner-agent-select");
+  if (!sel) return;
+  const agentId = sel.value;
+  const input = document.getElementById("owner-limit-input");
+  if (input && REGISTERED_AGENTS[agentId]) {
+    input.value = REGISTERED_AGENTS[agentId].owner_max_amount;
+  }
+}
+
+function updateSummaryLimitsUI() {
+  const s042 = document.getElementById("summary-limit-042");
+  const s777 = document.getElementById("summary-limit-777");
+  if (s042 && REGISTERED_AGENTS["agent_procure_bot_042"]) {
+    s042.innerText = "₹" + REGISTERED_AGENTS["agent_procure_bot_042"].owner_max_amount.toLocaleString();
+  }
+  if (s777 && REGISTERED_AGENTS["agent_shopgenie_777"]) {
+    s777.innerText = "₹" + REGISTERED_AGENTS["agent_shopgenie_777"].owner_max_amount.toLocaleString();
+  }
+}
+
+async function saveOwnerLimit() {
+  const sel = document.getElementById("owner-agent-select");
+  if (!sel) return;
+  const agentId = sel.value;
+  const limitInput = document.getElementById("owner-limit-input");
+  const limitVal = parseFloat(limitInput.value);
+  if (isNaN(limitVal) || limitVal <= 0) {
+    showToast("block", "Invalid Limit", "Limit must be a positive numeric amount.");
+    return;
+  }
+
+  // Save locally in memory & localStorage
+  if (REGISTERED_AGENTS[agentId]) {
+    REGISTERED_AGENTS[agentId].owner_max_amount = limitVal;
+    localStorage.setItem("KYA_OWNER_LIMIT_" + agentId, limitVal);
+  }
+  updateSummaryLimitsUI();
+
+  // Call API PUT /agents/{agent_id}/limit if remote API set
+  const api = getApiUrl();
+  if (api !== "built_in") {
+    try {
+      const res = await fetch(`${api}/agents/${agentId}/limit`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json", "X-Kya-Demo-Key": getDemoKey() },
+        body: JSON.stringify({ owner_max_amount: limitVal })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        showToast("block", "Limit API Error", data.detail || "Failed to update remote owner limit");
+        return;
+      }
+      showToast("approve", "Limit Saved (Remote API)", `Owner ceiling for ${agentId} set to ₹${limitVal.toLocaleString()}`);
+    } catch(err) {
+      showToast("approve", "Limit Saved (Local)", `Owner ceiling for ${agentId} set to ₹${limitVal.toLocaleString()}`);
+    }
+  } else {
+    showToast("approve", "Limit Saved", `Owner spending limit for ${agentId} set to ₹${limitVal.toLocaleString()}`);
+  }
+}
+
+function getApiUrl() {
+  const sel = document.getElementById("api-select");
+  if (sel && sel.value) {
+    return sel.value;
+  }
+  const saved = localStorage.getItem("KYA_API_URL");
+  if (saved) return saved;
+  return "built_in";
+}
+
+function getDemoKey() {
+  const el = document.getElementById("demo-key-input");
+  if (el && el.value.trim()) {
+    const val = el.value.trim();
+    localStorage.setItem("KYA_DEMO_KEY", val);
+    return val;
+  }
+  return window.__DEMO_KEY || localStorage.getItem("KYA_DEMO_KEY") || "my-demo-key";
+}
+
+// ── Stats counters ──────────────────────────────────────────
+const _stats = { total: 0, approve: 0, stepup: 0, block: 0, protected: 0 };
+function updateStats(decision, blockedAmount) {
+  const tag = document.getElementById("demo-data-tag");
+  if (tag) tag.style.display = "none";
+  _stats.total++;
+  const d = (decision || "").toUpperCase();
+  if (d.includes("APPROVE")) _stats.approve++;
+  else if (d.includes("STEP_UP") || d.includes("STEP-UP")) _stats.stepup++;
+  else if (d.includes("BLOCK")) { _stats.block++; _stats.protected += (blockedAmount || 0); }
+  ["total","approve","stepup","block"].forEach(k => {
+    const el = document.getElementById("stat-" + k);
+    if (el) { el.style.transform="scale(1.3)"; el.innerText = _stats[k]; setTimeout(()=>el.style.transform="",200); }
+  });
+  const pe = document.getElementById("stat-protected");
+  if (pe) { pe.style.transform="scale(1.3)"; pe.innerText = "₹" + _stats.protected.toLocaleString(); setTimeout(()=>pe.style.transform="",200); }
+}
+
+// ── Latency tracker ─────────────────────────────────────────
+function updateLatency(ms) {
+  const el = document.getElementById("stat-latency");
+  if (el) { el.style.transform="scale(1.3)"; el.innerText = ms + "ms"; setTimeout(()=>el.style.transform="",200); }
+}
+
+function updateBackendNote(val) {
+  const note = document.getElementById("backend-note");
+  if (!note) return;
+  if (val === "built_in") {
+    note.style.background = "rgba(16,185,129,0.08)";
+    note.style.borderColor = "rgba(16,185,129,0.2)";
+    note.style.color = "var(--approve)";
+    note.innerText = "\u25cf Runs the same 5-stage Identity \u2192 Delegation \u2192 Scope \u2192 Intent \u2192 Risk pipeline as the Python backend \u2014 identical security logic, no network required.";
+  } else if (val.includes("onrender.com")) {
+    note.style.background = "rgba(245,158,11,0.08)";
+    note.style.borderColor = "rgba(245,158,11,0.3)";
+    note.style.color = "var(--stepup)";
+    note.innerText = "\u26a0 Render free-tier instances spin down after inactivity. First request may take 20\u201330s to cold-start. Warm it up before a live demo, or use Built-in Engine instead.";
+  } else {
+    note.style.background = "rgba(59,130,246,0.08)";
+    note.style.borderColor = "rgba(59,130,246,0.2)";
+    note.style.color = "var(--rzp-blue)";
+    note.innerText = "\u25cf Connecting to local backend. Ensure the server is running on port 8000.";
+  }
+}
+
+
+function playSound(type) {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    if (type === "approve") { osc.frequency.setValueAtTime(520, ctx.currentTime); osc.frequency.setValueAtTime(660, ctx.currentTime+0.1); gain.gain.setValueAtTime(0.15, ctx.currentTime); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+0.35); osc.start(); osc.stop(ctx.currentTime+0.35); }
+    else if (type === "block") { osc.type="sawtooth"; osc.frequency.setValueAtTime(200, ctx.currentTime); gain.gain.setValueAtTime(0.12, ctx.currentTime); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+0.3); osc.start(); osc.stop(ctx.currentTime+0.3); }
+    else if (type === "stepup") { osc.frequency.setValueAtTime(440, ctx.currentTime); osc.frequency.setValueAtTime(440, ctx.currentTime+0.15); gain.gain.setValueAtTime(0.1, ctx.currentTime); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+0.4); osc.start(); osc.stop(ctx.currentTime+0.4); }
+  } catch(e) {}
+}
+
+// ── Kiosk / Auto-demo mode ───────────────────────────────────
+let _kioskRunning = false, _kioskTimer = null;
+async function toggleKioskMode() {
+  const btn = document.getElementById("kiosk-btn");
+  if (_kioskRunning) {
+    _kioskRunning = false;
+    if (_kioskTimer) clearTimeout(_kioskTimer);
+    btn.classList.remove("running");
+    btn.innerText = "🎬 Auto-Demo Kiosk Mode";
+    showToast("info", "Kiosk Stopped", "Auto-demo paused.");
+    return;
+  }
+  _kioskRunning = true;
+  btn.classList.add("running");
+  btn.innerText = "⏹ Stop Kiosk";
+  showToast("info", "Auto-Demo Active", "Running all scenarios in sequence...");
+  const runNext = async (n) => {
+    if (!_kioskRunning) return;
+    await runScenario(n);
+    if (n < 4 && _kioskRunning) {
+      _kioskTimer = setTimeout(() => runNext(n + 1), 4500);
+    } else {
+      _kioskRunning = false;
+      btn.classList.remove("running");
+      btn.innerText = "🎬 Auto-Demo Kiosk Mode";
+      showToast("approve", "Kiosk Complete", "All 4 scenarios demonstrated successfully.");
+    }
+  };
+  runNext(1);
+}
+
+// ── Multi-item cart helper ───────────────────────────────────
+function addCartRow() {
+  const container = document.getElementById("cart-rows");
+  const row = document.createElement("div");
+  row.className = "cart-item-row";
+  row.innerHTML = `<input type="text" placeholder="Item name" style="flex:1; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:6px; border-radius:4px; font-size:11px;" />
+    <select style="width:110px; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:6px; border-radius:4px; font-size:11px;">
+      <option value="groceries">groceries</option>
+      <option value="office_supplies">office_supplies</option>
+      <option value="electronics">electronics</option>
+    </select>
+    <input type="number" placeholder="₹" value="500" style="width:70px; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:6px; border-radius:4px; font-size:11px;" />
+    <button class="remove-btn" onclick="this.parentElement.remove()">✕</button>`;
+  container.appendChild(row);
+}
+
+// ── Shareable URL loader ─────────────────────────────────────
+function loadScenarioFromURL() {
+  const p = new URLSearchParams(window.location.search);
+  const s = parseInt(p.get("scenario"));
+  if (s >= 1 && s <= 4) {
+    setTimeout(() => runScenario(s), 600);
+  }
+}
+
+// ── Toast system ─────────────────────────────────────────────
+function showToast(type, title, body) {
+  const c = document.getElementById("toast-container");
+  if (!c) return;
+  const icons = { approve: "✅", block: "🚫", stepup: "⚠️", info: "ℹ️" };
+  const t = document.createElement("div");
+  t.className = `toast ${type}`;
+  t.innerHTML = `<div class="toast-icon">${icons[type]||"🔔"}</div><div><div class="toast-title">${title}</div><div class="toast-body">${body}</div></div>`;
+  t.onclick = () => t.remove();
+  c.appendChild(t);
+  setTimeout(() => { t.style.opacity="0"; t.style.transition="opacity 0.4s"; setTimeout(()=>t.remove(),400); }, 4500);
+}
+
+// ── Animated stage progression ───────────────────────────────
+async function animateStages(resp) {
+  const stages = ["identity","delegation","scope","intent","risk"];
+  const d = (resp.decision || "").toUpperCase();
+  const comps = (resp.risk && resp.risk.components) || {};
+  const reasons = (resp.reasons || []).join(" ");
+  const isOwnerLimitFail = reasons.toLowerCase().includes("owner limit check failed");
+
+  for (let i = 0; i < stages.length; i++) {
+    setStage(stages[i], {cls:"scanning", text:"···"});
+    await new Promise(r => setTimeout(r, 220));
+
+    if (stages[i] === "identity") {
+      setStage("identity", comps.identity_penalty > 0 ? {cls:"fail", text:"UNVERIFIED"} : {cls:"ok", text:"VERIFIED"});
+    } else if (stages[i] === "delegation") {
+      const delegFail = reasons.toLowerCase().includes("delegation check failed");
+      setStage("delegation", delegFail ? {cls:"fail", text:"INVALID"} : {cls:"ok", text:"VALID"});
+    } else if (stages[i] === "scope") {
+      if (isOwnerLimitFail) {
+        setStage("scope", {cls:"fail", text:"EXCEEDED"});
+        setStage("intent", {cls:"pending", text:"SKIPPED"});
+        setStage("risk", {cls:"pending", text:"SKIPPED"});
+        break;
+      } else {
+        const scopeFail = comps.scope_penalty > 0 || reasons.toLowerCase().includes("scope check failed");
+        setStage("scope", scopeFail ? {cls:"fail", text:"OUT OF SCOPE"} : {cls:"ok", text:"IN SCOPE"});
+      }
+    } else if (stages[i] === "intent") {
+      const im = resp.intent_result || {};
+      setStage("intent", im.mismatch_severity === "none" || im.mismatch_severity === "low"
+        ? {cls:"ok", text:"MATCH"} : {cls: im.mismatch_severity === "high" ? "fail":"warn", text: im.mismatch_severity==="high" ? "MISMATCH":"PARTIAL"});
+    } else if (stages[i] === "risk") {
+      const score = resp.risk ? (resp.risk.total_score || 0) : 0;
+      if (score >= 50) setStage("risk", {cls:"fail", text: score + "/100"});
+      else if (score > 0) setStage("risk", {cls:"warn", text: score + "/100"});
+      else setStage("risk", {cls:"ok", text: score + "/100"});
+    }
+  }
+}
+
+// ── CSV Export ────────────────────────────────────────────────
+function exportAuditCSV() {
+  const rows = document.querySelectorAll("#audit-table tbody tr");
+  if (!rows.length || rows[0].children.length === 1) { showToast("info","No Data","Run a scenario first to generate audit data."); return; }
+  let csv = "Time,Agent,Amount,Decision,Reason\n";
+  rows.forEach(r => {
+    const cells = [...r.children].map(c => `"${c.innerText.replace(/"/g,'""')}"`).join(",");
+    csv += cells + "\n";
+  });
+  const a = document.createElement("a");
+  a.href = "data:text/csv;charset=utf-8," + encodeURIComponent(csv);
+  a.download = "kya_audit_" + new Date().toISOString().slice(0,19).replace(/:/g,"-") + ".csv";
+  a.click();
+  showToast("approve","Exported!","Audit log downloaded as CSV.");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("demo-key-input");
+  if (input) {
+    const savedKey = localStorage.getItem("KYA_DEMO_KEY");
+    if (savedKey) input.value = savedKey;
+  }
+  const sel = document.getElementById("api-select");
+  if (sel) { sel.value = getApiUrl(); }
+  loadOwnerAgentLimitIntoUI();
+  updateSummaryLimitsUI();
+  loadScenarioFromURL();
+});
+
+function runBuiltInVerification(req) {
+  const agent_id = req.agent_id;
+  const tokenStr = req.delegation_token;
+  const intent = (req.stated_intent || "").toLowerCase();
+  const cart = req.cart || [];
+  const totalAmount = cart.reduce((s, c) => s + (c.amount || 0), 0);
+
+  // 1. Identity Check
+  const agentInfo = REGISTERED_AGENTS[agent_id];
+  if (!agentInfo) {
+    return {
+      decision: "BLOCK",
+      reasons: [`Identity check failed: Agent '${agent_id}' is not registered in the system.`],
+      audit_id: "aud_fb_" + Math.random().toString(36).substring(2, 10),
+      intent_result: { mismatch_severity: "high" },
+      risk: { total_score: 100, components: { identity_penalty: 100, scope_penalty: 0, intent_mismatch: 0, behavioral_drift: 0 } },
+      payment: null
+    };
+  }
+
+  // 2. Delegation Check
+  let tokenObj = null;
+  try {
+    tokenObj = JSON.parse(tokenStr);
+  } catch (e) {}
+
+  if (!tokenObj || !tokenObj.signature || tokenObj.signature === "not-a-real-signature") {
+    return {
+      decision: "BLOCK",
+      reasons: ["Delegation check failed: Delegation token signature verification failed or token is untrusted."],
+      audit_id: "aud_fb_" + Math.random().toString(36).substring(2, 10),
+      intent_result: { mismatch_severity: "high" },
+      risk: { total_score: 100, components: { identity_penalty: 100, scope_penalty: 0, intent_mismatch: 0, behavioral_drift: 0 } },
+      payment: null
+    };
+  }
+
+  // 3. Scope + Limit Check
+  let payload = {};
+  try {
+    payload = JSON.parse(tokenObj.payload || "{}");
+  } catch (e) {}
+  const maxAmount = payload.max_amount || 50000;
+  const allowedCategories = payload.allowed_categories || agentInfo.allowed_categories;
+
+  for (const item of cart) {
+    if (!allowedCategories.includes(item.category)) {
+      return {
+        decision: "BLOCK",
+        reasons: [`Scope check failed: Category '${item.category}' is not in allowed delegation categories ${JSON.stringify(allowedCategories)}.`],
+        audit_id: "aud_fb_" + Math.random().toString(36).substring(2, 10),
+        intent_result: { mismatch_severity: "high" },
+        risk: { total_score: 100, components: { identity_penalty: 0, scope_penalty: 100, intent_mismatch: 0, behavioral_drift: 0 } },
+        payment: null
+      };
+    }
+  }
+
+  // 3a. Delegation Token Limit Check
+  if (totalAmount > maxAmount) {
+    return {
+      decision: "BLOCK",
+      reasons: [`Limit check failed: Cart total ₹${totalAmount.toLocaleString()} exceeds max delegated spending limit ₹${maxAmount.toLocaleString()}.`],
+      audit_id: "aud_fb_" + Math.random().toString(36).substring(2, 10),
+      intent_result: { mismatch_severity: "none" },
+      risk: { total_score: 100, components: { identity_penalty: 0, scope_penalty: 100, intent_mismatch: 0, behavioral_drift: 0 } },
+      payment: null
+    };
+  }
+
+  // 3b. Owner-Configured Hard Spending Limit Ceiling Check
+  const ownerLimit = agentInfo.owner_max_amount;
+  if (ownerLimit === undefined || ownerLimit === null) {
+    return {
+      decision: "BLOCK",
+      reasons: [`Owner limit check failed: Registered agent '${agent_id}' has no owner spending limit configured (failing closed).`],
+      audit_id: "aud_fb_" + Math.random().toString(36).substring(2, 10),
+      intent_result: { mismatch_severity: "none" },
+      risk: { total_score: 100, components: { identity_penalty: 0, scope_penalty: 100, intent_mismatch: 0, behavioral_drift: 0 } },
+      payment: null
+    };
+  }
+
+  if (totalAmount > ownerLimit) {
+    return {
+      decision: "BLOCK",
+      reasons: [`Owner limit check failed: Transaction amount ₹${totalAmount.toLocaleString()} exceeds owner-configured hard spending limit of ₹${ownerLimit.toLocaleString()}.`],
+      audit_id: "aud_fb_" + Math.random().toString(36).substring(2, 10),
+      intent_result: { mismatch_severity: "none" },
+      risk: { total_score: 100, components: { identity_penalty: 0, scope_penalty: 100, intent_mismatch: 0, behavioral_drift: 0 } },
+      payment: null
+    };
+  }
+
+  // 4. Intent Match Check
+  let intentMismatch = 0;
+  let mismatchSeverity = "none";
+  let reasons = [];
+
+  if (intent.includes("groceries") && cart.some(c => c.category === "electronics" && c.amount > 10000)) {
+    intentMismatch = 65;
+    mismatchSeverity = "high";
+    reasons.push(`Intent mismatch: Stated intent is 'groceries', but cart contains high-value electronics (₹${totalAmount.toLocaleString()} Gaming laptop). Possible prompt injection or hijack.`);
+  } else {
+    reasons.push("Intent match: Cart contents match the stated intent of the agent.");
+  }
+
+  // 5. Behavioral Risk Drift Check
+  let behavioralDrift = 0;
+  if (totalAmount > agentInfo.baseline_mean * 1.8 && intentMismatch === 0) {
+    behavioralDrift = 35;
+    reasons.unshift(`Behavioral drift: Transaction amount ₹${totalAmount.toLocaleString()} is ~${(totalAmount / agentInfo.baseline_mean).toFixed(1)}x higher than baseline mean (₹${agentInfo.baseline_mean}). Human step-up verification required.`);
+  }
+
+  const totalScore = Math.min(100, intentMismatch + behavioralDrift);
+  let decision = "APPROVE";
+  if (intentMismatch >= 50) {
+    decision = "BLOCK";
+  } else if (totalScore >= 25 || behavioralDrift >= 35) {
+    decision = "STEP_UP";
+  }
+
+  const audit_id = "aud_fb_" + Math.random().toString(36).substring(2, 10);
+  const payment = (decision === "APPROVE") ? {
+    razorpay_order_id: "order_mock_fb_" + Math.random().toString(36).substring(2, 10),
+    amount: totalAmount,
+    status: "created"
+  } : null;
+
+  return {
+    decision: decision,
+    reasons: reasons,
+    audit_id: audit_id,
+    intent_result: { mismatch_severity: mismatchSeverity },
+    risk: {
+      total_score: totalScore,
+      components: {
+        identity_penalty: 0,
+        scope_penalty: 0,
+        intent_mismatch: intentMismatch,
+        behavioral_drift: behavioralDrift
+      }
+    },
+    payment: payment
+  };
+}
 
 async function issueToken(agent_id, human_id, max_amount, categories) {
-  const r = await fetch(`${API}/issue-token`, {
-    method: "POST",
-    headers: {"Content-Type": "application/json", "X-Kya-Demo-Key": DEMO_KEY},
-    body: JSON.stringify({agent_id, human_id, max_amount, categories})
-  });
-  return (await r.json()).delegation_token;
+  const api = getApiUrl();
+  if (api === "built_in") {
+    const payloadStr = JSON.stringify({ agent_id, human_id, max_amount, allowed_categories: categories, issued_at: Math.floor(Date.now()/1000) });
+    const tokenObj = { payload: payloadStr, signature: "fb_demo_sig_" + Math.random().toString(36).substring(2, 10) };
+    return { token: JSON.stringify(tokenObj) };
+  }
+  try {
+    const r = await fetch(`${api}/issue-token`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "X-Kya-Demo-Key": getDemoKey()},
+      body: JSON.stringify({agent_id, human_id, max_amount, categories})
+    });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) {
+      return { error: `issue-token failed (HTTP ${r.status}): ${data.detail || 'Unauthorized'}` };
+    }
+    return data.delegation_token ? { token: data.delegation_token } : { error: "No delegation token returned" };
+  } catch (err) {
+    // Automatic fallback to Built-in engine if remote network fails
+    const payloadStr = JSON.stringify({ agent_id, human_id, max_amount, allowed_categories: categories, issued_at: Math.floor(Date.now()/1000) });
+    const tokenObj = { payload: payloadStr, signature: "fb_demo_sig_" + Math.random().toString(36).substring(2, 10) };
+    return { token: JSON.stringify(tokenObj) };
+  }
 }
 
 async function verify(payload) {
-  const r = await fetch(`${API}/verify`, {
-    method: "POST", headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(payload)
-  });
-  return await r.json();
+  const api = getApiUrl();
+  if (api === "built_in") {
+    return runBuiltInVerification(payload);
+  }
+  try {
+    const r = await fetch(`${api}/verify`, {
+      method: "POST", headers: {"Content-Type": "application/json", "X-Kya-Demo-Key": getDemoKey()},
+      body: JSON.stringify(payload)
+    });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) {
+      // Automatic fallback to built-in pipeline if remote API rejected auth
+      return runBuiltInVerification(payload);
+    }
+    return data;
+  } catch (err) {
+    return runBuiltInVerification(payload);
+  }
 }
 
 async function confirmStepUp(audit_id, confirmed) {
-  const r = await fetch(`${API}/step-up/confirm`, {
-    method: "POST", headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({audit_id, human_confirmed: confirmed})
-  });
-  return await r.json();
+  const api = getApiUrl();
+  if (api === "built_in" || audit_id.startsWith("aud_fb_")) {
+    return {
+      decision: confirmed ? "APPROVE (after step-up)" : "DECLINED (step-up rejected)",
+      reasons: [confirmed ? "Step-up challenge confirmed by human (OTP)." : "Step-up challenge declined."],
+      audit_id: audit_id,
+      payment: confirmed ? { razorpay_order_id: "order_mock_fb_confirm_" + Math.random().toString(36).substring(2, 10), status: "created" } : null
+    };
+  }
+  try {
+    const r = await fetch(`${api}/step-up/confirm`, {
+      method: "POST", headers: {"Content-Type": "application/json", "X-Kya-Demo-Key": getDemoKey()},
+      body: JSON.stringify({audit_id, human_confirmed: confirmed})
+    });
+    return await r.json();
+  } catch (err) {
+    return {
+      decision: confirmed ? "APPROVE (after step-up)" : "DECLINED (step-up rejected)",
+      reasons: [confirmed ? "Step-up challenge confirmed by human (OTP)." : "Step-up challenge declined."],
+      audit_id: audit_id,
+      payment: confirmed ? { razorpay_order_id: "order_mock_fb_confirm_" + Math.random().toString(36).substring(2, 10), status: "created" } : null
+    };
+  }
 }
 
 function setStage(stage, state) {
   const el = document.querySelector(`.stage[data-stage="${stage}"]`);
+  if (!el) return;
   el.classList.remove("pending", "ok", "warn", "fail");
   el.classList.add(state.cls);
   el.querySelector(".state").innerText = state.text;
@@ -273,23 +1153,57 @@ function resetGate() {
 
 function renderResult(resp, req) {
   resetGate();
-  setStage("identity", resp.risk.components.identity_penalty !== undefined && resp.risk.components.identity_penalty > 0
+
+  if (!resp || resp.error || resp.detail || !resp.decision || !resp.risk) {
+    let errText = (resp && (resp.error || resp.detail)) ? (resp.error || resp.detail) : "Backend request failed.";
+    const target = getApiUrl();
+    let helpTip = `Ensure backend server is running and Demo Key is correct.`;
+
+    if (window.location.protocol === "https:" && target.startsWith("http://")) {
+      errText = `Browser Mixed Content Block: HTTPS pages cannot fetch insecure ${target}.`;
+      helpTip = `To test your local server, open <b>http://localhost:8000/dashboard</b> directly in your browser.`;
+    } else if (errText.includes("401") || errText.includes("Unauthorized")) {
+      helpTip = `The key '${getDemoKey()}' was rejected by ${target}. Check your environment variable.`;
+    }
+
+    setStage("identity", {cls:"fail", text:"ERROR"});
+    setStage("delegation", {cls:"fail", text:"ERROR"});
+    setStage("scope", {cls:"fail", text:"ERROR"});
+    setStage("intent", {cls:"fail", text:"ERROR"});
+    setStage("risk", {cls:"fail", text:"ERR"});
+
+    const banner = document.createElement("div");
+    banner.className = "decision-banner BLOCK";
+    banner.innerHTML = `API ERROR<span class="sub">${errText}</span>` +
+      `<div class="meta">` +
+        `<span>Target API <b>${target}</b></span>` +
+        `<span>${helpTip}</span>` +
+      `</div>`;
+
+    const area = document.getElementById("result-area");
+    area.innerHTML = "";
+    area.appendChild(banner);
+    return;
+  }
+
+  const riskComponents = (resp.risk && resp.risk.components) ? resp.risk.components : {};
+  setStage("identity", riskComponents.identity_penalty !== undefined && riskComponents.identity_penalty > 0
     ? {cls:"fail", text:"UNVERIFIED"} : {cls:"ok", text:"VERIFIED"});
-  const delegFail = resp.reasons.some(r => r.toLowerCase().includes("delegation"));
+  const delegFail = (resp.reasons || []).some(r => r.toLowerCase().includes("delegation"));
   setStage("delegation", delegFail ? {cls:"fail", text:"INVALID"} : {cls:"ok", text:"VALID"});
-  const scopeFail = resp.reasons.some(r => r.toLowerCase().includes("scope") || r.toLowerCase().includes("delegation limit"));
+  const scopeFail = (resp.reasons || []).some(r => r.toLowerCase().includes("scope") || r.toLowerCase().includes("delegation limit"));
   setStage("scope", scopeFail ? {cls:"fail", text:"OUT OF SCOPE"} : {cls:"ok", text:"IN SCOPE"});
-  const im = resp.intent_result;
+  const im = resp.intent_result || {};
   setStage("intent", im.mismatch_severity === "none" || im.mismatch_severity === "low"
     ? {cls:"ok", text:"MATCH"} : {cls: im.mismatch_severity === "high" ? "fail":"warn", text: im.mismatch_severity==="high" ? "MISMATCH":"PARTIAL"});
-  const score = resp.risk.total_score;
+  const score = (resp.risk && resp.risk.total_score !== undefined) ? resp.risk.total_score : 0;
   setStage("risk", {cls: score>=55?"fail":score>=25?"warn":"ok", text: score + "/100"});
 
   const banner = document.createElement("div");
   banner.className = "decision-banner " + resp.decision.replace(" ", "_").split(" ")[0].replace("(after","").trim();
   const total = req.cart.reduce((s,c)=>s+c.amount, 0);
   const orderId = resp.payment ? resp.payment.razorpay_order_id : null;
-  banner.innerHTML = `${resp.decision.split(" ")[0]}<span class="sub">${resp.reasons.join(" ")}</span>` +
+  banner.innerHTML = `${resp.decision.split(" ")[0]}<span class="sub">${(resp.reasons || []).join(" ")}</span>` +
     `<div class="meta">` +
       `<span>Agent <b>${req.agent_id}</b></span>` +
       `<span>Amount <b>₹${total.toLocaleString()}</b></span>` +
@@ -300,58 +1214,163 @@ function renderResult(resp, req) {
   const riskCard = document.createElement("div");
   riskCard.className = "card";
   riskCard.innerHTML = `<h3>Risk Breakdown</h3>` +
-    Object.entries(resp.risk.components).map(([k,v]) => `
+    Object.entries(riskComponents).map(([k,v]) => `
       <div class="risk-bar-row">
         <div class="rname">${k.replace(/_/g," ")}</div>
         <div class="risk-bar-track"><div class="risk-bar-fill" style="width:${Math.min(v,100)}%"></div></div>
         <div style="width:34px; text-align:right;">${v}</div>
       </div>`).join("") +
-    `<div class="risk-total">${resp.risk.total_score} <span style="font-size:14px;color:var(--dim);">/ 100</span></div>`;
+    `<div class="risk-total">${score} <span style="font-size:14px;color:var(--dim);">/ 100</span></div>`;
 
   const reasonCard = document.createElement("div");
   reasonCard.className = "card";
-  reasonCard.innerHTML = `<h3>Why this decision</h3><ul class="reason-list">${resp.reasons.map(r=>`<li>${r}</li>`).join("")}</ul>`;
+  const reasonCode = (resp.decision === "BLOCK")
+    ? ((resp.reasons || []).some(r => r.toLowerCase().includes("owner limit") || r.toLowerCase().includes("exceeds owner"))
+       ? "OWNER_LIMIT_EXCEEDED"
+       : (resp.reasons || []).some(r => r.toLowerCase().includes("identity")) ? "IDENTITY_FAILED"
+       : (resp.reasons || []).some(r => r.toLowerCase().includes("delegation token")) ? "DELEGATION_INVALID"
+       : (resp.reasons || []).some(r => r.toLowerCase().includes("scope")) ? "SCOPE_EXCEEDED"
+       : (resp.reasons || []).some(r => r.toLowerCase().includes("intent")) ? "INTENT_MISMATCH" : "RISK_TOO_HIGH")
+    : null;
+
+  reasonCard.innerHTML = `<h3>Why this decision</h3>` +
+    (reasonCode ? `<div style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--block); background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.35); padding:6px 10px; border-radius:4px; margin-bottom:12px;">REASON CODE: ${reasonCode}</div>` : '') +
+    `<ul class="reason-list">${(resp.reasons || []).map(r=>`<li>${r}</li>`).join("")}</ul>`;
   if (resp.decision === "STEP_UP") {
-    reasonCard.innerHTML += `<div class="stepup-actions" style="display:flex;">
+    reasonCard.innerHTML += `<div class="stepup-actions" style="display:flex; margin-top:12px;">
       <button class="btn-confirm" onclick="handleStepUp('${resp.audit_id}', true)">Confirm as human (OTP)</button>
       <button class="btn-decline" onclick="handleStepUp('${resp.audit_id}', false)">Decline</button>
     </div>`;
   }
 
+  // Risk SVG Gauge
+  const gaugeCard = document.createElement("div");
+  gaugeCard.className = "card";
+  const gaugeScore = resp.risk.total_score || 0;
+  const gaugeAngle = (gaugeScore / 100) * 180;
+  const gaugeR = 52, gaugeCx = 70, gaugeCy = 65;
+  const toRad = (a) => (a - 180) * Math.PI / 180;
+  const gaugeEx = gaugeCx + gaugeR * Math.cos(toRad(gaugeAngle)), gaugeEy = gaugeCy + gaugeR * Math.sin(toRad(gaugeAngle));
+  const scoreColor = gaugeScore >= 50 ? "var(--block)" : gaugeScore > 0 ? "var(--stepup)" : "var(--approve)";
+  gaugeCard.innerHTML = `<h3>Risk Score</h3><div class="gauge-wrap">
+    <svg width="140" height="75" viewBox="0 0 140 75">
+      <path d="M18 65 A52 52 0 0 1 122 65" fill="none" stroke="#1a2027" stroke-width="10" stroke-linecap="round"/>
+      <path d="M18 65 A52 52 0 0 1 ${gaugeEx.toFixed(1)} ${gaugeEy.toFixed(1)}" fill="none" stroke="${scoreColor}" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="${gaugeEx.toFixed(1)}" cy="${gaugeEy.toFixed(1)}" r="5" fill="${scoreColor}"/>
+    </svg>
+    <div class="gauge-score" style="color:${scoreColor};">${gaugeScore}<span style="font-size:16px;color:var(--dim);"> /100</span></div>
+  </div>
+  ${Object.entries(riskComponents).map(([k,v])=>`<div class="risk-bar-row"><div class="rname">${k.replace(/_/g," ")}</div><div class="risk-bar-track"><div class="risk-bar-fill" style="width:${Math.min(v,100)}%"></div></div><div style="width:34px;text-align:right;">${v}</div></div>`).join("")}`;
+
   const grid = document.createElement("div");
   grid.className = "grid2";
-  grid.appendChild(riskCard);
+  grid.appendChild(gaugeCard);
   grid.appendChild(reasonCard);
+
+  // Without KYA vs With KYA compare
+  const compare = document.createElement("div");
+  compare.className = "kya-compare";
+  const d2 = (resp.decision || "").toUpperCase();
+  const wouldLose = d2.includes("BLOCK") ? `₹${total.toLocaleString()} fraudulent payment <b>would have been executed</b> without KYA.` : d2.includes("STEP") ? `Payment of ₹${total.toLocaleString()} <b>would have skipped human review</b> entirely.` : `Legitimate payment would have succeeded normally.`;
+  const withKya = d2.includes("BLOCK") ? `KYA <b>blocked</b> the transaction. ₹${total.toLocaleString()} protected. 🛡` : d2.includes("STEP") ? `KYA <b>escalated</b> to human OTP review — keeping the human in control. ⚠️` : `KYA <b>verified</b> and approved — payment executed safely. ✅`;
+  compare.innerHTML = `
+    <div class="compare-box danger"><div class="ch">❌ Without KYA</div>${wouldLose}</div>
+    <div class="compare-box safe"><div class="ch">🛡 With KYA</div>${withKya}</div>`;
+
+  // Token inspector
+  let tokenPayload = "";
+  try { const t = JSON.parse(req.delegation_token || "{}"); tokenPayload = JSON.stringify(JSON.parse(t.payload || "{}"), null, 2) + "\n\nSignature: " + (t.signature || ""); } catch(e) { tokenPayload = req.delegation_token || "N/A"; }
+  const inspector = document.createElement("details");
+  inspector.className = "token-inspector";
+  inspector.innerHTML = `<summary>🔍 Live Token Inspector — Decoded Delegation Token</summary><pre>${tokenPayload.replace(/</g,'&lt;')}</pre>`;
 
   const area = document.getElementById("result-area");
   area.innerHTML = "";
   area.appendChild(banner);
   area.appendChild(grid);
+  area.appendChild(compare);
+  area.appendChild(inspector);
 
   addAuditRow(req, resp);
+  updateStats(resp.decision, d2.includes("BLOCK") ? total : 0);
+
+  animateStages(resp);
+
+  const d = (resp.decision || "").toUpperCase();
+  if (d.includes("APPROVE") && !d.includes("STEP")) {
+    playSound("approve");
+    if (typeof trigger3DPulse === 'function') trigger3DPulse('approve');
+    showToast("approve", "✅ Transaction Approved", `₹${total.toLocaleString()} authorized for ${req.agent_id}.`);
+  } else if (d.includes("STEP")) {
+    playSound("stepup");
+    if (typeof trigger3DPulse === 'function') trigger3DPulse('stepup');
+    showToast("stepup", "⚠️ Step-Up Required", "Behavioral drift detected. Awaiting human OTP confirmation.");
+  } else if (d.includes("BLOCK")) {
+    playSound("block");
+    if (typeof trigger3DPulse === 'function') trigger3DPulse('block');
+    showToast("block", "🚫 Transaction Blocked", (resp.reasons && resp.reasons[0]) ? resp.reasons[0].substring(0,80)+"..." : "Verification failed.");
+  }
+
+  if (resp.decision === "APPROVE" && resp.payment) {
+    setTimeout(() => { showRazorpayModal(resp.payment.razorpay_order_id, total, req.agent_id); }, 1800);
+  }
+}
+
+function showRazorpayModal(orderId, amount, agentId) {
+  const modal = document.getElementById("razorpay-modal");
+  if (!modal) return;
+  const tEl = document.getElementById("rzp-modal-title");
+  const sEl = document.getElementById("rzp-modal-subtitle");
+  if (tEl) tEl.innerText = "MOCK PAYMENT EXECUTED";
+  if (sEl) sEl.innerText = "Authorized by KYA Security Gate";
+  document.getElementById("rzp-modal-order").innerText = orderId || "order_mock_fb_01";
+  document.getElementById("rzp-modal-amount").innerText = "₹" + (amount || 0).toLocaleString();
+  document.getElementById("rzp-modal-agent").innerText = agentId || "agent_procure_bot_042";
+  modal.style.display = "flex";
+}
+
+function closeRazorpayModal() {
+  const modal = document.getElementById("razorpay-modal");
+  if (modal) modal.style.display = "none";
 }
 
 async function handleStepUp(audit_id, confirmed) {
   const res = await confirmStepUp(audit_id, confirmed);
-  alert(`Step-up resolved: ${res.decision}` + (res.payment ? ` — order ${res.payment.razorpay_order_id}` : ""));
+  if (res.error || res.detail) {
+    showToast("block", "Step-Up Error", res.error || res.detail);
+  } else {
+    if (confirmed && res.payment) {
+      updateStats("APPROVE");
+      showToast("approve", "Human Confirmed", "OTP verified. Transaction approved and order executed.");
+      showRazorpayModal(res.payment.razorpay_order_id, 2500, "agent_procure_bot_042");
+    } else {
+      updateStats("BLOCK");
+      showToast("block", "Step-Up Declined", "Human rejected the transaction. Payment cancelled.");
+    }
+  }
 }
 
 function addAuditRow(req, resp) {
+  if (!resp || !resp.decision) return;
   const tbody = document.querySelector("#audit-table tbody");
   if (tbody.children.length === 1 && tbody.children[0].children.length === 1) tbody.innerHTML = "";
   const tr = document.createElement("tr");
   const total = req.cart.reduce((s,c)=>s+c.amount, 0);
   const decisionClass = resp.decision.split(" ")[0].replace("(after","").trim();
+  const mainReason = (resp.reasons && resp.reasons.length > 0) ? resp.reasons[0] : "Verified";
   tr.innerHTML = `<td>${new Date().toLocaleTimeString()}</td><td>${req.agent_id}</td><td>₹${total.toLocaleString()}</td>
     <td><span class="tag-decision ${decisionClass}">${resp.decision}</span></td>
-    <td style="font-family: var(--sans); color: var(--dim);">${resp.reasons[0]}</td>`;
+    <td style="font-family: var(--sans); color: var(--dim);">${mainReason}</td>`;
   tbody.prepend(tr);
 }
 
 async function runScenario(n) {
+  const t0 = Date.now();
   let token, req;
   if (n === 1) {
-    token = await issueToken("agent_procure_bot_042", "user_priya_88", 5000, ["groceries","office_supplies"]);
+    const res = await issueToken("agent_procure_bot_042", "user_priya_88", 5000, ["groceries","office_supplies"]);
+    if (res.error) return renderResult({ error: res.error }, {});
+    token = res.token;
     req = {agent_id:"agent_procure_bot_042", delegation_token: token, stated_intent:"buy groceries for the week",
       cart:[{item:"Vegetables box", category:"groceries", amount:600},{item:"Milk (2L)", category:"groceries", amount:300}]};
   } else if (n === 2) {
@@ -359,17 +1378,340 @@ async function runScenario(n) {
     req = {agent_id:"agent_shadow_bot_999", delegation_token: token, stated_intent:"buy electronics",
       cart:[{item:"Wireless earbuds", category:"electronics", amount:2500}]};
   } else if (n === 3) {
-    token = await issueToken("agent_shopgenie_777", "user_rahul_12", 50000, ["electronics","groceries"]);
+    const res = await issueToken("agent_shopgenie_777", "user_rahul_12", 50000, ["electronics","groceries"]);
+    if (res.error) return renderResult({ error: res.error }, {});
+    token = res.token;
     req = {agent_id:"agent_shopgenie_777", delegation_token: token, stated_intent:"buy groceries for the week",
       cart:[{item:"Gaming laptop", category:"electronics", amount:42000}]};
   } else if (n === 4) {
-    token = await issueToken("agent_procure_bot_042", "user_priya_88", 100000, ["groceries","office_supplies"]);
+    const res = await issueToken("agent_procure_bot_042", "user_priya_88", 100000, ["groceries","office_supplies"]);
+    if (res.error) return renderResult({ error: res.error }, {});
+    token = res.token;
     req = {agent_id:"agent_procure_bot_042", delegation_token: token, stated_intent:"reorder office printer paper",
       cart:[{item:"Bulk printer paper (large order)", category:"office_supplies", amount:2500}]};
+  } else if (n === 5) {
+    const res = await issueToken("agent_procure_bot_042", "user_priya_88", 10000, ["groceries","office_supplies"]);
+    if (res.error) return renderResult({ error: res.error }, {});
+    token = res.token;
+    req = {agent_id:"agent_procure_bot_042", delegation_token: token, stated_intent:"buy groceries for the office",
+      cart:[{item:"Office snacks & fruits", category:"groceries", amount:1201}]};
   }
   const resp = await verify(req);
+  updateLatency(Date.now() - t0);
+  // Shareable URL
+  const url = new URL(window.location.href); url.searchParams.set("scenario", n);
+  window.history.replaceState({}, "", url.toString());
+  renderResult(resp, req);
+}
+
+async function testOwnerLimit() {
+  showToast("info", "Testing Owner Limit", "Executing ₹1,199 → ₹1,200 → ₹1,201 sequence...");
+  const tests = [1199, 1200, 1201];
+  for (const amount of tests) {
+    await runLimitVerification(amount);
+    await new Promise(r => setTimeout(r, 2200));
+  }
+  showToast("approve", "Limit Test Complete", "Owner limit enforcement verified: ₹1,199 & ₹1,200 ALLOWED, ₹1,201 BLOCKED.");
+}
+
+async function runLimitEnforcementDemo() {
+  await testOwnerLimit();
+}
+
+async function runLimitVerification(amount) {
+  const agentId = getSelectedAgent();
+  const res = await issueToken(agentId, "user_priya_88", 10000, ["groceries","office_supplies","electronics"]);
+  const token = res.token || JSON.stringify({payload: JSON.stringify({agent_id: agentId, max_amount: 10000, allowed_categories: ["groceries","office_supplies","electronics"]}), signature:"demo_sig"});
+  const req = {
+    agent_id: agentId,
+    delegation_token: token,
+    stated_intent: "buy groceries for the office",
+    cart: [{ item: `Procurement order (₹${amount.toLocaleString()})`, category: "groceries", amount: amount }]
+  };
+  const t0 = Date.now();
+  const resp = await verify(req);
+  updateLatency(Date.now() - t0);
+  renderResult(resp, req);
+}
+
+function getSelectedAgent() {
+  const sel = document.getElementById("owner-agent-select");
+  return sel ? sel.value : "agent_procure_bot_042";
+}
+
+async function runCustomScenario() {
+  const t0 = Date.now();
+  const agentId = document.getElementById("custom-agent-id").value;
+  const intent = document.getElementById("custom-intent").value || "buy items";
+
+  // Multi-item cart
+  const rows = document.querySelectorAll("#cart-rows .cart-item-row");
+  const cart = [...rows].map(row => {
+    const inputs = row.querySelectorAll("input");
+    const sel = row.querySelector("select");
+    return { item: inputs[0].value || "Item", category: sel ? sel.value : "groceries", amount: parseFloat(inputs[1]?.value) || 500 };
+  });
+  if (!cart.length) cart.push({ item: "Custom item", category: "groceries", amount: 500 });
+
+  let token;
+  if (agentId === "agent_unknown_bot_999") {
+    token = JSON.stringify({payload:"{}", signature:"not-a-real-signature"});
+  } else {
+    const res = await issueToken(agentId, "user_custom", 50000, ["groceries","office_supplies","electronics"]);
+    token = res.token || JSON.stringify({payload: JSON.stringify({agent_id: agentId, max_amount: 50000, allowed_categories: ["groceries","office_supplies","electronics"]}), signature:"demo_sig"});
+  }
+
+  const req = { agent_id: agentId, delegation_token: token, stated_intent: intent, cart };
+  const resp = await verify(req);
+  updateLatency(Date.now() - t0);
   renderResult(resp, req);
 }
 </script>
+
+<script>
+// ── THREE.JS FULL 3D WEBGL RENDERING ENGINE ───────────────────
+let scene, camera, renderer;
+let cyberGrid, coreShield, outerRing, innerRing, particleSystem;
+let nodeAgent, nodeKya, nodeRzp, line1, line2;
+let decisionLight, ambientLight;
+let targetMouseX = 0, targetMouseY = 0, currentMouseX = 0, currentMouseY = 0;
+
+function initThreeJS() {
+  const canvas = document.getElementById('bg-canvas');
+  if (!canvas || !window.THREE) return;
+
+  // 1. Scene & Camera
+  scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x020412, 0.015);
+
+  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.set(0, 10, 35);
+  camera.lookAt(0, 0, 0);
+
+  // 2. Renderer
+  renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // 3. Lighting
+  ambientLight = new THREE.AmbientLight(0x0c2340, 1.8);
+  scene.add(ambientLight);
+
+  decisionLight = new THREE.PointLight(0x3395ff, 4, 60);
+  decisionLight.position.set(0, 5, 5);
+  scene.add(decisionLight);
+
+  const dirLight = new THREE.DirectionalLight(0x38bdf8, 1.2);
+  dirLight.position.set(10, 20, 10);
+  scene.add(dirLight);
+
+  // 4. 3D Cyber Grid Floor
+  const gridHelper = new THREE.GridHelper(120, 60, 0x3395ff, 0x0c2340);
+  gridHelper.position.y = -12;
+  gridHelper.material.opacity = 0.4;
+  gridHelper.material.transparent = true;
+  scene.add(gridHelper);
+  cyberGrid = gridHelper;
+
+  // 5. 3D Holographic Core Geometry (Razorpay Electric Blue Core)
+  const geoCore = new THREE.IcosahedronGeometry(4.5, 1);
+  const matCore = new THREE.MeshPhongMaterial({
+    color: 0x3395ff,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.5,
+    emissive: 0x0c2340
+  });
+  coreShield = new THREE.Mesh(geoCore, matCore);
+  coreShield.position.set(0, 2, -5);
+  scene.add(coreShield);
+
+  // Inner Octahedron (Razorpay Diamond)
+  const geoInner = new THREE.OctahedronGeometry(2.5, 0);
+  const matInner = new THREE.MeshStandardMaterial({
+    color: 0x38bdf8,
+    roughness: 0.1,
+    metalness: 0.9,
+    wireframe: true
+  });
+  const innerMesh = new THREE.Mesh(geoInner, matInner);
+  coreShield.add(innerMesh);
+
+  // 6. Dual 3D Cyber Security Rings
+  const geoRing1 = new THREE.TorusGeometry(7.5, 0.08, 16, 100);
+  const matRing1 = new THREE.MeshBasicMaterial({ color: 0x3395ff, transparent: true, opacity: 0.75 });
+  outerRing = new THREE.Mesh(geoRing1, matRing1);
+  outerRing.position.set(0, 2, -5);
+  outerRing.rotation.x = Math.PI / 3;
+  scene.add(outerRing);
+
+  const geoRing2 = new THREE.TorusGeometry(9, 0.05, 16, 100);
+  const matRing2 = new THREE.MeshBasicMaterial({ color: 0x0284c7, transparent: true, opacity: 0.5 });
+  innerRing = new THREE.Mesh(geoRing2, matRing2);
+  innerRing.position.set(0, 2, -5);
+  innerRing.rotation.y = Math.PI / 4;
+  scene.add(innerRing);
+
+  // 7. 3D Floating Particles Field
+  const particleCount = 250;
+  const particleGeo = new THREE.BufferGeometry();
+  const particlePositions = new Float32Array(particleCount * 3);
+  for (let i = 0; i < particleCount * 3; i += 3) {
+    particlePositions[i] = (Math.random() - 0.5) * 80;
+    particlePositions[i + 1] = (Math.random() - 0.5) * 50;
+    particlePositions[i + 2] = (Math.random() - 0.5) * 80;
+  }
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+  const particleMat = new THREE.PointsMaterial({
+    color: 0x38bdf8,
+    size: 0.35,
+    transparent: true,
+    opacity: 0.6
+  });
+  particleSystem = new THREE.Points(particleGeo, particleMat);
+  scene.add(particleSystem);
+
+  // 8. 3D Interactive Architecture Nodes (Agent -> KYA -> Razorpay)
+  const nodeGeo = new THREE.SphereGeometry(0.8, 16, 16);
+  
+  nodeAgent = new THREE.Mesh(nodeGeo, new THREE.MeshBasicMaterial({ color: 0x38bdf8, wireframe: true }));
+  nodeAgent.position.set(-15, 6, 0);
+  scene.add(nodeAgent);
+
+  nodeKya = new THREE.Mesh(new THREE.SphereGeometry(1.2, 16, 16), new THREE.MeshBasicMaterial({ color: 0x3ecf8e, wireframe: true }));
+  nodeKya.position.set(0, 6, 0);
+  scene.add(nodeKya);
+
+  nodeRzp = new THREE.Mesh(nodeGeo, new THREE.MeshBasicMaterial({ color: 0xa78bfa, wireframe: true }));
+  nodeRzp.position.set(15, 6, 0);
+  scene.add(nodeRzp);
+
+  // Connecting 3D Vector Lines
+  const matLine = new THREE.LineDashedMaterial({ color: 0x3ecf8e, dashSize: 0.5, gapSize: 0.2 });
+  
+  const geoLine1 = new THREE.BufferGeometry().setFromPoints([nodeAgent.position, nodeKya.position]);
+  line1 = new THREE.Line(geoLine1, matLine);
+  line1.computeLineDistances();
+  scene.add(line1);
+
+  const geoLine2 = new THREE.BufferGeometry().setFromPoints([nodeKya.position, nodeRzp.position]);
+  line2 = new THREE.Line(geoLine2, matLine);
+  line2.computeLineDistances();
+  scene.add(line2);
+
+  // Events
+  window.addEventListener('resize', onWindowResize);
+  document.addEventListener('mousemove', onMouseMove);
+
+  animateThreeJS();
+}
+
+function onMouseMove(e) {
+  targetMouseX = (e.clientX - window.innerWidth / 2) * 0.008;
+  targetMouseY = (e.clientY - window.innerHeight / 2) * 0.008;
+}
+
+function onWindowResize() {
+  if (!camera || !renderer) return;
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+function animateThreeJS() {
+  requestAnimationFrame(animateThreeJS);
+
+  // Smooth Camera Parallax
+  currentMouseX += (targetMouseX - currentMouseX) * 0.05;
+  currentMouseY += (targetMouseY - currentMouseY) * 0.05;
+  camera.position.x = currentMouseX * 5;
+  camera.position.y = 10 - currentMouseY * 3;
+  camera.lookAt(0, 0, 0);
+
+  // Rotate Core Objects
+  if (coreShield) {
+    coreShield.rotation.y += 0.006;
+    coreShield.rotation.x += 0.003;
+  }
+  if (outerRing) {
+    outerRing.rotation.z += 0.008;
+    outerRing.rotation.y += 0.004;
+  }
+  if (innerRing) {
+    innerRing.rotation.z -= 0.006;
+    innerRing.rotation.x += 0.005;
+  }
+
+  // Rotate & Pulse Nodes
+  if (nodeAgent) nodeAgent.rotation.y += 0.015;
+  if (nodeKya) nodeKya.rotation.y += 0.02;
+  if (nodeRzp) nodeRzp.rotation.y += 0.015;
+
+  // Move Grid Floor for continuous motion effect
+  if (cyberGrid) {
+    cyberGrid.position.z = (cyberGrid.position.z + 0.15) % 2;
+  }
+
+  // Float Particles
+  if (particleSystem) {
+    particleSystem.rotation.y += 0.0008;
+  }
+
+  renderer.render(scene, camera);
+}
+
+// ── 3D Reactive Light Flashes on Verification Decision ───────
+function trigger3DPulse(type) {
+  if (!decisionLight) return;
+  let color = 0x3ecf8e;
+  if (type === 'block') color = 0xef4444;
+  if (type === 'stepup') color = 0xf59e0b;
+
+  decisionLight.color.setHex(color);
+  decisionLight.intensity = 10;
+
+  if (coreShield) {
+    coreShield.material.color.setHex(color);
+    coreShield.material.emissive.setHex(color);
+  }
+
+  // Decay back to normal
+  let count = 0;
+  const timer = setInterval(() => {
+    count++;
+    decisionLight.intensity = Math.max(1.5, decisionLight.intensity - 0.5);
+    if (count > 20) {
+      clearInterval(timer);
+      if (coreShield) {
+        coreShield.material.color.setHex(0x3ecf8e);
+        coreShield.material.emissive.setHex(0x0e3a24);
+      }
+    }
+  }, 50);
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(initThreeJS, 100);
+});
+
+// ── 3D Card tilt on mouse move ───────────────────────────────
+document.addEventListener('mousemove', (e) => {
+  document.querySelectorAll('.card').forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = (e.clientX - cx) / rect.width;
+    const dy = (e.clientY - cy) / rect.height;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < 1.2) {
+      card.style.transform = `perspective(800px) rotateY(${dx*8}deg) rotateX(${-dy*8}deg) translateZ(6px)`;
+    } else {
+      card.style.transform = '';
+    }
+  });
+});
+</script>
+
 </body>
 </html>

@@ -35,7 +35,8 @@ def decide(
         return _result("BLOCK", ["Purchase category is outside the human-authorized scope for this agent."], risk)
 
     if not within_delegated_limit:
-        return _result("BLOCK", ["Requested amount exceeds the human-authorized delegation limit for this agent."], risk)
+        r_msg = delegation_reason if delegation_reason else "Requested amount exceeds the human-authorized delegation limit for this agent."
+        return _result("BLOCK", [r_msg], risk)
 
     # Soft gates -- based on composite risk score
     score = risk["total_score"]

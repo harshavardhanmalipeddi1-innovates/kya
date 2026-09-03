@@ -214,6 +214,7 @@ from rate_limiter import LocalRateLimiter
 from metrics import get_metrics
 from policy_engine import get_policy_engine
 from reliability import get_payment_circuit_breaker
+from trace import get_recent_traces, get_trace_stats, record_trace
 _rate_limiter = LocalRateLimiter()
 _metrics = get_metrics()
 _policy_engine = get_policy_engine()
@@ -405,6 +406,19 @@ def health_check():
     }
 
 
+class UpdateAgentLimitRequest(BaseModel):
+    owner_max_amount: float
+
+    @field_validator("owner_max_amount")
+    @classmethod
+    def validate_owner_max_amount(cls, v):
+        if math.isnan(v) or math.isinf(v):
+            raise ValueError("owner_max_amount must be a finite number")
+        if v <= 0:
+            raise ValueError("owner_max_amount must be greater than zero")
+        return v
+
+
 @app.get("/agents")
 def list_agents(request: Request, x_kya_demo_key: Optional[str] = Header(default=None)):
     """Returns the agent registry. Requires demo key authentication.
@@ -419,6 +433,28 @@ def list_agents(request: Request, x_kya_demo_key: Optional[str] = Header(default
     return {
         agent_id: {k: v for k, v in agent.items() if k in _AGENT_PUBLIC_FIELDS}
         for agent_id, agent in registry.items()
+    }
+
+
+@app.put("/agents/{agent_id}/limit")
+def update_agent_limit_route(
+    agent_id: str,
+    req: UpdateAgentLimitRequest,
+    request: Request,
+    x_kya_demo_key: Optional[str] = Header(default=None)
+):
+    """Update human owner's hard per-transaction limit for an agent.
+    Requires demo key authentication (X-Kya-Demo-Key).
+    """
+    _require_demo_key(x_kya_demo_key, request)
+    from registry import update_agent_limit
+    agent = update_agent_limit(agent_id, req.owner_max_amount)
+    if not agent:
+        raise HTTPException(status_code=404, detail=f"Agent '{agent_id}' not found")
+    return {
+        "status": "success",
+        "agent_id": agent_id,
+        "owner_max_amount": agent["owner_max_amount"]
     }
 
 
@@ -635,6 +671,10 @@ def verify_purchase(request: Request, req: PurchaseRequest, x_kya_demo_key: Opti
             "request_id": request_id,
         }
         audit_id = audit_store.record(audit_entry)
+        try:
+            record_trace(audit_entry)
+        except Exception:
+            pass
 
     security_log.log_payment_decision(
         agent_id=req.agent_id,

@@ -192,10 +192,10 @@ def gen_delegation_replay(i):
 
 AMBIGUOUS_INTENT_PHRASES = [
     "pick up some essentials for home",
-    "restock supplies for the desk",
-    "get some new tech gear",
     "handle the usual weekly errand",
     "take care of the recurring order",
+    "get the items on the list",
+    "place the usual order",
 ]
 
 
@@ -224,7 +224,7 @@ def gen_boundary_drift(i):
     a = AGENTS[agent_id]
     category = random.choice(a["categories"])
     # z around 2.0 (edge of step-up band, from decision_engine STEP_UP_THRESHOLD=25 -> sub_score=25 -> z=2.0)
-    z = random.choice([1.8, 2.0, 2.2, 4.2, 4.4, 4.6])
+    z = random.choice([1.8, 2.0, 2.2, 4.2, 4.3, 4.6])
     amount = a["mean"] + z * a["std"]
     token = issue_delegation_token(agent_id, a["human"], max_amount=a["mean"] * 50, allowed_categories=a["categories"], issued_at=EPOCH + GEN_OFFSET)
     expected = "STEP_UP" if 2.0 <= z <= 4.4 else ("APPROVE" if z < 2.0 else "BLOCK")
