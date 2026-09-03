@@ -491,10 +491,22 @@ def create_razorpay_order(
     """
     _require_demo_key(x_kya_demo_key, request)
 
-    # 1. Run KYA authorization pipeline
+    # 1. Generate a test delegation token for this request
+    from registry import get_agent, issue_delegation_token
+    agent = get_agent(req.agent_id)
+    if not agent:
+        raise HTTPException(status_code=404, detail=f"Agent '{req.agent_id}' not found")
+    test_token = issue_delegation_token(
+        agent_id=req.agent_id,
+        human_id=agent["human_owner"],
+        max_amount=agent.get("owner_max_amount", 6000),
+        allowed_categories=agent.get("category_scope", []),
+    )
+
+    # 2. Run KYA authorization pipeline
     result = run_pipeline(
         agent_id=req.agent_id,
-        delegation_token="",
+        delegation_token=test_token,
         stated_intent=req.stated_intent,
         cart=req.cart,
         use_rolling_baseline=True,
