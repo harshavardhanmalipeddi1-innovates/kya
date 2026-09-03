@@ -492,10 +492,11 @@
         <span class="arch-arrow">→</span>
         <span class="arch-node">💳 Payment Provider</span>
       </div>
-      <div style="color:var(--dim); font-size:10px; line-height:1.5;">
+      <div style="color:var(--dim); font-size:10px; line-height:1.5; margin-bottom:10px;">
         ├── Mock Provider (Built-in)<br>
-        └── Razorpay API (Optional / Sandbox)
+        └── Razorpay API (Sandbox Gateway)
       </div>
+      <a href="checkout.html" style="display:block; width:100%; background:linear-gradient(135deg, #1d4ed8, #3b82f6); color:#ffffff; padding:7px; border-radius:5px; font-family:var(--mono); font-size:10px; font-weight:700; text-decoration:none; box-shadow:0 2px 8px rgba(59,130,246,0.3); transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform=''">💳 Launch Razorpay Checkout</a>
     </div>
 
     <h2 style="margin-top:20px;">Custom Tester</h2>
@@ -531,7 +532,7 @@
       <div style="font-size:10px; color:var(--dim); font-family:var(--mono); margin-bottom:4px; letter-spacing:0.08em;">BACKEND API ENDPOINT</div>
       <select id="api-select" style="width:100%; background:#0f1520; border:1px solid #3a4550; color:#d7dee5; padding:7px; border-radius:5px; font-family:var(--mono); font-size:11px; margin-bottom:6px;" onchange="localStorage.setItem('KYA_API_URL', this.value); updateBackendNote(this.value)">
         <option value="built_in" selected>Built-in Engine — Authoritative Pipeline (Recommended)</option>
-        <option value="https://kya-backend.onrender.com">Render Cloud (https://kya-backend.onrender.com)</option>
+        <option value="/api">Firebase Cloud Function (Live Razorpay)</option>
         <option value="http://localhost:8000">Local Backend (http://localhost:8000)</option>
       </select>
       <div id="backend-note" style="font-size:10px; font-family:var(--mono); padding:6px 8px; border-radius:4px; margin-bottom:10px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.2); color:var(--approve);">● Runs the same 5-stage Identity → Delegation → Scope → Intent → Risk pipeline as the Python backend — all security logic is identical, no network required.</div>

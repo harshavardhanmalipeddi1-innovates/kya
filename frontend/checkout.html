@@ -181,7 +181,7 @@
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-const API = window.location.origin;
+const API = window.location.origin + '/api';
 
 document.getElementById('amount').addEventListener('input', function() {
   document.getElementById('amountDisplay').textContent = this.value || '0';

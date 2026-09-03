@@ -2,18 +2,46 @@
   "hosting": {
     "public": "frontend",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/api",
+        "function": "kya"
+      },
+      {
+        "source": "/api/**",
+        "function": "kya"
+      }
+    ],
     "headers": [
       {
         "source": "**",
         "headers": [
           {"key": "Cache-Control", "value": "no-cache, no-store, must-revalidate, max-age=0"},
-          {"key": "Pragma", "value": "no-cache"},
-          {"key": "Expires", "value": "0"},
           {"key": "X-Content-Type-Options", "value": "nosniff"},
           {"key": "X-Frame-Options", "value": "DENY"},
           {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}
         ]
       }
     ]
-  }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "python311",
+      "memory": "256MB",
+      "timeout": "60s",
+      "envVars": {
+        "KYA_PAYMENT_PROVIDER": "razorpay",
+        "RAZORPAY_KEY_ID": "rzp_test_TXaoSix3tglQoe",
+        "RAZORPAY_KEY_SECRET": "EHhx6Uv55dqe7ei76Y285vQ4",
+        "KYA_SIGNING_SECRET": "kya_prod_secret_2026_abc123def",
+        "KYA_DEMO_ISSUER_KEY": "kya_demo_key_2026_xyz789ghi",
+        "KYA_IDENTITY_MODE": "hmac",
+        "KYA_INTENT_CLASSIFIER": "keyword",
+        "KYA_RISK_MODEL": "basic",
+        "KYA_LOG_LEVEL": "INFO"
+      }
+    }
+  ]
 }
