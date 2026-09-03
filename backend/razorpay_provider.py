@@ -170,26 +170,21 @@ class RazorpayProvider(PaymentProvider):
                 error=f"[{error_type.value}] {e}",
             )
 
-    def search_orders(self, criteria: OrderSearchCriteria) -> SearchResult:
+    def search_orders(self, criteria: OrderSearchCriteria, retries: int = 3, delay: float = 5.0) -> SearchResult:
         """Search for Razorpay orders matching criteria.
 
-        Uses Razorpay's orders list API. Supports filtering by receipt.
-        Note: Razorpay's API may not support all criteria fields —
-        the adapter uses what's available and filters the rest client-side.
+        Razorpay's fetch_all does NOT support server-side receipt filtering,
+        so we fetch all and filter client-side.
+
+        IMPORTANT: Newly created orders may take a few seconds to appear
+        in fetch_all. We retry up to `retries` times with `delay` seconds
+        between attempts to handle this propagation delay.
         """
-        try:
-            params = {}
+        import time as _time
 
-            # Razorpay supports fetching by receipt via the orders endpoint
-            if criteria.receipt:
-                params["receipt"] = criteria.receipt
-
-            # Fetch orders (Razorpay returns up to 100 per page)
-            orders_response = self._client.order.fetch_all(params)
-            orders = orders_response.get("items", [])
-
+        def _filter_orders(orders_list):
             candidates = []
-            for order in orders:
+            for order in orders_list:
                 detail = OrderDetail(
                     id=order.get("id"),
                     amount=order.get("amount", 0) / RAZORPAY_PAISE_MULTIPLIER,
@@ -199,8 +194,8 @@ class RazorpayProvider(PaymentProvider):
                     notes=order.get("notes"),
                     created_at=order.get("created_at"),
                 )
-
-                # Client-side filtering for fields Razorpay doesn't filter
+                if criteria.receipt and detail.receipt != criteria.receipt:
+                    continue
                 if criteria.agent_id:
                     agent = (detail.notes or {}).get("initiated_by_agent", "")
                     if agent != criteria.agent_id:
@@ -209,23 +204,34 @@ class RazorpayProvider(PaymentProvider):
                     continue
                 if criteria.currency and detail.currency != criteria.currency:
                     continue
-
                 candidates.append(detail)
+            return candidates
 
-            if len(candidates) == 0:
-                return SearchResult(status=OrderSearchStatus.NO_MATCH)
-            elif len(candidates) == 1:
-                return SearchResult(status=OrderSearchStatus.EXACT_MATCH, orders=candidates)
-            else:
-                return SearchResult(status=OrderSearchStatus.AMBIGUOUS, orders=candidates)
+        for attempt in range(retries):
+            try:
+                orders_response = self._client.order.fetch_all({"count": 100})
+                orders = orders_response.get("items", [])
+                candidates = _filter_orders(orders)
+                if candidates or attempt == retries - 1:
+                    break
+                _time.sleep(delay)
+            except Exception as e:
+                if attempt == retries - 1:
+                    error_type = self._classify_error(e)
+                    logger.error(f"Razorpay order search failed ({error_type.value}): {e}")
+                    return SearchResult(
+                        status=OrderSearchStatus.QUERY_FAILED,
+                        error=f"[{error_type.value}] {e}",
+                    )
+                _time.sleep(delay)
+                candidates = []
 
-        except Exception as e:
-            error_type = self._classify_error(e)
-            logger.error(f"Razorpay order search failed ({error_type.value}): {e}")
-            return SearchResult(
-                status=OrderSearchStatus.QUERY_FAILED,
-                error=f"[{error_type.value}] {e}",
-            )
+        if len(candidates) == 0:
+            return SearchResult(status=OrderSearchStatus.NO_MATCH)
+        elif len(candidates) == 1:
+            return SearchResult(status=OrderSearchStatus.EXACT_MATCH, orders=candidates)
+        else:
+            return SearchResult(status=OrderSearchStatus.AMBIGUOUS, orders=candidates)
 
     def get_order(self, order_id: str) -> Optional[OrderDetail]:
         """Fetch a specific Razorpay order by ID."""
@@ -245,9 +251,13 @@ class RazorpayProvider(PaymentProvider):
             return None
 
     def get_order_payments(self, order_id: str) -> List[PaymentDetail]:
-        """Fetch payments linked to a Razorpay order."""
+        """Fetch payments linked to a Razorpay order.
+
+        Uses the SDK's fetch_all_payments method. Returns empty list
+        if the order has no payments yet (normal for newly created orders).
+        """
         try:
-            payments_response = self._client.order.fetch_payments(order_id)
+            payments_response = self._client.order.fetch_all_payments(order_id)
             payments = payments_response.get("items", [])
 
             return [

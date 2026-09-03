@@ -26,3 +26,6 @@ backend/data/policies.json
 backend/data/traces.db
 backend/data/traces.db-wal
 backend/data/traces.db-shm
+razorpay_test_api_keys_*.csv
+.env
+*.csv
