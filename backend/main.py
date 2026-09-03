@@ -60,7 +60,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 # --- Configurable logging level ---
 # Set KYA_LOG_LEVEL to DEBUG, INFO, WARNING, ERROR (default: INFO)
@@ -455,6 +455,84 @@ def update_agent_limit_route(
         "status": "success",
         "agent_id": agent_id,
         "owner_max_amount": agent["owner_max_amount"]
+    }
+
+
+class CreateOrderRequest(BaseModel):
+    amount: float
+    agent_id: str
+    stated_intent: str
+    cart: List[Dict[str, Any]]
+
+    @field_validator("amount")
+    @classmethod
+    def validate_amount(cls, v):
+        if math.isnan(v) or math.isinf(v):
+            raise ValueError("amount must be finite")
+        if v <= 0:
+            raise ValueError("amount must be positive")
+        return v
+
+
+@app.post("/create-order")
+def create_razorpay_order(
+    request: Request,
+    req: CreateOrderRequest,
+    x_kya_demo_key: Optional[str] = Header(default=None),
+):
+    """Create a Razorpay order after KYA authorization.
+
+    Flow:
+      1. Run KYA pipeline (identity, delegation, scope, intent, risk)
+      2. If APPROVE, create Razorpay order
+      3. Return order_id for frontend checkout
+
+    The frontend then uses Razorpay.js to open the payment modal.
+    """
+    _require_demo_key(x_kya_demo_key, request)
+
+    # 1. Run KYA authorization pipeline
+    result = run_pipeline(
+        agent_id=req.agent_id,
+        delegation_token="",
+        stated_intent=req.stated_intent,
+        cart=req.cart,
+        use_rolling_baseline=True,
+    )
+
+    if result["decision"] != "APPROVE":
+        raise HTTPException(
+            status_code=403,
+            detail={
+                "decision": result["decision"],
+                "reasons": result["reasons"],
+                "risk_score": result["risk"]["total_score"],
+            },
+        )
+
+    # 2. Create Razorpay order
+    provider = _get_payment_provider()
+    execution_id = f"exec_{uuid.uuid4().hex[:12]}"
+    order_result = provider.create_order(
+        amount=req.amount,
+        currency="INR",
+        receipt=execution_id[:40],
+        notes={
+            "initiated_by_agent": req.agent_id,
+            "kya_decision": result["decision"],
+            "kya_risk_score": str(result["risk"]["total_score"]),
+        },
+    )
+
+    if not order_result.success:
+        raise HTTPException(status_code=502, detail={"error": order_result.error})
+
+    return {
+        "order_id": order_result.order_id,
+        "amount": order_result.amount,
+        "currency": order_result.currency,
+        "receipt": execution_id,
+        "key_id": os.environ.get("RAZORPAY_KEY_ID", ""),
     }
 
 

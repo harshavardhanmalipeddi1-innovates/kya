@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KYA — Razorpay Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #01040a;
+    --panel: rgba(10, 20, 36, 0.88);
+    --line: rgba(59, 130, 246, 0.18);
+    --text: #f0f6fc;
+    --dim: #7d9bbd;
+    --blue: #3b82f6;
+    --green: #10b981;
+    --red: #f43f5e;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 480px;
+    width: 90%;
+  }
+  h1 {
+    font-family: var(--mono);
+    font-size: 22px;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #fff, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle { color: var(--dim); font-size: 13px; margin-bottom: 28px; }
+  .form-group { margin-bottom: 16px; }
+  label {
+    display: block;
+    font-size: 12px;
+    color: var(--dim);
+    margin-bottom: 4px;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  input, select {
+    width: 100%;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  input:focus, select:focus { border-color: var(--blue); }
+  select option { background: #0a1424; color: var(--text); }
+  .amount-display {
+    font-family: var(--mono);
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+    margin: 16px 0;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+  }
+  .amount-display .currency { color: var(--dim); font-size: 18px; }
+  button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 8px;
+  }
+  button:hover { opacity: 0.9; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .status {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: var(--mono);
+    display: none;
+  }
+  .status.success { display: block; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: var(--green); }
+  .status.error { display: block; background: rgba(244,63,94,0.12); border: 1px solid rgba(244,63,94,0.3); color: var(--red); }
+  .status.loading { display: block; background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.3); color: var(--blue); }
+  .back-link { text-align: center; margin-top: 16px; }
+  .back-link a { color: var(--dim); text-decoration: none; font-size: 13px; }
+  .back-link a:hover { color: var(--blue); }
+  .test-cards {
+    margin-top: 20px;
+    padding: 12px;
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.2);
+    border-radius: 8px;
+    font-size: 11px;
+    color: #f59e0b;
+    font-family: var(--mono);
+  }
+  .test-cards strong { display: block; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>KYA — Razorpay Checkout</h1>
+  <p class="subtitle">Test Mode • Real sandbox payment</p>
+
+  <div class="form-group">
+    <label>Agent</label>
+    <select id="agent">
+      <option value="agent_procure_bot_042">ProcureBot (₹6,000 limit)</option>
+      <option value="agent_shopgenie_777">ShopGenie (₹50,000 limit)</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Intent</label>
+    <input id="intent" value="buy groceries for the week" />
+  </div>
+
+  <div class="form-group">
+    <label>Item</label>
+    <input id="item" value="Rice (5kg)" />
+  </div>
+
+  <div class="form-group">
+    <label>Category</label>
+    <select id="category">
+      <option value="groceries">Groceries</option>
+      <option value="electronics">Electronics</option>
+      <option value="office_supplies">Office Supplies</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Amount (INR)</label>
+    <input id="amount" type="number" value="1" min="1" step="1" />
+  </div>
+
+  <div class="amount-display">
+    <span class="currency">₹</span><span id="amountDisplay">1</span>
+  </div>
+
+  <button id="payBtn" onclick="startPayment()">Pay with Razorpay</button>
+
+  <div id="status" class="status"></div>
+
+  <div class="test-cards">
+    <strong>Test Card (Success):</strong>
+    4111 1111 1111 1111 • Exp: 12/28 • CVV: 123
+  </div>
+
+  <div class="back-link">
+    <a href="/dashboard/">← Back to Dashboard</a>
+  </div>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+const API = window.location.origin;
+
+document.getElementById('amount').addEventListener('input', function() {
+  document.getElementById('amountDisplay').textContent = this.value || '0';
+});
+
+async function startPayment() {
+  const btn = document.getElementById('payBtn');
+  const status = document.getElementById('status');
+  btn.disabled = true;
+  status.className = 'status loading';
+  status.textContent = 'Creating Razorpay order...';
+
+  const agentId = document.getElementById('agent').value;
+  const intent = document.getElementById('intent').value;
+  const item = document.getElementById('item').value;
+  const category = document.getElementById('category').value;
+  const amount = parseFloat(document.getElementById('amount').value);
+
+  if (!amount || amount <= 0) {
+    status.className = 'status error';
+    status.textContent = 'Amount must be positive';
+    btn.disabled = false;
+    return;
+  }
+
+  try {
+    // 1. Create order via KYA backend
+    const demoKey = window.__DEMO_KEY || 'kya_demo_key_2026_xyz789ghi';
+    const resp = await fetch(`${API}/create-order`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Kya-Demo-Key': demoKey,
+      },
+      body: JSON.stringify({
+        amount: amount,
+        agent_id: agentId,
+        stated_intent: intent,
+        cart: [{ item: item, category: category, amount: amount }],
+      }),
+    });
+
+    const data = await resp.json();
+
+    if (!resp.ok) {
+      status.className = 'status error';
+      status.textContent = `KYA rejected: ${data.detail?.decision || data.detail || 'Unknown error'}\n${(data.detail?.reasons || []).join(', ')}`;
+      btn.disabled = false;
+      return;
+    }
+
+    status.className = 'status loading';
+    status.textContent = `Order created: ${data.order_id}\nOpening Razorpay checkout...`;
+
+    // 2. Open Razorpay checkout
+    const options = {
+      key: data.key_id,
+      amount: data.amount * 100, // paise
+      currency: data.currency,
+      name: 'KYA — Know Your Agent',
+      description: `Test payment for ${agentId}`,
+      order_id: data.order_id,
+      handler: function(response) {
+        status.className = 'status success';
+        status.innerHTML = `
+          <strong>✅ Payment Successful!</strong><br>
+          Payment ID: ${response.razorpay_payment_id}<br>
+          Order ID: ${response.razorpay_order_id}<br>
+          Signature: ${response.razorpay_signature.substring(0, 20)}...<br><br>
+          Webhook will be sent to KYA automatically.
+        `;
+        btn.disabled = false;
+      },
+      prefill: {
+        name: 'KYA Test User',
+        email: 'test@kya.dev',
+        contact: '9999999999',
+      },
+      notes: {
+        kya_agent: agentId,
+        kya_execution: data.receipt,
+      },
+      theme: {
+        color: '#3b82f6',
+      },
+      modal: {
+        ondismiss: function() {
+          status.className = 'status error';
+          status.textContent = 'Payment cancelled by user';
+          btn.disabled = false;
+        },
+      },
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.on('payment.failed', function(response) {
+      status.className = 'status error';
+      status.textContent = `Payment failed: ${response.error.description}`;
+      btn.disabled = false;
+    });
+    rzp.open();
+
+  } catch (err) {
+    status.className = 'status error';
+    status.textContent = `Error: ${err.message}`;
+    btn.disabled = false;
+  }
+}
+</script>
+</body>
+</html>
