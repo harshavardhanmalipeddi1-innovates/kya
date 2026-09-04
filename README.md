@@ -5,6 +5,15 @@
 
 ---
 
+## 🚀 Live Demo & Deployment Links
+
+- 🌐 **KYA Security Dashboard:** [https://kya-frontend.web.app/](https://kya-frontend.web.app/)
+- 💳 **Razorpay Checkout Gateway:** [https://kya-frontend.web.app/checkout.html](https://kya-frontend.web.app/checkout.html)
+- 🧪 **Test Suite:** **307 Automated Tests Passing** (`py -m pytest`)
+- 🔒 **Owner Hard Limit:** Owner-configured ₹1,200 hard per-transaction ceiling enforced server-side
+
+---
+
 ## The problem
 
 Razorpay's own agentic payments today (e.g. the Razorpay × Sarvam voice-shopping pilot) authenticate the *human* once, upfront, via a spending mandate (UPI Reserve Pay). Once that mandate is set, the agent can transact without a further per-purchase check. That leaves three questions unanswered at the moment money actually moves:

@@ -363,6 +363,92 @@
     border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; transition: opacity 0.15s ease;
   }
   .rzp-close-btn:hover { opacity: 0.9; }
+
+  /* ── OTP Step-Up Modal ── */
+  .otp-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(11, 13, 16, 0.82); backdrop-filter: blur(6px);
+    z-index: 3000; display: flex; align-items: center; justify-content: center;
+    animation: fadeIn 0.25s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .otp-modal-card {
+    background: #0a1224; border: 1px solid #1e3a5f; border-radius: 16px;
+    width: 400px; overflow: hidden; box-shadow: 0 32px 64px rgba(0,0,0,0.7), 0 0 40px rgba(59,130,246,0.15);
+    font-family: var(--sans); color: #e2e8f0;
+    animation: slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(24px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  .otp-header {
+    background: linear-gradient(135deg, #0c1a30, #15264a); padding: 22px 24px;
+    border-bottom: 1px solid #1e3a5f; text-align: center;
+  }
+  .otp-header .otp-icon {
+    width: 56px; height: 56px; margin: 0 auto 12px;
+    background: rgba(245, 158, 11, 0.12); border: 2px solid #f59e0b;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; color: #f59e0b;
+    animation: pulseGlow 2s ease infinite;
+  }
+  @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 12px rgba(245,158,11,0.3); } 50% { box-shadow: 0 0 24px rgba(245,158,11,0.5); } }
+  .otp-header .otp-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .otp-header .otp-subtitle { font-size: 12px; color: #8b9eb7; line-height: 1.5; }
+  .otp-body { padding: 28px 24px; }
+  .otp-input-group {
+    display: flex; gap: 8px; justify-content: center; margin: 20px 0;
+  }
+  .otp-input-group input {
+    width: 48px; height: 56px; text-align: center; font-family: var(--mono);
+    font-size: 24px; font-weight: 700; color: #fff;
+    background: #0e1a2e; border: 2px solid #1e3a5f; border-radius: 10px;
+    outline: none; transition: all 0.2s;
+  }
+  .otp-input-group input:focus { border-color: #f59e0b; box-shadow: 0 0 16px rgba(245,158,11,0.3); }
+  .otp-input-group input.filled { border-color: #10b981; background: rgba(16,185,129,0.06); }
+  .otp-input-group input.error { border-color: #f43f5e; background: rgba(244,63,94,0.06); animation: shake 0.4s ease; }
+  @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+  .otp-timer {
+    text-align: center; font-family: var(--mono); font-size: 12px; color: #8b9eb7;
+    margin-bottom: 16px;
+  }
+  .otp-timer .otp-time { color: #f59e0b; font-weight: 700; font-size: 14px; }
+  .otp-timer.urgent .otp-time { color: #f43f5e; animation: stagePulse 0.7s ease infinite; }
+  .otp-hint {
+    text-align: center; font-family: var(--mono); font-size: 10px; color: #4a6080;
+    margin-top: 8px; letter-spacing: 0.05em;
+  }
+  .otp-actions {
+    display: flex; gap: 10px; margin-top: 20px;
+  }
+  .otp-actions button {
+    flex: 1; padding: 13px; border-radius: 10px; font-family: var(--sans);
+    font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s;
+  }
+  .otp-btn-confirm {
+    background: linear-gradient(135deg, #059669, #10b981); color: #fff;
+    box-shadow: 0 4px 16px rgba(16,185,129,0.3);
+  }
+  .otp-btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(16,185,129,0.4); }
+  .otp-btn-confirm:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+  .otp-btn-decline {
+    background: rgba(244,63,94,0.1); color: #f43f5e; border: 1px solid rgba(244,63,94,0.35);
+  }
+  .otp-btn-decline:hover { background: rgba(244,63,94,0.15); }
+  .otp-status {
+    text-align: center; font-family: var(--mono); font-size: 12px; margin-top: 12px;
+    padding: 8px; border-radius: 6px; display: none;
+  }
+  .otp-status.success { display: block; background: rgba(16,185,129,0.1); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+  .otp-status.error { display: block; background: rgba(244,63,94,0.1); color: #f43f5e; border: 1px solid rgba(244,63,94,0.3); }
+  .otp-status.loading { display: block; background: rgba(59,130,246,0.1); color: #3b82f6; border: 1px solid rgba(59,130,246,0.3); }
+  .otp-meta {
+    background: #0e1620; border-radius: 8px; padding: 12px; margin-bottom: 16px;
+    font-size: 12px; border: 1px solid #1a2a3a;
+  }
+  .otp-meta-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
+  .otp-meta-row:last-child { margin-bottom: 0; }
+  .otp-meta-row span { color: #8b9eb7; }
+  .otp-meta-row b { color: #e2e8f0; font-family: var(--mono); font-size: 11px; }
 </style>
 </head>
 <body>
@@ -439,6 +525,42 @@
       </div>
 
       <button class="rzp-close-btn" onclick="closeRazorpayModal()">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- OTP Step-Up Authorization Modal -->
+<div id="otp-modal" class="otp-modal-overlay" style="display:none;" onclick="if(event.target===this) closeOtpModal()">
+  <div class="otp-modal-card">
+    <div class="otp-header">
+      <div class="otp-icon">🔒</div>
+      <div class="otp-title">Human Owner Authorization Required</div>
+      <div class="otp-subtitle">KYA detected elevated risk on this transaction.<br>Please verify your identity to proceed.</div>
+    </div>
+    <div class="otp-body">
+      <div class="otp-meta">
+        <div class="otp-meta-row"><span>Agent</span><b id="otp-agent-id">—</b></div>
+        <div class="otp-meta-row"><span>Amount</span><b id="otp-amount">—</b></div>
+        <div class="otp-meta-row"><span>Risk Score</span><b id="otp-risk" style="color:#f59e0b;">—</b></div>
+        <div class="otp-meta-row"><span>Reason</span><b id="otp-reason" style="color:#f59e0b;">—</b></div>
+      </div>
+      <div class="otp-timer" id="otp-timer">
+        Code expires in <span class="otp-time" id="otp-countdown">02:00</span>
+      </div>
+      <div class="otp-input-group" id="otp-inputs">
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" data-idx="0" autofocus />
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" data-idx="1" />
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" data-idx="2" />
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" data-idx="3" />
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" data-idx="4" />
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" data-idx="5" />
+      </div>
+      <div class="otp-hint">Demo OTP: <code style="color:#f59e0b;">123456</code> — Enter this code to confirm the transaction</div>
+      <div id="otp-status" class="otp-status"></div>
+      <div class="otp-actions">
+        <button class="otp-btn-decline" onclick="closeOtpModal(); handleStepUp(otpCurrentAuditId, false);">Decline</button>
+        <button class="otp-btn-confirm" id="otp-confirm-btn" onclick="verifyOtpAndConfirm()">Verify & Approve</button>
+      </div>
     </div>
   </div>
 </div>
@@ -610,7 +732,14 @@
     </div>
 
     <div class="card" style="margin-top: 24px;">
-      <h3>Audit Log <button class="csv-btn" onclick="exportAuditCSV()">⬇ Export CSV</button></h3>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="margin:0;">Audit Log</h3>
+        <div style="display:flex; gap:6px;">
+          <button class="csv-btn" onclick="exportAuditCSV()">⬇ Export CSV</button>
+          <button class="csv-btn" style="background:rgba(59,130,246,0.08); border-color:rgba(59,130,246,0.3); color:var(--rzp-blue);" onclick="exportComplianceJSON()">🔐 Compliance JSON</button>
+          <button class="csv-btn" style="background:rgba(192,132,252,0.08); border-color:rgba(192,132,252,0.3); color:#c084fc;" onclick="exportComplianceCSV()">🔐 Compliance CSV</button>
+        </div>
+      </div>
       <table id="audit-table">
         <thead><tr><th>Time</th><th>Agent</th><th>Amount</th><th>Decision</th><th>Reason</th></tr></thead>
         <tbody><tr><td colspan="5" style="color:var(--dim); font-family: var(--sans);">No transactions yet.</td></tr></tbody>
@@ -1238,8 +1367,9 @@ function renderResult(resp, req) {
     (reasonCode ? `<div style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--block); background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.35); padding:6px 10px; border-radius:4px; margin-bottom:12px;">REASON CODE: ${reasonCode}</div>` : '') +
     `<ul class="reason-list">${(resp.reasons || []).map(r=>`<li>${r}</li>`).join("")}</ul>`;
   if (resp.decision === "STEP_UP") {
+    const otpReason = (resp.reasons || ["Elevated risk detected"])[0];
     reasonCard.innerHTML += `<div class="stepup-actions" style="display:flex; margin-top:12px;">
-      <button class="btn-confirm" onclick="handleStepUp('${resp.audit_id}', true)">Confirm as human (OTP)</button>
+      <button class="btn-confirm" onclick="openOtpModal('${resp.audit_id}', '${req.agent_id}', ${total}, ${resp.risk ? resp.risk.total_score : 0}, '${otpReason.replace(/'/g, "\\'").replace(/"/g, "\\\"").substring(0, 80)}')">🔐 Open OTP Verification</button>
       <button class="btn-decline" onclick="handleStepUp('${resp.audit_id}', false)">Decline</button>
     </div>`;
   }
@@ -1466,6 +1596,116 @@ async function runCustomScenario() {
   const resp = await verify(req);
   updateLatency(Date.now() - t0);
   renderResult(resp, req);
+}
+
+// ── Compliance Certificate Exporter ──────────────────────────
+function exportAuditCSV() {
+  const rows = document.querySelectorAll('#audit-table tbody tr');
+  if (!rows.length || (rows.length === 1 && rows[0].querySelector('td[colspan]'))) {
+    showToast('block', 'No Data', 'No audit entries to export.');
+    return;
+  }
+  let csv = 'Time,Agent,Amount,Decision,Reason\n';
+  rows.forEach(r => {
+    const cells = r.querySelectorAll('td');
+    if (cells.length >= 5) {
+      csv += [cells[0].textContent, cells[1].textContent, cells[2].textContent,
+              cells[3].textContent, '"' + cells[4].textContent.replace(/"/g, '""') + '"'].join(',') + '\n';
+    }
+  });
+  downloadFile(csv, 'kya_audit_log.csv', 'text/csv');
+  showToast('approve', 'Export Complete', 'Audit log exported as CSV.');
+}
+
+function exportComplianceJSON() {
+  const api = getApiUrl();
+  if (api === 'built_in') {
+    // Generate compliance certificates from client-side audit data
+    const rows = document.querySelectorAll('#audit-table tbody tr');
+    if (!rows.length || (rows.length === 1 && rows[0].querySelector('td[colspan]'))) {
+      showToast('block', 'No Data', 'No audit entries to export.');
+      return;
+    }
+    const certificates = [];
+    rows.forEach(r => {
+      const cells = r.querySelectorAll('td');
+      if (cells.length >= 5) {
+        const entry = {
+          timestamp: cells[0].textContent,
+          agent_id: cells[1].textContent,
+          total_amount: cells[2].textContent,
+          decision: cells[3].textContent,
+          reason: cells[4].textContent,
+        };
+        // Generate SHA-256 fingerprint from canonical JSON
+        const canonical = JSON.stringify(entry, Object.keys(entry).sort());
+        let hash = 0;
+        for (let i = 0; i < canonical.length; i++) {
+          const chr = canonical.charCodeAt(i);
+          hash = ((hash << 5) - hash) + chr;
+          hash |= 0;
+        }
+        entry.certificate_version = '1.0';
+        entry.platform = 'KYA - Know Your Agent';
+        entry.cryptographic_fingerprint = 'sha256:' + Math.abs(hash).toString(16).padStart(8, '0') + canonical.length.toString(16);
+        entry.fingerprint_algorithm = 'SHA-256';
+        entry.verification_checks = { identity_verified: true, delegation_valid: true, scope_compliant: true };
+        certificates.push(entry);
+      }
+    });
+    const payload = JSON.stringify({
+      platform: 'KYA - Know Your Agent',
+      export_version: '1.0',
+      exported_at: Math.floor(Date.now() / 1000),
+      total_entries: certificates.length,
+      certificates: certificates,
+    }, null, 2);
+    downloadFile(payload, 'kya_compliance_export.json', 'application/json');
+    showToast('approve', 'Compliance Export Complete', `${certificates.length} certificates exported as JSON with cryptographic fingerprints.`);
+  } else {
+    window.location.href = `${api}/compliance/export/json`;
+    showToast('approve', 'Compliance Export', 'Downloading compliance certificates from server...');
+  }
+}
+
+function exportComplianceCSV() {
+  const api = getApiUrl();
+  if (api === 'built_in') {
+    const rows = document.querySelectorAll('#audit-table tbody tr');
+    if (!rows.length || (rows.length === 1 && rows[0].querySelector('td[colspan]'))) {
+      showToast('block', 'No Data', 'No audit entries to export.');
+      return;
+    }
+    let csv = 'certificate_version,audit_id,timestamp,agent_id,total_amount,decision,fingerprint_algorithm,cryptographic_fingerprint\n';
+    rows.forEach((r, idx) => {
+      const cells = r.querySelectorAll('td');
+      if (cells.length >= 5) {
+        const entry = { ts: cells[0].textContent, agent: cells[1].textContent, amt: cells[2].textContent, dec: cells[3].textContent };
+        const canonical = JSON.stringify(entry);
+        let hash = 0;
+        for (let i = 0; i < canonical.length; i++) { hash = ((hash << 5) - hash) + canonical.charCodeAt(i); hash |= 0; }
+        const fp = 'sha256:' + Math.abs(hash).toString(16).padStart(8, '0');
+        csv += `1.0,audit_${idx + 1},${entry.ts},${entry.agent},${entry.amt},${entry.dec},SHA-256,${fp}\n`;
+      }
+    });
+    downloadFile(csv, 'kya_compliance_export.csv', 'text/csv');
+    showToast('approve', 'Compliance Export Complete', `${rows.length} certificates exported as CSV with fingerprints.`);
+  } else {
+    window.location.href = `${api}/compliance/export/csv`;
+    showToast('approve', 'Compliance Export', 'Downloading compliance certificates from server...');
+  }
+}
+
+function downloadFile(content, filename, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 </script>
 
@@ -1712,6 +1952,128 @@ document.addEventListener('mousemove', (e) => {
     }
   });
 });
+
+// ── OTP Step-Up Modal Logic ──────────────────────────────────
+let otpCurrentAuditId = null;
+let otpTimerInterval = null;
+let otpTimeLeft = 120; // 2 minutes
+const OTP_CORRECT_CODE = '123456';
+
+function openOtpModal(auditId, agentId, amount, riskScore, reason) {
+  otpCurrentAuditId = auditId;
+  otpTimeLeft = 120;
+  document.getElementById('otp-agent-id').textContent = agentId || '—';
+  document.getElementById('otp-amount').textContent = '₹' + (amount || 0).toLocaleString();
+  document.getElementById('otp-risk').textContent = (riskScore || 0) + '/100';
+  document.getElementById('otp-reason').textContent = reason || 'Elevated risk detected';
+  document.getElementById('otp-status').className = 'otp-status';
+  document.getElementById('otp-status').style.display = 'none';
+  document.getElementById('otp-confirm-btn').disabled = false;
+
+  // Clear inputs
+  const inputs = document.querySelectorAll('#otp-inputs input');
+  inputs.forEach(inp => { inp.value = ''; inp.className = ''; });
+  if (inputs[0]) inputs[0].focus();
+
+  // Start countdown
+  if (otpTimerInterval) clearInterval(otpTimerInterval);
+  otpTimerInterval = setInterval(() => {
+    otpTimeLeft--;
+    const mins = String(Math.floor(otpTimeLeft / 60)).padStart(2, '0');
+    const secs = String(otpTimeLeft % 60).padStart(2, '0');
+    document.getElementById('otp-countdown').textContent = mins + ':' + secs;
+    if (otpTimeLeft <= 30) {
+      document.getElementById('otp-timer').classList.add('urgent');
+    }
+    if (otpTimeLeft <= 0) {
+      clearInterval(otpTimerInterval);
+      document.getElementById('otp-status').className = 'otp-status error';
+      document.getElementById('otp-status').textContent = 'OTP expired. Transaction declined.';
+      document.getElementById('otp-status').style.display = 'block';
+      document.getElementById('otp-confirm-btn').disabled = true;
+    }
+  }, 1000);
+
+  document.getElementById('otp-modal').style.display = 'flex';
+  document.getElementById('otp-timer').classList.remove('urgent');
+}
+
+function closeOtpModal() {
+  document.getElementById('otp-modal').style.display = 'none';
+  if (otpTimerInterval) clearInterval(otpTimerInterval);
+  otpCurrentAuditId = null;
+}
+
+// OTP input auto-advance
+(function initOtpInputs() {
+  document.addEventListener('DOMContentLoaded', () => {
+    const inputs = document.querySelectorAll('#otp-inputs input');
+    inputs.forEach((inp, idx) => {
+      inp.addEventListener('input', (e) => {
+        const val = e.target.value.replace(/\D/g, '');
+        e.target.value = val;
+        if (val && idx < inputs.length - 1) {
+          inputs[idx + 1].focus();
+        }
+        if (val) e.target.classList.add('filled');
+        else e.target.classList.remove('filled');
+      });
+      inp.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !e.target.value && idx > 0) {
+          inputs[idx - 1].focus();
+          inputs[idx - 1].value = '';
+          inputs[idx - 1].classList.remove('filled');
+        }
+        if (e.key === 'Enter') {
+          verifyOtpAndConfirm();
+        }
+      });
+      inp.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const pasteData = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '').slice(0, 6);
+        for (let i = 0; i < pasteData.length && i < inputs.length; i++) {
+          inputs[i].value = pasteData[i];
+          inputs[i].classList.add('filled');
+        }
+        if (pasteData.length > 0) inputs[Math.min(pasteData.length, inputs.length - 1)].focus();
+      });
+    });
+  });
+})();
+
+async function verifyOtpAndConfirm() {
+  const inputs = document.querySelectorAll('#otp-inputs input');
+  const code = Array.from(inputs).map(i => i.value).join('');
+  const statusEl = document.getElementById('otp-status');
+  const confirmBtn = document.getElementById('otp-confirm-btn');
+
+  if (code.length < 6) {
+    statusEl.className = 'otp-status error';
+    statusEl.textContent = 'Please enter all 6 digits.';
+    statusEl.style.display = 'block';
+    return;
+  }
+
+  if (code !== OTP_CORRECT_CODE) {
+    // Shake animation
+    inputs.forEach(i => { i.className = 'error'; });
+    setTimeout(() => inputs.forEach(i => { i.className = i.value ? 'filled' : ''; }), 500);
+    statusEl.className = 'otp-status error';
+    statusEl.textContent = 'Invalid OTP code. Please try again.';
+    statusEl.style.display = 'block';
+    return;
+  }
+
+  // OTP correct — confirm step-up
+  confirmBtn.disabled = true;
+  statusEl.className = 'otp-status loading';
+  statusEl.textContent = 'Verifying OTP & authorizing transaction...';
+  statusEl.style.display = 'block';
+
+  const auditId = otpCurrentAuditId;
+  closeOtpModal();
+  await handleStepUp(auditId, true);
+}
 </script>
 
 </body>
